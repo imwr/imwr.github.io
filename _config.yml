@@ -1,3 +1,8 @@
-permalink: /:category/:title
+permalink: /:categories/:title
+
+title: 汀汀涔涔
+url: http://tt-cc.cn
+author_info: <a href="https://github.com/imwr">imwr</a>
+
 gems:
   - jekyll-sitemap
