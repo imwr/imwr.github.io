@@ -1,23 +1,39 @@
-<div id="disqus_container">
-  <div class="share-con">
-    <script type="text/javascript" charset="utf-8">
-      (function(){
-        var param = {
-          url: 'http://beiyuu.com{{ page.url }}',
-          type: '6',
-          title: '《{{ page.title }}》' + '- {{ page.description }}',
-          ralateUid: '1855270953',
-          rnd:new Date().valueOf()
-        }
-        var temp = [];
-        for( var p in param ){
-          temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
-        }
-        document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="86" height="16"></iframe>')
-      })()
-    </script>
-  </div>
+<section class="main-inner hide" id="share-comment">
+    <br/>
+    <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style">
+        <span class="jiathis_txt">分享到：</span>
+        <a class="jiathis_button_weixin">微信</a>
+        <a class="jiathis_button_tsina">新浪微博</a>
+        <a class="jiathis_button_qzone">QQ空间</a>
+        <a class="jiathis_button_cqq">QQ好友</a>
+        <a class="jiathis_button_fav">收藏夹</a>
+        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis"
+           target="_blank">更多</a>
+    </div>
+    <!-- JiaThis Button END -->
+    <br/>
+    <br/>
 
-  <a href="#" class="comment" onclick="return false;">点击查看评论</a>
-  <div id="disqus_thread"></div>
-</div>
+    <div id="disqus_thread"></div>
+</section>
+<script>
+    var jiathis_config = {
+        summary: "",
+        shortUrl: false,
+        hideMore: false
+    }, disqus_config = function () {
+        this.page.url = location.href; // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = location.pathname; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    setTimeout(function () {
+        var d = document, share = d.createElement('script'), dis = d.createElement('script');
+        // add jiathis
+        share.src = '//v3.jiathis.com/code/jia.js';
+        // add disqus
+        dis.src = '//tt-cc.disqus.com/embed.js';
+        dis.setAttribute('data-timestamp', new Date());
+        (d.head || d.body).appendChild(share).appendChild(dis);
+        $("#share-comment").show();
+    }, 1000);
+</script>

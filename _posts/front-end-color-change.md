@@ -1,0 +1,142 @@
+---
+layout: post
+title: Color Change —— 颜色变换插件，可改变文字、背景、边框颜色
+description: Color Change —— 颜色变换插件，可改变文字、背景、边框颜色
+category: front-end
+tags: Color Change,jquery plugin
+---
+<section class="main-inner">
+    <div class="paper-title">Demo1:</div>
+    <div class="paper-div">
+        <div id="demo1">我的文字颜色在按默认设置顺序改变...</div>
+    </div>
+    <div class="paper-sep"></div>
+
+    <div class="paper-title">Demo2:</div>
+    <div class="paper-div">
+        <div id="demo2" style="border:2px solid red;padding: 4px">我的边框色在按默认设置随机改变...</div>
+    </div>
+    <div class="paper-sep"></div>
+
+    <div class="paper-title">Demo3:</div>
+    <div class="paper-div">
+        <div id="demo3"><span>开</span><span>机</span><span>中 </span> <span>请</span><span>稍</span><span>后</span>
+            <span>。</span><span>。</span><span>。</span></div>
+    </div>
+    <div class="paper-sep"></div>
+
+    <div class="paper-title">Demo4:</div>
+    <div class="paper-div">
+        <div id="demo4">点击我开始变色</div>
+    </div>
+    <div class="paper-sep"></div>
+
+    <div class="paper-title paper-specil" id="options">options:</div>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th width="15%">参数名</th>
+            <th width="15%">类型</th>
+            <th width="20%">默认值</th>
+            <th width="50%">说明</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>auto</td>
+            <td>boolean</td>
+            <td>true</td>
+            <td>是否自动开始变色</td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>string</td>
+            <td>text</td>
+            <td>目标变色类型：text、background、border</td>
+        </tr>
+        <tr>
+            <td>changeChildren</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>是否以所有子元素作为变色对象，true且innerHTML为纯文字时，单个字符将被添加span标签</td>
+        </tr>
+        <tr>
+            <td>randomcolor</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>是否随机生成颜色</td>
+        </tr>
+        <tr>
+            <td>normalcolor</td>
+            <td>string</td>
+            <td>#000</td>
+            <td>pause恢复时目标的颜色</td>
+        </tr>
+        <tr>
+            <td>colors</td>
+            <td>array</td>
+            <td>[
+                '#00ffff',
+                '#f1c40f',
+                '#3498db',
+                '#000000',
+                '#1abc9c',
+                '#e67e22',
+                '#95a5a6',
+                '#ffffff',
+                '#2ecc71',
+                '#f00000'
+                ]
+            </td>
+            <td>指定颜色集合，randomcolor=false时有效</td>
+        </tr>
+        <tr>
+            <td>randomshow</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>是否随机展示colors指定的颜色集合</td>
+        </tr>
+        <tr>
+            <td>pause</td>
+            <td>boolean</td>
+            <td>true</td>
+            <td>是否支持点击目标暂停/恢复</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+<script src="js/ColorChange.js"></script>
+<script type="text/javascript" id="js1">
+    $("#demo1").colorChange();
+</script>
+<script type="text/javascript" id="js2">
+    $("#demo2").colorChange({
+        type: "border",
+        randomshow: true
+    });
+</script>
+<script type="text/javascript" id="js3">
+    $("#demo3").colorChange({
+        changeChildren: true,
+        colors: [
+            '#888',
+            '#ccc',
+            '#888',
+            '#333',
+            '#333',
+            '#333',
+            '#333',
+            '#333',
+            '#333'
+        ]
+    });
+</script>
+<script type="text/javascript" id="js4">
+    $("#demo4").colorChange({
+        changeChildren: true,
+        auto: false,
+        pause: false
+    }).on("click", function () {
+        $(this).colorChange("start");
+    });
+</script>
