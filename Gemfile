@@ -1,2 +1,2 @@
 source 'https://tt-cc.cn'
-gem 'github-pages'
+gem 'github-pages', group: :jekyll_plugins
