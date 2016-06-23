@@ -23,14 +23,14 @@ gems:
   - jekyll-paginate
   - jekyll-geo-pattern
   - rouge
-#  - kramdown
-#  - jekyll-github-metadata
+  - kramdown
+  - jekyll-github-metadata
 
 # Build settings
 # markdown: kramdown
-# highlighter: rouge
-# lsi:         false
-# excerpt_separator: "\n\n"
+ highlighter: rouge
+ lsi:         false
+ excerpt_separator: "\n\n"
 
 source:      .
 destination: ./_site
@@ -38,9 +38,9 @@ destination: ./_site
 quiet:    false
 defaults: []
 
-# kramdown:
-#  input: GFM
-#  enable_coderay: true
+ kramdown:
+  input: GFM
+  enable_coderay: true
 
 # Disque
 disque: tt-cc.disqus.com
@@ -55,21 +55,21 @@ navs:
     href: /
     label: Home
 
-#   -
-#     href: /open-source
-#     label: Open-Source
+   -
+     href: /open-source
+     label: Open-Source
 
-#   -
-#     href: /blog
-#     label: Blog
+   -
+     href: /blog
+     label: Blog
 
-#   -
-#     href: /bookmark
-#     label: Bookmark
+   -
+     href: /bookmark
+     label: Bookmark
 
-#   -
-#     href: /about
-#     label: About
+   -
+     href: /about
+     label: About
 
 # Sidebar to show popular repo
 side_bar_repo_limit: 5 # Number of repos to show
