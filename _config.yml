@@ -28,9 +28,9 @@ gems:
 
 # Build settings
 markdown: kramdown
- highlighter: rouge
- lsi:         false
- excerpt_separator: "\n\n"
+highlighter: rouge
+lsi:         false
+excerpt_separator: "\n\n"
 
 source:      .
 destination: ./_site
@@ -38,7 +38,7 @@ destination: ./_site
 quiet:    false
 defaults: []
 
- kramdown:
+kramdown:
   input: GFM
   enable_coderay: true
 
