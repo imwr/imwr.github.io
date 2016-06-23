@@ -1,0 +1,24 @@
+---
+layout: default
+title: 404 Error | Sorry, this page does not exist.
+---
+<style>
+    body {
+        background: #f8f8f8;
+    }
+</style>
+<div style="position: absolute;top: 50%;width: 287px;left: 50%;margin-left: -143px;margin-top: -67px;">
+    <img src="images/404.png"/>
+    <div>something wrong, goto <a href="http://tt-cc.cn">home</a>(<span id="time">5</span>)</div>
+</div>
+<script type="text/javascript">
+    var el = document.getElementById("time");
+    setInterval(function(){
+        var val = Number(el.innerHTML);
+        if(val <= 1){
+            location.replace("http://tt-cc.cn");
+        }else{
+            el.innerHTML = val - 1;
+        }
+    },1000)
+</script>
