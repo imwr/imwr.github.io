@@ -1,10 +1,10 @@
-<h3 class="sidebar-title">Blog Categories</h3>
+<h3 class="sidebar-title">Blog Tags</h3>
 <div id="blog-categories">
     <ul class="list-group">
-        {% for category in site.categories %}
+        {% for tag in site.tags %}
         <li class="list-group-item">
-            {{ category | first }}
-            <span class="badge">{{ category[1].size }}</span>
+            {{ tag | first }}
+            <span class="badge">{{ tag[1].size }}</span>
         </li>
         {% endfor %}
     </ul>

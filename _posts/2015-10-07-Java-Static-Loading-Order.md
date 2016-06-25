@@ -2,7 +2,7 @@
 layout: post
 title: Java Static Blocks Loading Order
 category: java
-tags: [java]
+tags: [loading,blocks,static]
 ---
 
 ## Java Static Blocks Loading Order

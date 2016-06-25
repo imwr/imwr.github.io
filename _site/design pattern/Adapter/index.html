@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Adapter Pattern</title>
+    <meta name="description"
+          content="Adapter Pattern">
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<meta property="og:title" content="Adapter Pattern" />
+<meta name="description" content="Adapter Pattern" />
+<meta property="og:description" content="Adapter Pattern" />
+<link rel="canonical" href="http://localhost:4000/design%20pattern/Adapter/" />
+<meta property="og:url" content="http://localhost:4000/design%20pattern/Adapter/" />
+<meta property="og:site_name" content="汀汀涔涔" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-01-10T00:00:00+08:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Adapter Pattern",
+    "datePublished": "2016-01-10T00:00:00+08:00",
+    "description": "Adapter Pattern",
+    "url": "http://localhost:4000/design%20pattern/Adapter/"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="canonical" href="http://localhost:4000/design%20pattern/Adapter/">
+    <link rel="alternate" type="application/rss+xml" title="汀汀涔涔" href="http://localhost:4000/feed.xml">
+
+    <script type="text/javascript" src="/components/jquery/jquery.min.js"></script>
+
+    <!-- Third-Party CSS -->
+    <link rel="stylesheet" href="/components/bootstrap/css/bootstrap.min.css">
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="/assets/css/common.css">
+
+    <!-- CSS set in page -->
+    
+
+    <!-- CSS set in layout -->
+    
+    <link rel="stylesheet" href="/assets/css/sidebar-post-nav.css">
+    
+
+    <script type="text/javascript" src="/components/bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+
+
+    <body>
+
+    <header class="site-header">
+    <div class="container">
+        <a id="site-header-brand" href="/" title="汀汀涔涔">
+            <span class="octicon octicon-mark-github"></span> 汀汀涔涔
+        </a>
+        <nav class="site-header-nav" role="navigation">
+            
+            <a href="/"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="Home">
+                Home
+            </a>
+            
+            <a href="/open-source"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="Open-Source">
+                Open-Source
+            </a>
+            
+            <a href="/blog"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="Blog">
+                Blog
+            </a>
+            
+            <a href="/tag"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="Tag">
+                Tag
+            </a>
+            
+            <a href="/categories"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="Categories">
+                Categories
+            </a>
+            
+            <a href="/about"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="About">
+                About
+            </a>
+            
+        </nav>
+    </div>
+</header>
+
+
+        <div class="content">
+            <section class="jumbotron geopattern" data-pattern-id="Adapter Pattern">
+    <div class="container">
+        <div id="jumbotron-meta-info">
+            <h1>Adapter Pattern</h1>
+            <span class="meta-info">
+                
+                
+                <span class="octicon octicon-calendar"></span> 2016/01/10
+                
+                 |
+                 Posted in design pattern
+                
+                 |
+                
+                  <a href="/tags#java" class="post-tag">
+                      <span class="glyphicon glyphicon-tag small"></span> java
+                  </a>
+                
+                  <a href="/tags#design-pattern" class="post-tag">
+                      <span class="glyphicon glyphicon-tag small"></span> design pattern
+                  </a>
+                
+                
+            </span>
+        </div>
+    </div>
+</section>
+<script>
+    $(document).ready(function(){
+
+        $('.geopattern').each(function(){
+            $(this).geopattern($(this).data('pattern-id'));
+        });
+
+    });
+</script>
+<article class="post container" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="row">
+
+        <div class="col-md-8 markdown-body">
+
+            <h2 id="adapter-pattern">Adapter Pattern</h2>
+
+<p>Adapter pattern works as <strong>a bridge between two incompatible interfaces</strong>. It converts interface A into another interface B so that interface A could be compatible with those class of interface B. A real life example could be a case of travaling to another country, in the hotel, you want to charge your mobile, but you find that the socket is absolutly not the same as the ones of your country. So now we need an adapter to charge your mobile.</p>
+
+<h2 id="example">Example</h2>
+
+<p>We have interfaces <code class="highlighter-rouge">Duck</code> and <code class="highlighter-rouge">Turkey</code>. Now we want an Adapter to convert <code class="highlighter-rouge">Turkey</code> into <code class="highlighter-rouge">Duck</code>, so in this way, on client side, we see only Ducks! (So turkey classes would be compatible with methods for interface <code class="highlighter-rouge">Duck</code>)</p>
+
+<h4 id="duck"><code class="highlighter-rouge">Duck</code>:</h4>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Duck</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">quack</span><span class="o">();</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">fly</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GreenHeadDuck</span> <span class="kd">implements</span> <span class="n">Duck</span> <span class="o">{</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">quack</span><span class="o">()</span> <span class="o">{</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Ga Ga"</span><span class="o">);</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">fly</span><span class="o">()</span> <span class="o">{</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"I am flying a long distance"</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<h4 id="turky"><code class="highlighter-rouge">Turky</code>:</h4>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Turkey</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">gobble</span><span class="o">();</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">fly</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">WildTurkey</span> <span class="kd">implements</span> <span class="n">Turkey</span> <span class="o">{</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">gobble</span><span class="o">()</span> <span class="o">{</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Go Go"</span><span class="o">);</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">fly</span><span class="o">()</span> <span class="o">{</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"I am flying a short distance"</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<h2 id="adapter-type">Adapter Type</h2>
+<p>To realize an adapter, we have two ways:</p>
+
+<ol>
+  <li><strong>Object Adapter</strong> - uses composition and can wrap classes or interfaces, or both. It can do this since it contains, as a private, encapsulated member, the class or interface object instance it wraps.</li>
+  <li><strong>Class Adapter</strong> - uses inheritance and can only wrap a class. It cannot wrap an interface since by definition it must derive from some base class.</li>
+</ol>
+
+<h3 id="object-adapter">Object Adapter</h3>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TurkeyAdapter</span> <span class="kd">implements</span> <span class="n">Duck</span> <span class="o">{</span>
+
+	<span class="kd">private</span> <span class="n">Turkey</span> <span class="n">turkey</span><span class="o">;</span>
+	
+	<span class="kd">public</span> <span class="nf">TurkeyAdapter</span><span class="o">(</span><span class="n">Turkey</span> <span class="n">turkey</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">turkey</span><span class="o">=</span><span class="n">turkey</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">quack</span><span class="o">()</span> <span class="o">{</span>
+		<span class="n">turkey</span><span class="o">.</span><span class="na">gobble</span><span class="o">();</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">fly</span><span class="o">()</span> <span class="o">{</span>
+		<span class="n">turkey</span><span class="o">.</span><span class="na">fly</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<h3 id="class-adapter">Class Adapter</h3>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TurkeyAdapter</span> <span class="kd">extends</span> <span class="n">WildTurkey</span> <span class="kd">implements</span> <span class="n">Duck</span> <span class="o">{</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">quack</span><span class="o">()</span> <span class="o">{</span>
+		<span class="kd">super</span><span class="o">.</span><span class="na">gobble</span><span class="o">();</span>
+	<span class="o">}</span>
+
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">fly</span><span class="o">()</span> <span class="o">{</span>
+		<span class="kd">super</span><span class="o">.</span><span class="na">fly</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<h4 id="test">Test</h4>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainTest</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		
+		<span class="c1">// WildTurkey turkey = new WildTurkey();</span>
+		<span class="c1">// Duck duck = new TurkeyAdapter(turkey);</span>
+
+		<span class="n">Duck</span> <span class="n">duck</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TurkeyAdapter</span><span class="o">();</span>
+
+		<span class="n">duck</span><span class="o">.</span><span class="na">quack</span><span class="o">();</span>
+		<span class="n">duck</span><span class="o">.</span><span class="na">fly</span><span class="o">();</span>
+
+	<span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p>So on client side, we only see a duck! But it performs like a turkey :D</p>
+
+<h2 id="ref">Ref</h2>
+<ul>
+  <li><a href="http://www.tutorialspoint.com/design_pattern/adapter_pattern.htm">Tutorialspoint</a></li>
+  <li><a href="http://stackoverflow.com/questions/5467005/adapter-pattern-class-adapter-vs-object-adapter">Stackoverflow</a></li>
+</ul>
+
+
+            <h3>Related Posts</h3>
+
+            
+            <a href="/android/Android-DragViewHelper/">Android DragViewHelper</a><br/>
+            
+            <a href="/android/Android-GestureDetector/">Android GestureDetector</a><br/>
+            
+            <a href="/android/Android-Shape/">Android Shape Drawable</a><br/>
+            
+            <a href="/android/Android-ListActivity/">Android ListActivity</a><br/>
+            
+            <a href="/android/Android-Fragment/">Android Fragment</a><br/>
+            
+            <a href="/android/Android-Toolbar/">Android Toolbar</a><br/>
+            
+            <a href="/css/CSS-Animation/">CSS Animation</a><br/>
+            
+            <a href="/mysql/MySQL-Index/">MySQL Index</a><br/>
+            
+            <a href="/mybatis/MyBatis-With-Spring/">MyBatis with Spring</a><br/>
+            
+            <a href="/mybatis/MyBatis-Advanced/">MyBatis association collection and discriminator</a><br/>
+            
+            <hr/>
+            <div class="post-div">
+                
+                <a class="prev-link" href="/jdbc/JDBC-Guide/"><span>&#8592;&#09;previous</span></a>
+                
+                <span class="nav-hint-mob"> You can also navigate with left [or] right arrows </span>
+                
+                <a class="next-link" href="/struts/Struts-OGNL/"><span>next&#09;&#8594;</span></a>
+                
+            </div>
+            <!-- Comments -->
+            <div class="comments">
+    <div id="disqus_thread"></div>
+    <script>
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+
+            s.src = '//tt-cc.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+</div>
+
+        </div>
+
+        <div class="col-md-4">
+            <div id="search">
+    <form action="/search" method="get" class="input-group">
+        <input type="text" id="search-query" class="form-control search-query" name="q" placeholder="Search"
+               autocomplete="off">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </span>
+    </form>
+</div>
+
+<section id="search-results" style="display:none">
+    <header class="page-header">
+        <h2>Search results</h2>
+    </header>
+
+    <div class="entries">
+    </div>
+</section>
+
+
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article>
+      <h6>
+        {{#date}}<small><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}}
+        <a href="{{url}}">{{title}}</a>
+      </h6>
+      {{#is_post}}
+      <ul>
+        {{#tags}}<li>{{.}} </li>{{/tags}}
+      </ul>
+      {{/is_post}}
+    </article>
+  {{/entries}}
+</script>
+
+
+
+<script src="/components/search-jekyll/search.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#search-query').lunrSearch({
+            index: '/components/search-jekyll/index.json',
+            results: '#search-results',
+            entries: '.entries',
+            template: '#search-results-template'
+        });
+    });
+</script>
+
+            <h3>Post Directory</h3>
+<div id="post-directory-module">
+<section class="post-directory">
+    <!-- Links that trigger the jumping -->
+    <!-- Added by javascript below -->
+    <dl></dl>
+</section>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $( "article h2" ).each(function( index ) {
+            $(".post-directory dl").append("<dt><a class=\"jumper\" hre=#" +
+                    $(this).attr("id")
+                    + ">"
+                    + $(this).text()
+                    + "</a></dt>");
+
+            var children = $(this).nextUntil("h2", "h3")
+
+            children.each(function( index ) {
+                $(".post-directory dl").append("<dd><a class=\"jumper\" hre=#" +
+                        $(this).attr("id")
+                        + ">"
+                        + "&nbsp;&nbsp;- " + $(this).text()
+                        + "</a></dd>");
+            });
+        });
+
+        var fixmeTop = $('#post-directory-module').offset().top - 100;       // get initial position of the element
+
+        $(window).scroll(function() {                  // assign scroll event listener
+
+            var currentScroll = $(window).scrollTop(); // get current position
+
+            if (currentScroll >= fixmeTop) {           // apply position: fixed if you
+                $('#post-directory-module').css({      // scroll to that element or below it
+                    top: '100px',
+                    position: 'fixed',
+                    width: 'inherit'
+                });
+            } else {                                   // apply position: static
+                $('#post-directory-module').css({      // if you scroll above it
+                    position: 'inherit',
+                    width: 'inherit'
+                });
+            }
+
+        });
+
+        $("a.jumper").on("click", function( e ) {
+
+            e.preventDefault();
+
+            $("body, html").animate({
+                scrollTop: ($( $(this).attr('hre') ).offset().top - 100)
+            }, 600);
+
+        });
+    });
+
+</script>
+        </div>
+
+    </div>
+
+</article>
+
+        </div>
+
+    <footer class="container">
+
+    <div class="site-footer">
+
+        <div class="copyright pull-left">
+            <!-- 请不要更改这一行 方便其他人知道模板的来源 谢谢 -->
+            <!-- Please keep this line to let others know where this theme comes from. Thank you :D -->
+            Power by <a href="https://github.com/DONGChuan/Yummy-Jekyll">Yummy Jekyll</a>
+        </div>
+
+        <a href="https://github.com/DONGChuan" target="_blank" aria-label="view source code">
+            <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+        </a>
+
+        <div class="pull-right">
+            <a href="javascript:window.scrollTo(0,0)">TOP</a>
+        </div>
+
+    </div>
+
+    <!-- Third-Party JS -->
+    <script type="text/javascript" src="/components/geopattern/js/geopattern.min.js"></script>
+
+    <!-- My JS -->
+    <script type="text/javascript" src="/assets/js/script.js"></script>
+
+    
+
+    <!-- Google Analytics -->
+    <div style="display:none">
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                            (i[r].q = i[r].q || []).push(arguments)
+                        }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-79713062-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </div>
+
+</footer>
+
+
+    </body>
+
+</html>

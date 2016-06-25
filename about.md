@@ -3,17 +3,25 @@ layout: page
 title: About Me
 menu: about
 subtitle:   <h3>Download My CV</h3>
-            <a role="button" class="btn btn-primary hvr-grow-shadow" href="#" target="_blanks">
-                <span class="flag-icon flag-icon-bl"></span> Français
-            </a>
-            <a role="button" class="btn btn-primary hvr-grow-shadow" href="#" target="_blanks">
-                <span class="flag-icon flag-icon-gb"></span> English
-            </a>
-            <a role="button" class="btn btn-primary hvr-grow-shadow" href="#" target="_blanks">
-                <span class="flag-icon flag-icon-cn"></span> 中文
-            </a>
-                            
-css: ['about.css', 'sidebar-popular-repo.css', '../../bower_components/flag-icon-css/css/flag-icon.min.css']
+css: ['about.css', 'sidebar-popular-repo.css']
 ---
-
+{% if site.author.contact %}
+{% assign len = site.author.contact | size %}
+{% assign current_index = 0 %}
+<div class="sidebar-personal-info-section">
+    <p> Follow me:
+        {% for contact in site.author.contact %}
+        {% assign iconname = contact[0] %}
+        {% if contact[0] == 'email' %}
+        {% assign iconname = 'envelope' %}
+        {% endif %}
+        <a href="{{ contact[1] }}">
+            <i class="glyphicon glyphicon-{{ iconname }}" aria-hidden="true"></i>
+        </a>
+        {% assign current_index = current_index | plus: 1 %}
+        {% if current_index != len %}|{% endif %}
+        {% endfor %}
+    </p>
+</div>
+{% endif %}
 {% include about.html %}

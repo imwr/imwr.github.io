@@ -1,36 +1,20 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-title: I am 汀汀涔涔 !
+title: 汀汀涔涔
 name: 汀汀涔涔
 email: ttccmvp@gmail.com
 location: Chengdu, Sichuang
-company: Gfi Informatique
-company_url: http://tt-cc.cn
+company: DM
 github_url: https://github.com/imwr
-description: This is personnel website of ttcc 汀汀涔涔
-favicon: favicon.png # Image must be in assets/images
+description: This is personnel website of ttcc
+# url: http://tt-cc.cn
+url: http://localhost:4000
 
-url: http://tt-cc.cn # the base hostname & protocol for your site
-
-## Gem
-gems:
-  - jekyll-paginate
-  - jekyll-geo-pattern
-  - rouge
-  - kramdown
-  - jekyll-github-metadata
-
-# Build settings
-markdown: kramdown
-highlighter: rouge
-lsi:         false
-excerpt_separator: "\n\n"
+# About/contact
+author:
+  contact:
+    github:    https://github.com/imwr
+    weibo:     http://weibo.com/imwr
+    email:     ttccmvp@gmail.com
 
 source:      .
 destination: ./_site
@@ -38,16 +22,34 @@ destination: ./_site
 quiet:    false
 defaults: []
 
-kramdown:
-  input: GFM
-  enable_coderay: true
-
-# Disque
-disque: tt-cc.disqus.com
-
 # Pagination
+permalink: /:categories/:title/
 paginate: 10
-paginate_path: 'page:num'
+paginate_path: "/blog/page:num/"
+
+# Where are tags and categories displayed
+tag_page: '/tags'
+category_page: '/categories'
+
+# lunr search
+lunr_search:
+  js_dir: "components/search-jekyll"
+  stopwords: ''
+  min_length: 3
+
+# github metadata
+repository: imwr/imwr.github.com
+
+# tagging
+tag_page_layout: tagpage
+tag_page_dir: tag
+
+# press
+jekyll-press:
+  exclude: 'index.xml' # Exclude files from processing
+  js_options: {}      # js minifier options
+  css_options: {}     # css minifier options
+  html_options: {}    # html minifier options
 
 # Navigation
 navs:
@@ -64,21 +66,24 @@ navs:
     label: Blog
 
   -
-    href: /bookmark
-    label: Bookmark
+    href: /tag
+    label: Tag
+
+  -
+    href: /categories
+    label: Categories
 
   -
     href: /about
     label: About
 
 # Sidebar to show popular repo
-side_bar_repo_limit: 5 # Number of repos to show
+side_bar_repo_limit: 5
 
+# Disque
+disque: tt-cc.disqus.com
 # Google Analytics
-analytics :
-  provider : google
-  google :
-      tracking_id : 'UA-79713062-1'
+google_tracking_id : 'UA-79713062-1'
 
 
 # For about.html. Fell free to create your own!
@@ -86,3 +91,6 @@ skill_software_keywords: [Java, C, C++, Qt, Python, MySQL, Oracle, SQLite, PL/SQ
 skill_j2ee_keywords: [Spring, Struct, Hibernet, MyBatis, JSP]
 skill_web_keywords: [HTML, CSS, JS, JQuery, Ajax, AngularJS, NodeJS, ExpressJS, MongoDB, Redis, PHP, Symfony, Boostrap]
 skill_mobile_app_keywords: [Android, Sketch UI Desgin]
+
+# Exclude metadata and development time dependencies (like Grunt plugins)
+exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules]
