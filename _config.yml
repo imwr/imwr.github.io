@@ -70,8 +70,8 @@ navs:
     label: Blog
 
   -
-    href: /tag
-    label: Tag
+    href: /tags
+    label: Tags
 
   -
     href: /categories

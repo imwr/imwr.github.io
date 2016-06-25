@@ -15,7 +15,7 @@ css: ['blog-page.css']
       </div>
       <div class="card-footer clearfix">
         <small class="pull-xs-left text-muted">Posted <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b. %d, %Y' }}</time> in&nbsp;</small>
-        <a class="pull-xs-left label" href="/blog/categories#{{ post.category }}" style="background-color:red">{{ post.category }}</a>
+        <a class="pull-xs-left label" href="/categories#{{ post.category }}" style="background-color:red">{{ post.category }}</a>
         <small><a class="pull-xs-right" href="{{ post.url }}">Read more</a></small>
       </div>
     </div>

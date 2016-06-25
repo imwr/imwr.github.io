@@ -3,8 +3,10 @@
     <ul class="list-group">
         {% for tag in site.tags %}
         <li class="list-group-item">
+            <a href="/tag/{{ tag | first }}">
             {{ tag | first }}
             <span class="badge">{{ tag[1].size }}</span>
+            </a>
         </li>
         {% endfor %}
     </ul>
