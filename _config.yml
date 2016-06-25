@@ -25,6 +25,9 @@ defaults: []
 # Plugins
 gems:
   - jekyll-seo-tag
+  - jekyll-press
+  - jekyll-tagging
+  - jekyll-lunr-js-search
 
 # Pagination
 permalink: /:categories/:title/
