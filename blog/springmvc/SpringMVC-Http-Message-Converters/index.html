@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>SpringMVC Http Message Converters</title>
+    <meta name="description"
+          content="Quick note about spring mvc http message converter. Especially thanks to this post by Eugen Paraschiv.">
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<meta property="og:title" content="SpringMVC Http Message Converters" />
+<meta name="description" content="Quick note about spring mvc http message converter. Especially thanks to this post by Eugen Paraschiv." />
+<meta property="og:description" content="Quick note about spring mvc http message converter. Especially thanks to this post by Eugen Paraschiv." />
+<link rel="canonical" href="http://localhost:4000/blog/springmvc/SpringMVC-Http-Message-Converters/" />
+<meta property="og:url" content="http://localhost:4000/blog/springmvc/SpringMVC-Http-Message-Converters/" />
+<meta property="og:site_name" content="汀汀涔涔" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-04-14T00:00:00+08:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "SpringMVC Http Message Converters",
+    "datePublished": "2016-04-14T00:00:00+08:00",
+    "description": "Quick note about spring mvc http message converter. Especially thanks to this post by Eugen Paraschiv.",
+    "url": "http://localhost:4000/blog/springmvc/SpringMVC-Http-Message-Converters/"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="canonical" href="http://localhost:4000/blog/springmvc/SpringMVC-Http-Message-Converters/">
+    <link rel="alternate" type="application/rss+xml" title="汀汀涔涔" href="http://localhost:4000/feed.xml">
+
+    <script type="text/javascript" src="/components/jquery/jquery.min.js"></script>
+
+    <!-- Third-Party CSS -->
+    <link rel="stylesheet" href="/components/bootstrap/css/bootstrap.min.css">
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="/assets/css/common.css">
+
+    <!-- CSS set in page -->
+    
+
+    <!-- CSS set in layout -->
+    
+    <link rel="stylesheet" href="/assets/css/sidebar-post-nav.css">
+    
+
+    <script type="text/javascript" src="/components/bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+
+
+    <body>
+
+    <header class="site-header">
+    <div class="container">
+        <a id="site-header-brand" href="/" title="汀汀涔涔">
+            <span class="octicon octicon-mark-github"></span> 汀汀涔涔
+        </a>
+        <nav class="site-header-nav" role="navigation">
+            
+            <a href="/"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="Home">
+                Home
+            </a>
+            
+            <a href="/open-source"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="Open-Source">
+                Open-Source
+            </a>
+            
+            <a href="/blog"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="Blog">
+                Blog
+            </a>
+            
+            <a href="/blog/tags"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="Tags">
+                Tags
+            </a>
+            
+            <a href="/blog/categories"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="Categories">
+                Categories
+            </a>
+            
+            <a href="/about"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="About">
+                About
+            </a>
+            
+        </nav>
+    </div>
+</header>
+
+
+        <div class="content">
+            <section class="jumbotron geopattern" data-pattern-id="SpringMVC Http Message Converters">
+    <div class="container">
+        <div id="jumbotron-meta-info">
+            <h1>SpringMVC Http Message Converters</h1>
+            <span class="meta-info">
+                
+                
+                <span class="octicon octicon-calendar"></span> 2016/04/14
+                
+                 |
+                 Posted in SpringMVC
+                
+                 |
+                
+                  <a href="blog/tags#spring" class="post-tag">
+                      <span class="glyphicon glyphicon-tag small"></span> spring
+                  </a>
+                
+                  <a href="blog/tags#springmvc" class="post-tag">
+                      <span class="glyphicon glyphicon-tag small"></span> springmvc
+                  </a>
+                
+                
+            </span>
+        </div>
+    </div>
+</section>
+<script>
+    $(document).ready(function(){
+
+        $('.geopattern').each(function(){
+            $(this).geopattern($(this).data('pattern-id'));
+        });
+
+    });
+</script>
+<article class="post container" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="row">
+
+        <div class="col-md-8 markdown-body">
+
+            <p>Quick note about spring mvc http message converter. Especially thanks to this <a href="http://www.baeldung.com/spring-httpmessageconverter-rest">post</a> by Eugen Paraschiv.</p>
+
+<h2 id="http-message-converters">Http Message Converters</h2>
+
+<p>An example:</p>
+
+<ol>
+  <li>
+    <p>Client sends a GET request to /foos with two headers <code class="highlighter-rouge">Accept: application/json</code> and <code class="highlighter-rouge">Content-type: application/xml</code>. To tell server that the request body is in xml and we want the server to return json.</p>
+  </li>
+  <li>
+    <p>Spring controller is hit. With <code class="highlighter-rouge">@RequestBody</code> annotation and <code class="highlighter-rouge">Content-type</code> of client, the request body will be converted from xml to specified java entity as argument of method by xml converter.</p>
+  </li>
+  <li>
+    <p>When spring controller returns a response. With <code class="highlighter-rouge">@ResponseBody</code> annotation and <code class="highlighter-rouge">Accept</code> of client, the return value/object will be converted from specified java entity to json by json converter.</p>
+  </li>
+</ol>
+
+<h3 id="converters-type">Converters Type</h3>
+
+<p>By default, the following HttpMessageConverters instances are pre-enabled:</p>
+
+<ul>
+  <li>StringHttpMessageConverter – converts Strings</li>
+  <li>MappingJackson2HttpMessageConverter – converts to/from JSON</li>
+  <li>Jaxb2RootElementHttpMessageConverter – converts to/from XML</li>
+  <li>For the other converters - <a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/html/remoting.html#rest-message-conversion">Message Converters</a></li>
+</ul>
+
+<h2 id="set-up">Set Up</h2>
+
+<p>We must declare explicitly support for annotation-driven MVC controllers</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="o">&lt;</span><span class="nl">mvc:</span><span class="n">annotation</span><span class="o">-</span><span class="n">driven</span><span class="o">/&gt;</span></code></pre></figure>
+
+<p>We could also use <a href="http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/config/annotation/EnableWebMvc.html"><code class="highlighter-rouge">@EnableWebMvc</code></a> annotation to do the same thing.</p>
+
+<h2 id="requestbody">@RequestBody</h2>
+
+<p><code class="highlighter-rouge">@RequestBody</code> indicates that the <strong>body of the HTTP Request is deserialized to that particular Java entity as method argument</strong>.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">path</span> <span class="o">=</span> <span class="err">"</span><span class="o">/</span><span class="n">user</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span><span class="o">(</span><span class="nd">@RequestBody</span> <span class="n">User</span> <span class="n">user</span><span class="o">)</span> <span class="o">{</span>
+    <span class="o">...</span>
+<span class="o">}</span></code></pre></figure>
+
+<p><strong><code class="highlighter-rouge">Content-Type</code> header specified by the Client will be used to determine the appropriate converter for it</strong>. So <code class="highlighter-rouge">Content-Type: application/xml</code> here to choose a xml converter which will convert xml content in request body to User object in method argument.</p>
+
+<h2 id="responsebody">@ResponseBody</h2>
+
+<p><code class="highlighter-rouge">@ResponseBody</code> indicates that the return value of the method is serialized directly to <strong>the body of the HTTP Response</strong>.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">"/getJson"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nd">@ResponseBody</span> <span class="n">User</span> <span class="nf">test</span><span class="o">(){</span>
+
+	<span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="k">new</span> <span class="n">User</span><span class="o">();</span>
+	<span class="n">user</span><span class="o">.</span><span class="na">setPassword</span><span class="o">(</span><span class="s">"1234"</span><span class="o">);</span>
+	<span class="n">user</span><span class="o">.</span><span class="na">setUserName</span><span class="o">(</span><span class="s">"DONG"</span><span class="o">);</span>
+
+	<span class="k">return</span> <span class="n">user</span><span class="o">;</span>
+<span class="o">}</span></code></pre></figure>
+
+<p><strong><code class="highlighter-rouge">Accept</code> header specified by the Client will be used to choose the appropriate Http Converter to marshall the entity</strong>. So <code class="highlighter-rouge">Accept: application/json</code> here to choose a json converter which will convert user object to json fromat  in the http response body.</p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+    </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DONG"</span><span class="p">,</span><span class="w">
+</span><span class="err">}</span></code></pre></figure>
+
+<h2 id="refs">Refs</h2>
+
+<ul>
+  <li><a href="http://www.baeldung.com/spring-httpmessageconverter-rest">HttpMessageConverter in Spring</a></li>
+  <li><a href="http://jiuye.jikexueyuan.com/play?id=2239&amp;class_id=36">极客学院-常用注解类</a></li>
+  <li><a href="https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestMapping.html">Annotation Type RequestMapping</a></li>
+</ul>
+
+
+            
+            <div>
+                <h3>Related Posts</h3>
+                <ul>
+                    
+                    <li><a href="/blog/springmvc/SpringMVC-RequestMapping/">SpringMVC RequestMapping</a></li>
+                    
+                    <li><a href="/blog/mybatis/MyBatis-With-Spring/">MyBatis with Spring</a></li>
+                    
+                    <li><a href="/blog/spring/Spring-SpEL/">Spring SpEL</a></li>
+                    
+                    <li><a href="/blog/spring/Spring-Beans-Autowire/">Spring Beans Autowire</a></li>
+                    
+                </ul>
+            </div>
+            
+            <hr/>
+            <div class="post-div">
+                
+                <a class="prev-link" href="/blog/springmvc/SpringMVC-RequestMapping/"><span>&#8592;&#09;previous</span></a>
+                
+                <span class="nav-hint-mob"> You can also navigate with left [or] right arrows </span>
+                
+                <a class="next-link" href="/blog/mybatis/MyBatis-CRUD/"><span>next&#09;&#8594;</span></a>
+                
+            </div>
+            <!-- Comments -->
+            <div class="comments">
+    <div id="disqus_thread"></div>
+    <script>
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+
+            s.src = '//tt-cc.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+</div>
+
+        </div>
+
+        <div class="col-md-4">
+            <div id="search">
+    <form action="/search" method="get" class="input-group">
+        <input type="text" id="search-query" class="form-control search-query" name="q" placeholder="Search"
+               autocomplete="off">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </span>
+    </form>
+</div>
+
+<section id="search-results" style="display:none">
+    <header class="page-header">
+        <h2>Search results</h2>
+    </header>
+
+    <div class="entries">
+    </div>
+</section>
+
+
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article>
+      <h6>
+        {{#date}}<small><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}}
+        <a href="{{url}}">{{title}}</a>
+      </h6>
+      {{#is_post}}
+      <ul>
+        {{#tags}}<li>{{.}} </li>{{/tags}}
+      </ul>
+      {{/is_post}}
+    </article>
+  {{/entries}}
+</script>
+
+
+
+<script src="/components/search-jekyll/search.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#search-query').lunrSearch({
+            indexUrl: '/components/search-jekyll/index.json',
+            results: '#search-results',
+            entries: '.entries',
+            template: '#search-results-template'
+        });
+    });
+</script>
+
+            <h3>Post Directory</h3>
+<div id="post-directory-module">
+<section class="post-directory">
+    <!-- Links that trigger the jumping -->
+    <!-- Added by javascript below -->
+    <dl></dl>
+</section>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $( "article h2" ).each(function( index ) {
+            $(".post-directory dl").append("<dt><a class=\"jumper\" hre=#" +
+                    $(this).attr("id")
+                    + ">"
+                    + $(this).text()
+                    + "</a></dt>");
+
+            var children = $(this).nextUntil("h2", "h3")
+
+            children.each(function( index ) {
+                $(".post-directory dl").append("<dd><a class=\"jumper\" hre=#" +
+                        $(this).attr("id")
+                        + ">"
+                        + "&nbsp;&nbsp;- " + $(this).text()
+                        + "</a></dd>");
+            });
+        });
+
+        var fixmeTop = $('#post-directory-module').offset().top - 100;       // get initial position of the element
+
+        $(window).scroll(function() {                  // assign scroll event listener
+
+            var currentScroll = $(window).scrollTop(); // get current position
+
+            if (currentScroll >= fixmeTop) {           // apply position: fixed if you
+                $('#post-directory-module').css({      // scroll to that element or below it
+                    top: '100px',
+                    position: 'fixed',
+                    width: 'inherit'
+                });
+            } else {                                   // apply position: static
+                $('#post-directory-module').css({      // if you scroll above it
+                    position: 'inherit',
+                    width: 'inherit'
+                });
+            }
+
+        });
+
+        $("a.jumper").on("click", function( e ) {
+
+            e.preventDefault();
+
+            $("body, html").animate({
+                scrollTop: ($( $(this).attr('hre') ).offset().top - 100)
+            }, 600);
+
+        });
+    });
+
+</script>
+        </div>
+
+    </div>
+
+</article>
+
+        </div>
+
+    <footer class="container">
+
+    <div class="site-footer">
+
+        <div class="copyright pull-left">
+            <!-- 请不要更改这一行 方便其他人知道模板的来源 谢谢 -->
+            <!-- Please keep this line to let others know where this theme comes from. Thank you :D -->
+            Power by <a href="https://github.com/DONGChuan/Yummy-Jekyll">Yummy Jekyll</a>
+        </div>
+
+        <a href="https://github.com/DONGChuan" target="_blank" aria-label="view source code">
+            <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+        </a>
+
+        <div class="pull-right">
+            <a href="javascript:window.scrollTo(0,0)">TOP</a>
+        </div>
+
+    </div>
+
+    <!-- Third-Party JS -->
+    <script type="text/javascript" src="/components/geopattern/js/geopattern.min.js"></script>
+
+    <!-- My JS -->
+    <script type="text/javascript" src="/assets/js/script.js"></script>
+
+    
+
+    <!-- Google Analytics -->
+    <div style="display:none">
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                            (i[r].q = i[r].q || []).push(arguments)
+                        }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-79713062-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </div>
+
+</footer>
+
+
+    </body>
+
+</html>
