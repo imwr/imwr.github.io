@@ -51,6 +51,11 @@ repository: imwr/imwr.github.com
 tag_page_layout: tagpage
 tag_page_dir: tag
 
+# category_archive
+category_archive:
+  slugify: true
+  path: /category
+
 # press
 jekyll-press:
   exclude: 'index.xml' # Exclude files from processing
