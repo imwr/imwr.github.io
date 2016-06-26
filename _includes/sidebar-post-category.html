@@ -7,7 +7,7 @@
             {{ category | first }}
             <span class="badge">{{ category[1].size }}</span>
             </a>
-            {% categorylink category[0] %}link{% endcategorylink %}
+            <a href="/category/{{ category[0] }}"> here </a>
         </li>
         {% endfor %}
     </ul>
