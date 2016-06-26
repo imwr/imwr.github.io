@@ -25,9 +25,6 @@ defaults: []
 # Plugins
 gems:
   - jekyll-seo-tag
-  - jekyll-press
-#  - jekyll-tagging
-#  - jekyll-lunr-js-search
 
 # Pagination
 permalink: /:categories/:title/
@@ -49,12 +46,13 @@ repository: imwr/imwr.github.com
 
 # tagging
 tag_page_layout: tagpage
-tag_page_dir: blog/tag
+tag_page_dir: tag
+tag_permalink_style: pretty
 
 # category_archive
 category_archive:
   slugify: true
-  path: /blog/category
+  path: category
 
 # press
 jekyll-press:

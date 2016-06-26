@@ -50,6 +50,9 @@ GEM
     jekyll-sitemap (0.10.0)
     jekyll-tagging (1.0.1)
       ruby-nuggets
+    jekyll-tagging-related_posts (0.2.1)
+      jekyll (~> 3.0)
+      jekyll-tagging (~> 1.0.0)
     jekyll-watch (1.4.0)
       listen (~> 3.0, < 3.1)
     json (1.8.3)
@@ -104,6 +107,7 @@ DEPENDENCIES
   jekyll-seo-tag
   jekyll-sitemap
   jekyll-tagging
+  jekyll-tagging-related_posts
 
 BUNDLED WITH
    1.12.5
