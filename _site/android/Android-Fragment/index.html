@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Android Fragment</title>
+    <meta name="description"
+          content="Quick note about learning Building a Dynamic UI with Fragments">
+
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<meta property="og:title" content="Android Fragment" />
+<meta name="description" content="Quick note about learning Building a Dynamic UI with Fragments" />
+<meta property="og:description" content="Quick note about learning Building a Dynamic UI with Fragments" />
+<link rel="canonical" href="http://localhost:4000/android/Android-Fragment/" />
+<meta property="og:url" content="http://localhost:4000/android/Android-Fragment/" />
+<meta property="og:site_name" content="汀汀涔涔" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-05-21T00:00:00+08:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Android Fragment",
+    "datePublished": "2016-05-21T00:00:00+08:00",
+    "description": "Quick note about learning Building a Dynamic UI with Fragments",
+    "url": "http://localhost:4000/android/Android-Fragment/"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="canonical" href="http://localhost:4000/android/Android-Fragment/">
+    <link rel="alternate" type="application/rss+xml" title="汀汀涔涔" href="http://localhost:4000/feed.xml">
+
+    <script type="text/javascript" src="/components/jquery/jquery.min.js"></script>
+
+    <!-- Third-Party CSS -->
+    <link rel="stylesheet" href="/components/bootstrap/css/bootstrap.min.css">
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="/assets/css/common.css">
+
+    <!-- CSS set in page -->
+    
+
+    <!-- CSS set in layout -->
+    
+    <link rel="stylesheet" href="/assets/css/sidebar-post-nav.css">
+    
+
+    <script type="text/javascript" src="/components/bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+
+
+    <body>
+
+    <header class="site-header">
+    <div class="container">
+        <a id="site-header-brand" href="/" title="汀汀涔涔">
+            <span class="octicon octicon-mark-github"></span> 汀汀涔涔
+        </a>
+        <nav class="site-header-nav" role="navigation">
+            
+            <a href="/"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="Home">
+                Home
+            </a>
+            
+            <a href="/open-source"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="Open-Source">
+                Open-Source
+            </a>
+            
+            <a href="/blog"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="Blog">
+                Blog
+            </a>
+            
+            <a href="/tags"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="Tags">
+                Tags
+            </a>
+            
+            <a href="/categories"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="Categories">
+                Categories
+            </a>
+            
+            <a href="/about"
+               class=" site-header-nav-item hvr-underline-from-center"
+               target=""
+               title="About">
+                About
+            </a>
+            
+        </nav>
+    </div>
+</header>
+
+
+        <div class="content">
+            <section class="jumbotron geopattern" data-pattern-id="Android Fragment">
+    <div class="container">
+        <div id="jumbotron-meta-info">
+            <h1>Android Fragment</h1>
+            <span class="meta-info">
+                
+                
+                <span class="octicon octicon-calendar"></span> 2016/05/21
+                
+                 |
+                 Posted in android
+                
+                 |
+                
+                  <a href="/tags#android" class="post-tag">
+                      <span class="glyphicon glyphicon-tag small"></span> android
+                  </a>
+                
+                
+            </span>
+        </div>
+    </div>
+</section>
+<script>
+    $(document).ready(function(){
+
+        $('.geopattern').each(function(){
+            $(this).geopattern($(this).data('pattern-id'));
+        });
+
+    });
+</script>
+<article class="post container" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="row">
+
+        <div class="col-md-8 markdown-body">
+
+            <p>Quick note about learning <a href="https://developer.android.com/training/basics/fragments/index.html">Building a Dynamic UI with Fragments</a></p>
+
+<h2 id="fragment">Fragment</h2>
+
+<p>Fragment is sort of like a “sub activity” that you can reuse in different activities.</p>
+
+<p>It can:</p>
+
+<ul>
+  <li>have its own lifecycle</li>
+  <li>receive its own input events</li>
+  <li>add or remove while the activity is running</li>
+</ul>
+
+<blockquote>
+  <p>To use fragment, it needs at least Support Library v4. But better to use v7 which is compatible with Android 2.1 (API level 7) and also includes the Fragment APIs.</p>
+</blockquote>
+
+<blockquote>
+  <p>For activity, it needs to extend <code class="highlighter-rouge">AppCompatActivity</code> when with v7. In fact, <code class="highlighter-rouge">FragmentActivity</code> is a special activity provided in Support Library to handle fragments on system versions older than API level 11. If the lowest system version is API level 11 or higher, then we can use a regular <code class="highlighter-rouge">Activity</code>. As here <code class="highlighter-rouge">AppCompatActivity</code> is a subclass of <code class="highlighter-rouge">FragmentActivity</code> and it could support older versions. So just use it :D</p>
+</blockquote>
+
+<p>Steps to use fragment:</p>
+
+<ol>
+  <li>Add Support Library.</li>
+  <li>Define fragment layout xml</li>
+  <li>Create fragment class</li>
+  <li>Add fragment to activity statically/dynamically</li>
+</ol>
+
+<h3 id="define-fragment-layout">Define Fragment Layout</h3>
+
+<p>Its layout has no difference with activity’s:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span> 
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:orientation=</span><span class="s">"vertical"</span> <span class="nt">&gt;</span>
+
+    <span class="nt">&lt;TextView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/textView1"</span>
+        <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:text=</span><span class="s">"TextView"</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;Button</span>
+        <span class="na">android:id=</span><span class="s">"@+id/button1"</span>
+        <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:text=</span><span class="s">"Button"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/LinearLayout&gt;</span></code></pre></figure>
+
+<h3 id="create-fragment-class">Create Fragment Class</h3>
+
+<p>Like <code class="highlighter-rouge">onCreate()</code> in Activity, fragment uses <code class="highlighter-rouge">onCreateView()</code> callback to define the layout. It is the only callback we need in order to get a fragment running.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyFragment</span> <span class="kd">extends</span> <span class="n">Fragment</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">View</span> <span class="nf">onCreateView</span><span class="o">(</span><span class="n">LayoutInflater</span> <span class="n">inflater</span><span class="o">,</span> <span class="n">ViewGroup</span> <span class="n">container</span><span class="o">,</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Inflate the layout for this fragment</span>
+        <span class="k">return</span> <span class="n">inflater</span><span class="o">.</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">article_view</span><span class="o">,</span> <span class="n">container</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<h3 id="add-fragment-to-activity">Add Fragment to Activity</h3>
+
+<p>There are two ways:</p>
+
+<ol>
+  <li>Statically by <code class="highlighter-rouge">&lt;fragment&gt;</code></li>
+  <li>Dynamically by <code class="highlighter-rouge">&lt;FrameLayout&gt;</code> and <code class="highlighter-rouge">FragmentManager</code></li>
+</ol>
+
+<h4 id="statically">Statically</h4>
+
+<p>Add each fragment in activity layout XML file:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;LinearLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">android:orientation=</span><span class="s">"horizontal"</span>
+    <span class="na">android:layout_width=</span><span class="s">"fill_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"fill_parent"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;fragment</span> <span class="na">android:name=</span><span class="s">"com.example.android.fragments.FragmentA"</span>
+              <span class="na">android:id=</span><span class="s">"@+id/fragment_a"</span>
+              <span class="na">android:layout_weight=</span><span class="s">"1"</span>
+              <span class="na">android:layout_width=</span><span class="s">"0dp"</span>
+              <span class="na">android:layout_height=</span><span class="s">"match_parent"</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;fragment</span> <span class="na">android:name=</span><span class="s">"com.example.android.fragments.FragmentB"</span>
+              <span class="na">android:id=</span><span class="s">"@+id/fragment_b"</span>
+              <span class="na">android:layout_weight=</span><span class="s">"2"</span>
+              <span class="na">android:layout_width=</span><span class="s">"0dp"</span>
+              <span class="na">android:layout_height=</span><span class="s">"match_parent"</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/LinearLayout&gt;</span></code></pre></figure>
+
+<h4 id="dynamically">Dynamically</h4>
+
+<p>Dynamically means adding a fragment to an activity at Runtime instead of defining fragments in activity layout file.</p>
+
+<p>Add firstly in activity’s layout includes an empty <code class="highlighter-rouge">&lt;FrameLayout&gt;</code> that acts as the fragment container:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;FrameLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">android:id=</span><span class="s">"@+id/fragment_container"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span> <span class="nt">/&gt;</span></code></pre></figure>
+
+<p>Add initial fragment(s) to activity in <code class="highlighter-rouge">onCreate()</code> by <code class="highlighter-rouge">FragmentTransaction</code>:</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">news_articles</span><span class="o">);</span>
+
+        <span class="c1">// Check that the activity is using the layout version with</span>
+        <span class="c1">// the fragment_container FrameLayout</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fragment_container</span><span class="o">)</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="c1">// However, if we're being restored from a previous state,</span>
+            <span class="c1">// then we don't need to do anything and should return or else</span>
+            <span class="c1">// we could end up with overlapping fragments.</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">savedInstanceState</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">return</span><span class="o">;</span>
+            <span class="o">}</span>
+
+            <span class="c1">// Create a new Fragment to be placed in the activity layout</span>
+            <span class="n">FragmentA</span> <span class="n">firstFragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FragmentA</span><span class="o">();</span>
+            
+            <span class="c1">// In case this activity was started with special instructions from an</span>
+            <span class="c1">// Intent, pass the Intent's extras to the fragment as arguments</span>
+            <span class="n">firstFragment</span><span class="o">.</span><span class="na">setArguments</span><span class="o">(</span><span class="n">getIntent</span><span class="o">().</span><span class="na">getExtras</span><span class="o">());</span>
+            
+            <span class="c1">// Add the fragment to the 'fragment_container' FrameLayout</span>
+            <span class="n">getSupportFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">()</span>
+                    <span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fragment_container</span><span class="o">,</span> <span class="n">firstFragment</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">commit</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<p><code class="highlighter-rouge">FragmentTransaction</code> here is to provides APIs to add, remove, replace, and perform other fragment transactions.</p>
+
+<p>To replace fragment:</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Create fragment and give it an argument specifying the article it should show</span>
+<span class="n">FragmentB</span> <span class="n">newFragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FragmentB</span><span class="o">();</span>
+<span class="n">Bundle</span> <span class="n">args</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
+<span class="n">args</span><span class="o">.</span><span class="na">putInt</span><span class="o">(</span><span class="n">FragmentB</span><span class="o">.</span><span class="na">ARG_POSITION</span><span class="o">,</span> <span class="n">position</span><span class="o">);</span>
+<span class="n">newFragment</span><span class="o">.</span><span class="na">setArguments</span><span class="o">(</span><span class="n">args</span><span class="o">);</span>
+
+<span class="n">FragmentTransaction</span> <span class="n">transaction</span> <span class="o">=</span> <span class="n">getSupportFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">();</span>
+
+<span class="c1">// Replace whatever is in the fragment_container view with this fragment,</span>
+<span class="c1">// and add the transaction to the back stack so the user can navigate back</span>
+<span class="n">transaction</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fragment_container</span><span class="o">,</span> <span class="n">newFragment</span><span class="o">);</span>
+<span class="n">transaction</span><span class="o">.</span><span class="na">addToBackStack</span><span class="o">(</span><span class="kc">null</span><span class="o">);</span>
+
+<span class="c1">// Commit the transaction</span>
+<span class="n">transaction</span><span class="o">.</span><span class="na">commit</span><span class="o">();</span></code></pre></figure>
+
+<p>When replace/remove fragments, it needs to allow user to navigate backward and “undo” the change. It is why <code class="highlighter-rouge">transaction.addToBackStack(null)</code> is called here before commit. It makes fragment to be stopped instead of destroyed when we replace/remove it.</p>
+
+<p>What’s more, this method takes an optional string parameter that specifies a unique name for the transaction. The name isn’t needed unless we plan to perform advanced fragment operations using <a href="https://developer.android.com/reference/android/support/v4/app/FragmentManager.BackStackEntry.html">FragmentManager.BackStackEntry APIs</a>.</p>
+
+
+            <h3>Related Posts</h3>
+
+            
+            <a href="/android/Android-DragViewHelper/">Android DragViewHelper</a><br/>
+            
+            <a href="/android/Android-GestureDetector/">Android GestureDetector</a><br/>
+            
+            <a href="/android/Android-Shape/">Android Shape Drawable</a><br/>
+            
+            <a href="/android/Android-ListActivity/">Android ListActivity</a><br/>
+            
+            <a href="/android/Android-Toolbar/">Android Toolbar</a><br/>
+            
+            <a href="/css/CSS-Animation/">CSS Animation</a><br/>
+            
+            <a href="/mysql/MySQL-Index/">MySQL Index</a><br/>
+            
+            <a href="/mybatis/MyBatis-With-Spring/">MyBatis with Spring</a><br/>
+            
+            <a href="/mybatis/MyBatis-Advanced/">MyBatis association collection and discriminator</a><br/>
+            
+            <a href="/mybatis/MyBatis-CRUD/">MyBatis config and CRUD</a><br/>
+            
+            <hr/>
+            <div class="post-div">
+                
+                <a class="prev-link" href="/android/Android-Toolbar/"><span>&#8592;&#09;previous</span></a>
+                
+                <span class="nav-hint-mob"> You can also navigate with left [or] right arrows </span>
+                
+                <a class="next-link" href="/android/Android-ListActivity/"><span>next&#09;&#8594;</span></a>
+                
+            </div>
+            <!-- Comments -->
+            <div class="comments">
+    <div id="disqus_thread"></div>
+    <script>
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+
+            s.src = '//tt-cc.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+</div>
+
+        </div>
+
+        <div class="col-md-4">
+            <div id="search">
+    <form action="/search" method="get" class="input-group">
+        <input type="text" id="search-query" class="form-control search-query" name="q" placeholder="Search"
+               autocomplete="off">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </span>
+    </form>
+</div>
+
+<section id="search-results" style="display:none">
+    <header class="page-header">
+        <h2>Search results</h2>
+    </header>
+
+    <div class="entries">
+    </div>
+</section>
+
+
+<script id="search-results-template" type="text/mustache">
+  {{#entries}}
+    <article>
+      <h6>
+        {{#date}}<small><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}}
+        <a href="{{url}}">{{title}}</a>
+      </h6>
+      {{#is_post}}
+      <ul>
+        {{#tags}}<li>{{.}} </li>{{/tags}}
+      </ul>
+      {{/is_post}}
+    </article>
+  {{/entries}}
+</script>
+
+
+
+<script src="/components/search-jekyll/search.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#search-query').lunrSearch({
+            indexUrl: '/components/search-jekyll/index.json',
+            results: '#search-results',
+            entries: '.entries',
+            template: '#search-results-template'
+        });
+    });
+</script>
+
+            <h3>Post Directory</h3>
+<div id="post-directory-module">
+<section class="post-directory">
+    <!-- Links that trigger the jumping -->
+    <!-- Added by javascript below -->
+    <dl></dl>
+</section>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $( "article h2" ).each(function( index ) {
+            $(".post-directory dl").append("<dt><a class=\"jumper\" hre=#" +
+                    $(this).attr("id")
+                    + ">"
+                    + $(this).text()
+                    + "</a></dt>");
+
+            var children = $(this).nextUntil("h2", "h3")
+
+            children.each(function( index ) {
+                $(".post-directory dl").append("<dd><a class=\"jumper\" hre=#" +
+                        $(this).attr("id")
+                        + ">"
+                        + "&nbsp;&nbsp;- " + $(this).text()
+                        + "</a></dd>");
+            });
+        });
+
+        var fixmeTop = $('#post-directory-module').offset().top - 100;       // get initial position of the element
+
+        $(window).scroll(function() {                  // assign scroll event listener
+
+            var currentScroll = $(window).scrollTop(); // get current position
+
+            if (currentScroll >= fixmeTop) {           // apply position: fixed if you
+                $('#post-directory-module').css({      // scroll to that element or below it
+                    top: '100px',
+                    position: 'fixed',
+                    width: 'inherit'
+                });
+            } else {                                   // apply position: static
+                $('#post-directory-module').css({      // if you scroll above it
+                    position: 'inherit',
+                    width: 'inherit'
+                });
+            }
+
+        });
+
+        $("a.jumper").on("click", function( e ) {
+
+            e.preventDefault();
+
+            $("body, html").animate({
+                scrollTop: ($( $(this).attr('hre') ).offset().top - 100)
+            }, 600);
+
+        });
+    });
+
+</script>
+        </div>
+
+    </div>
+
+</article>
+
+        </div>
+
+    <footer class="container">
+
+    <div class="site-footer">
+
+        <div class="copyright pull-left">
+            <!-- 请不要更改这一行 方便其他人知道模板的来源 谢谢 -->
+            <!-- Please keep this line to let others know where this theme comes from. Thank you :D -->
+            Power by <a href="https://github.com/DONGChuan/Yummy-Jekyll">Yummy Jekyll</a>
+        </div>
+
+        <a href="https://github.com/DONGChuan" target="_blank" aria-label="view source code">
+            <span class="mega-octicon octicon-mark-github" title="GitHub"></span>
+        </a>
+
+        <div class="pull-right">
+            <a href="javascript:window.scrollTo(0,0)">TOP</a>
+        </div>
+
+    </div>
+
+    <!-- Third-Party JS -->
+    <script type="text/javascript" src="/components/geopattern/js/geopattern.min.js"></script>
+
+    <!-- My JS -->
+    <script type="text/javascript" src="/assets/js/script.js"></script>
+
+    
+
+    <!-- Google Analytics -->
+    <div style="display:none">
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                            (i[r].q = i[r].q || []).push(arguments)
+                        }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-79713062-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+    </div>
+
+</footer>
+
+
+    </body>
+
+</html>
