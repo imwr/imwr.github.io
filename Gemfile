@@ -4,4 +4,8 @@
    gem "jekyll-sitemap"
    gem "jekyll-seo-tag"
    gem "jekyll-github-metadata"
+
+   gem "jekyll-press"
+   gem "jekyll-tagging"
+   gem "jekyll-lunr-js-search"
  end
