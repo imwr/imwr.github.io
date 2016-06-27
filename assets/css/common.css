@@ -59,6 +59,15 @@
     font-size: 20px;
 }
 
+.site-header-nav-item.selected {
+    color: #4183c4;
+}
+
+.site-header-nav-item.selected:before {
+    left: 0;
+    right: 0;
+}
+
 /******* Scroll Start *******/
 .site-header {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);

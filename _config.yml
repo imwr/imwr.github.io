@@ -22,7 +22,7 @@ gems:
   - jekyll-geo-pattern
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-github-metadata
+ # - jekyll-github-metadata
 
 # Where things are
 collections:
@@ -63,33 +63,33 @@ defaults:
 navs:
   -
     href: /
-    label: Home
+    label: home
 
   -
     href: /open-source
-    label: Open-Source
+    label: open-source
 
   -
     href: /blog
-    label: Blog
+    label: blog
 
   -
     href: /tags
-    label: Tags
+    label: tags
 
   -
     href: /categories
-    label: Categories
+    label: categories
 
   -
     href: /about
-    label: About
+    label: about
 
 
 # Pagination
 permalink: /:categories/:title/
-paginate: 10
-paginate_path: "/page:num/"
+paginate: 5
+paginate_path: "/blog/page:num/"
 
 # Where are tags and categories displayed
 tag_page: tags

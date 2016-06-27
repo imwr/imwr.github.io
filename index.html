@@ -3,34 +3,46 @@ layout: default
 menu: home
 css: ['sidebar-popular-repo.css']
 ---
-{% include jumbotron.html %}
+<section class="jumbotron" style="background: #4183c4;">
+    <div class="container">
+        <h2>{{ site.description }}</h2>
+
+        <div id="jumbotron-meta-info">
+            <span class="meta-info">
+                <span class="glyphicon glyphicon-map-marker"></span>
+                {{ site.location }}
+            </span>
+            <span class="meta-info hvr-grow">
+                <span class="glyphicon glyphicon-user"></span>
+                <a href="{{ site.company_url }}" target="_blank">{{ site.company }}</a>
+            </span>
+        </div>
+    </div>
+</section>
 <section class="content container">
-    <div class="row">
-        <!-- Post List -->
-        <div class="col-md-8">
-            <ol class="post-list">
-                {% for post in paginator.posts %}
-                <li class="post-list-item">
-                    <h2 class="post-list-title">
-                        <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-                    </h2>
+    <!-- Post List -->
+    <div class="col-md-8">
+        <ol class="post-list">
+            {% for post in site.posts | limit: 5 %}
+            <li class="post-list-item">
+                <h2 class="post-list-title">
+                    <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+                </h2>
 
-                    <p class="post-list-description">
-                        {{ post.excerpt | strip_html | strip }}
-                    </p>
+                <p class="post-list-description">
+                    {{ post.excerpt | strip_html | strip }}
+                </p>
 
-                    <p class="post-list-meta">
-                        Posted in <a href="/category/{{ post.category }}"> {{ post.category }}</a> &nbsp;&nbsp;
-                        <span class="glyphicon glyphicon-time"></span> {{ post.date | date: "%Y/%m/%d" }}
-                    </p>
-                </li>
-                {% endfor %}
-            </ol>
-            <!-- Pagination -->
-            {% include pagination.html %}
-        </div>
-        <div class="col-md-4">
-            {% include sidebar-popular-repo.html %}
-        </div>
+                <p class="post-list-meta">
+                    Posted in <a href="/category/{{ post.category }}"> {{ post.category }}</a> &nbsp;&nbsp;
+                    <span class="glyphicon glyphicon-time"></span> {{ post.date | date: "%Y/%m/%d" }}
+                </p>
+            </li>
+            {% endfor %}
+        </ol>
+        <a href="/project" class="pull-right"><h3>Read More ...</h3></a>
+    </div>
+    <div class="col-md-4">
+        {% include sidebar-popular-repo.html %}
     </div>
 </section>
