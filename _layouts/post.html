@@ -1,0 +1,65 @@
+---
+layout: default
+css: ['sidebar-post-nav.css']
+---
+{% include jumbotron.html %}
+<article class="post container" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="row">
+
+        <div class="col-md-8 markdown-body">
+
+            {{ content }}
+
+            {% if site.related_posts.size >= 1 %}
+            <div>
+                <h3>Related Posts</h3>
+                <ul>
+                    {% for related_post in site.related_posts limit: 5 %}
+                    <li><a href="{{ related_post.url }}">{{ related_post.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            <hr/>
+
+            {% if page.categories %}
+            {% assign category = page.categories[0] %}
+            {% assign posts = site.categories[category] %}
+            {% for post in posts %}
+            {% if post.url == page.url %}
+            {% assign post_index0 = forloop.index0 %}
+            {% assign post_index1 = forloop.index %}
+            {% endif %}
+            {% endfor %}
+            {% for post in posts %}
+            {% if post_index0 == forloop.index %}
+            {% assign next_post = post %}
+            {% endif %}
+            {% if post_index1 == forloop.index0 %}
+            {% assign prev_post = post %}
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+
+            <div class="post-div">
+                {% if prev_post %}
+                <a class="prev-link" href="{{ prev_post.url }}"><span>&#8592;&#09;上一篇</span></a>
+                {% endif %}
+                {% if next_post %}
+                <a class="next-link pull-right" href="{{ next_post.url }}"><span>下一篇&#09;&#8594;</span></a>
+                {% endif %}
+            </div>
+
+            <!-- Comments -->
+            {% include disqus-comments.html %}
+        </div>
+
+        <div class="col-md-4">
+            {% include sidebar-post-search.html %}
+            {% include sidebar-post-nav.html %}
+        </div>
+
+    </div>
+
+</article>

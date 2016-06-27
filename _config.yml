@@ -1,0 +1,116 @@
+# Site settings
+title: 汀汀涔涔
+name: 汀汀涔涔
+email: ttccmvp@gmail.com
+location: Chengdu, Sichuang
+company: DM
+github_url: https://github.com/imwr
+description: This is personnel website of ttcc
+# url: http://tt-cc.cn
+url: http://localhost:4000
+
+# About/contact
+author:
+  contact:
+    github:    https://github.com/imwr
+    weibo:     http://weibo.com/imwr
+    email:     ttccmvp@gmail.com
+
+# Plugins
+gems:
+  - jekyll-paginate
+  - jekyll-geo-pattern
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-github-metadata
+
+# Where things are
+collections:
+  my_categories:
+    output: true
+    permalink: /category/:name/
+  my_tags:
+    output: true
+    permalink: /tag/:name/
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  -
+    scope:
+      path: ""
+      type: my_categories
+    values:
+      layout: blog_by_category
+  -
+    scope:
+      path: ""
+      type: my_tags
+    values:
+      layout: blog_by_tag
+
+# Navigation
+navs:
+  -
+    href: /
+    label: Home
+
+  -
+    href: /open-source
+    label: Open-Source
+
+  -
+    href: /blog
+    label: Blog
+
+  -
+    href: /tags
+    label: Tags
+
+  -
+    href: /categories
+    label: Categories
+
+  -
+    href: /about
+    label: About
+
+
+# Pagination
+permalink: /:categories/:title/
+paginate: 10
+paginate_path: "/page:num/"
+
+# Where are tags and categories displayed
+tag_page: tags
+category_page: categories
+
+# github metadata
+repository: imwr/imwr.github.com
+
+# Sidebar to show popular repo
+side_bar_repo_limit: 5
+
+# Disque
+disque: tt-cc.disqus.com
+# Google Analytics
+google_tracking_id : 'UA-79713062-1'
+
+
+# For about.html. Fell free to create your own!
+skill_software_keywords: [Java, MySQL, Oracle, SQLite, PL/SQL, Design Patterns]
+skill_j2ee_keywords: [Spring, Struct, Hibernet, MyBatis, JSP]
+skill_web_keywords: [HTML, CSS, JS, JQuery, Ajax, AngularJS, MongoDB, Redis,  Boostrap]
+
+# Exclude metadata and development time dependencies (like Grunt plugins)
+exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, node_modules]
