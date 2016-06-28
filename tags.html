@@ -3,27 +3,32 @@ layout: page
 title: Tags
 menu: Tags
 ---
-
-<div class="tags-expo">
-    <div class="tags-expo-list">
-        {% for tag in site.tags %}
-        <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
-        {% endfor %}
-    </div>
-    <hr/>
-    <div class="tags-expo-section">
-        {% for tag in site.tags %}
-        <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
+<div class="col-md-8 row">
+    <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li class="active">{{ page.title }}</li>
+    </ol>
+    {% for tag in site.tags %}
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading" id="{{ tag[0] | slugify }}">{{ tag[0] }}</div>
         <ul class="list-group">
             {% for post in tag[1] %}
-            <a class="list-group-item" href="{{ site.baseurl }}{{ post.url }}">
+            <a class="list-group-item" href="{{ post.url }}">
                 {{ post.title }}
-                <small class="post-date">
-                    <span class="glyphicon glyphicon-time"></span> {{ post.date | date: "%Y-%m-%d" }}
-                </small>
+                <div class="pull-right">
+                    <span class="glyphicon glyphicon-time "> </span>
+                    {{ post.date | date: "%Y-%m-%d" }}
+                </div>
             </a>
             {% endfor %}
         </ul>
-        {% endfor %}
     </div>
+    {% endfor %}
+</div>
+<div class="col-md-4">
+    <h3> Tag Cloud</h3>
+    {% for tag in site.tags %}
+    <a href="#{{ tag[0] | slugify }}">{{ tag[0] }}</a>
+    {% endfor %}
 </div>

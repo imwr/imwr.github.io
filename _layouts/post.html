@@ -7,12 +7,17 @@ menu: Blog
 <article class="post container" itemscope itemtype="http://schema.org/BlogPosting">
 
     <div class="row">
-
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li><a href="/category/{{ page.category }}">{{ page.category }}</a></li>
+            <li class="active">{{ page.title }}</li>
+        </ol>
         <div class="col-md-8 markdown-body">
 
             {{ content }}
 
             {% if site.related_posts.size >= 1 %}
+            <hr/>
             <div>
                 <h3>Related Posts</h3>
                 <ul>
@@ -22,7 +27,6 @@ menu: Blog
                 </ul>
             </div>
             {% endif %}
-            <hr/>
 
             {% if page.categories %}
             {% assign category = page.categories[0] %}
@@ -43,15 +47,37 @@ menu: Blog
             {% endfor %}
             {% endif %}
 
-            <div class="post-div">
-                {% if prev_post %}
-                <a class="prev-link" href="{{ prev_post.url }}"><span>&#8592;&#09;上一篇</span></a>
-                {% endif %}
-                {% if next_post %}
-                <a class="next-link pull-right" href="{{ next_post.url }}"><span>下一篇&#09;&#8594;</span></a>
-                {% endif %}
-            </div>
-
+            <nav>
+                <ul class="pager">
+                    {% if prev_post %}
+                    <li class="previous">
+                        <a href="{{ prev_post.url }}">
+                            <span aria-hidden="true">&larr;</span> Previous
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="previous disabled">
+                        <a href="javascript:void(0)">
+                            <span aria-hidden="true">&larr;</span> Previous
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if next_post %}
+                    <li class="next">
+                        <a href="{{ next_post.url }}">Next
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="next disabled">
+                        <a href="javascript:void(0)">Next
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            <hr/>
             <!-- Comments -->
             {% include disqus-comments.html %}
         </div>

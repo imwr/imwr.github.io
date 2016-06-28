@@ -1,20 +1,11 @@
-<h3 class="sidebar-title"> Tags</h3>
-<div id="blog-categories">
-    <ul class="list-group">
-        {% for tag in site.tags %}
-        <li class="list-group-item">
-            <a href="/tag/{{ tag | first }}">
-            {{ tag | first }}
-            <span class="badge pull-right">{{ tag[1].size }}</span>
-            </a>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
-<script type="text/javascript">
-
-    $(document).ready(function(){
-        $("#blog-categories li").css('text-transform','capitalize')
-    });
-
-</script>
+<ul class="list-group">
+    <a href="#" class="list-group-item active">
+        Tags
+    </a>
+    {% for tag in site.tags %}
+    <a class="list-group-item" href="/tag/{{ tag | first }}">
+        {{ tag | first }}
+        <span class="badge pull-right">{{ tag[1].size }}</span>
+    </a>
+    {% endfor %}
+</ul>

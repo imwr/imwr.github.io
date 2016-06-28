@@ -1,0 +1,36 @@
+---
+layout: page
+title: Search
+menu: search
+---
+<ol class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li class="active">{{ page.title }}</li>
+</ol>
+<form action="/search" method="get" class="input-group">
+    <input type="text" id="search-query" class="form-control" placeholder="Search"
+           autocomplete="off">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </span>
+</form>
+<br/>
+<ul class="list-group" id="search-results"></ul>
+<script src="/components/search-jekyll/jekyll-search.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+    var search = $('#search-query').val(getQueryString("query"));
+    SimpleJekyllSearch({
+        searchInput: search[0],
+        resultsContainer: document.getElementById('search-results'),
+        searchResultTemplate: '<a href="{url}" class="list-group-item">{title}<span class="badge pull-right">{category}</span></a>',
+        json: '/components/search-jekyll/index.json'
+    });
+</script>

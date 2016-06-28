@@ -1,11 +1,11 @@
 ---
 layout: default
-menu: home
-css: ['sidebar-popular-repo.css']
+menu: Home
+css: ['open-source.css']
 ---
 <section class="jumbotron" style="background: #4183c4;">
     <div class="container">
-        <h2>{{ site.description }}</h2>
+        <h3>{{ site.description }}</h3>
 
         <div id="jumbotron-meta-info">
             <span class="meta-info">
@@ -21,24 +21,21 @@ css: ['sidebar-popular-repo.css']
 </section>
 <section class="content container">
     <!-- Post List -->
-    <div class="col-md-8">
-        {% for post in site.posts | limit: 5 %}
-        <li class="post-list-item">
-            <div class="post-body">
-                <h3 class="post-list-title">
-                    <a href="{{ post.url }}">{{ post.title }}</a>
-                </h3>
-
-                <p class="post-list-description">
-                    {{ post.excerpt | strip_html | strip }}
-                </p>
+    <div class="col-md-8 row">
+        {% for post in site.posts | limit: 8 %}
+        <div class="panel panel-default">
+            <h3 class="panel-top">
+                <a href="{{ post.url }}">{{ post.title }}</a>
+            </h3>
+            <div class="panel-body">
+                {{ post.excerpt | strip_html | strip }}
             </div>
-            <p class="post-footer">
+            <div class="panel-footer">
                 <span class="glyphicon glyphicon-time"></span> {{ post.date | date: "%Y-%m-%d" }}&nbsp;
                 Posted in <a href="/category/{{ post.category }}">{{ post.category }}</a>
                 <a class="pull-right" href="{{ post.url }}">Read More</a>
-            </p>
-        </li>
+            </div>
+        </div>
         {% endfor %}
         <a href="/blog" class="col-xs-12"><h3 class="pull-right">Read More ...</h3></a>
     </div>

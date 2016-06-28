@@ -1,33 +1,23 @@
-<div id="container-open-source">
-    <section class="jumbotron geopattern" data-pattern-id="{{ page.title }}">
-        <div class="container">
-            <div id="jumbotron-meta-info">
-                <h1>Open Source Projects</h1>
-                <span class="meta-info">
-                    I have <span class="repo-count badge">{{ sorted_repos.size }}</span> projects on Github
-                </span>
-            </div>
-        </div>
-    </section>
-    <section class="container">
-        <div class="repo-list row">
-            {% if site.github && site.github.public_repositories %}
-            {% assign sorted_repos = (site.github.public_repositories | sort: 'stargazers_count') | reverse | where: "fork", "false" %}
-            {% for repo in sorted_repos %}
-            <div class="col-md-4 card text-center">
-                <div class="thumbnail">
-                    <div class="card-image geopattern" data-pattern-id="{{ repo.name }}">
-                        <div class="card-image-cell">
-                            <h3 class="card-title">
-                                <a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a>
-                            </h3>
-                        </div>
+<section class="container">
+    <div class="repo-list row">
+        {% if site.github && site.github.public_repositories %}
+        {% assign sorted_repos = (site.github.public_repositories | sort: 'stargazers_count') | reverse | where: "fork",
+        "false" %}
+        {% for repo in sorted_repos %}
+        <div class="col-md-4 card text-center">
+            <div class="thumbnail">
+                <div class="card-image geopattern" data-pattern-id="{{ repo.name }}">
+                    <div class="card-image-cell">
+                        <h3 class="card-title">
+                            <a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a>
+                        </h3>
                     </div>
-                    <div class="caption">
-                        <div class="card-description">
-                            <p class="card-text">{{ repo.description }}</p>
-                        </div>
-                        <div class="card-text">
+                </div>
+                <div class="caption">
+                    <div class="card-description">
+                        <p class="card-text">{{ repo.description }}</p>
+                    </div>
+                    <div class="card-text">
                             <span data-toggle="tooltip" class="meta-info" title="{{ repo.stargazers_count }} stars">
                                 <span class="glyphicon glyphicon-star"></span> {{ repo.stargazers_count }}
                             </span>
@@ -36,27 +26,25 @@
                             </span>
                             <span data-toggle="tooltip" class="meta-info" title="Last updated：{{ repo.updated_at }}">
                                 <span class="glyphicon glyphicon-time"></span>
-                                <time datetime="{{ repo.updated_at }}" title="{{ repo.updated_at }}">{{ repo.updated_at | date: '%Y-%m-%d' }}</time>
+                                <time datetime="{{ repo.updated_at }}" title="{{ repo.updated_at }}">{{ repo.updated_at
+                                    | date: '%Y-%m-%d' }}
+                                </time>
                             </span>
-                        </div>
                     </div>
                 </div>
             </div>
-            {% endfor %}
-            {% endif %}
         </div>
-    </section>
-
-</div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</section>
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
 
         // Enable bootstrap tooltip
-        $("body").tooltip({ selector: '[data-toggle=tooltip]' });
-
-        $('.geopattern').each(function(){
+        $("body").tooltip({selector: '[data-toggle=tooltip]'});
+        $('.geopattern').each(function () {
             $(this).geopattern($(this).data('pattern-id'));
         });
-
     });
 </script>

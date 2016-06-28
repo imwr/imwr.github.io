@@ -2,31 +2,45 @@
 layout: page
 menu: Blog
 ---
-<div class="text-justify">
-  {% if site.tags[page.slug] %}
+<div class="col-md-8 row">
+    <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tags">tags</a></li>
+        <li class="active">{{ page.title }}</li>
+    </ol>
+    {% if site.tags[page.slug] %}
     {% for post in site.tags[page.slug] %}
-      {% capture post_year %}{{ post.date | date: '%Y' }}{% endcapture %}
-      {% if forloop.first %}
-        <h3 class="m-t-3 m-b-1">{{ post_year }}</h3>
-        <div class="list-group">
-      {% endif %}
-      {% unless forloop.first %}
+    {% capture post_year %}{{ post.date | date: '%Y' }}{% endcapture %}
+    {% if forloop.first %}
+    <h3>{{ post_year }}</h3>
+
+    <div class="list-group">
+        {% endif %}
+        {% unless forloop.first %}
         {% assign previous_index = forloop.index0 | minus: 1 %}
         {% capture previous_post_year %}{{ site.tags[page.slug][previous_index].date | date: '%Y' }}{% endcapture %}
         {% if post_year != previous_post_year %}
-          </div>
-          <h3 class="m-t-3 m-b-1">{{ post_year }}</h3>
-          <div class="list-group">
+    </div>
+    <h3>{{ post_year }}</h3>
+
+    <div class="list-group">
         {% endif %}
-      {% endunless %}
-      <a href="{{ post.url }}" class="list-group-item">
-         {{ post.title }}
-      </a>
-      {% if forloop.last %}
-        </div>
-      {% endif %}
+        {% endunless %}
+        <a href="{{ post.url }}" class="list-group-item">
+            {{ post.title }}
+            <div class="pull-right">
+                <span class="glyphicon glyphicon-time "> </span>
+                {{ post.date | date: "%Y-%m-%d" }}
+            </div>
+        </a>
+        {% if forloop.last %}
+    </div>
+    {% endif %}
     {% endfor %}
-  {% else %}
+    {% else %}
     <p>There are no posts in this tag.</p>
-  {% endif %}
+    {% endif %}
+</div>
+<div class="col-md-4">
+    {% include sidebar-post-category.html %}
 </div>

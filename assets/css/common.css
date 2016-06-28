@@ -1,118 +1,56 @@
-/** Header **/
 .site-header {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 10px;
     width: 100%;
     position: fixed;
-    margin: 40px 0 30px 0;
+    margin-top: 20px;
     top: 0;
-    left: 0 !important;
-    right: 0;
-    z-index: 103;
-    color: #000;
-    background: #fff;
+    background: white;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    z-index: 10;
 }
 
-.site-header #site-header-brand {
-    color: #2e2e2e;
-    float: left;
+.navbar-default {
+    background: none;
+    border: none;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
-.site-header a {
-    text-decoration: none;
-}
-
-.site-header a:hover {
-    color: #4183c4;
-}
-
-.site-header-nav {
-    float: right;
-    margin-bottom: -20px;
-}
-
-.site-header-nav-item {
-    color: #000;
-    display: inline-block;
-    padding: 10px;
-    margin-left: 10px;
-    font-size: 20px;
-}
-
-.site-header-nav-item.selected {
-    color: #4183c4;
-}
-
-.site-header-nav-item.selected:before {
+.navbar-nav > li.active .hvr-underline-from-center:before {
     left: 0;
     right: 0;
 }
 
-.site-header-search {
-    float: right;
-    padding: 8px 14px 8px 56px;
-    position: relative;
-}
-
-.site-header-search .search-query {
-    width: 0;
-    opacity: 0;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-}
-
-.site-header-search .glyphicon-search {
-    position: absolute;
-    right: 24px;
-    top: 18px;
-}
-
-.site-header-search .search-results {
-    width: 0;
-    opacity: 0;
-    z-index: -1;
-    position: absolute;
-    right: 14px;
-    top: 38px;
-    line-height: 30px;
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
     background: white;
-    border: 1px solid #ddd;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    max-height: 250px;
-    overflow-x: hidden;
-    overflow-y: auto;
+}
+
+.navbar-form {
+    padding: 0 0 0 20px;
+    min-width: 48px;
+}
+
+.navbar-form .search-query {
+    width: 0;
+    opacity: 0;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
-    padding: 0 10px;
 }
 
-.site-header-search .search-query:focus {
-    width: 250px;
+.navbar-form .search-query:focus {
+    width: 196px;
     opacity: 1;
 }
 
-.site-header-search .search-query:focus ~ .search-results{
-    width: 250px;
-    opacity: 1;
+.navbar-form .search-query-icon {
+    position: absolute;
+    right: 8px;
+    cursor: pointer;
+    top: 16px;
 }
 
-.search-results a:first-child {
-    margin-top: 8px;
-}
-
-.search-results a {
-    display: block;
-    height: 32px;
-    line-height: 32px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-/******* Scroll Start *******/
 .site-header {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
@@ -124,89 +62,26 @@
     box-shadow: 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.125);
 }
 
-/******* Scroll End *******/
+.panel a {
+    text-decoration: none;
+}
 
-/** Jumbotron **/
+.panel .panel-top {
+    padding-left: 15px;
+}
+
 .jumbotron {
-    padding-top: 200px;
-    padding-bottom: 80px;
+    padding-top: 120px;
+    padding-bottom: 40px;
     color: #fff;
 }
 
 .jumbotron a {
     color: #fff;
-    text-decoration: none;
-}
-
-.jumbotron #jumbotron-meta-info {
-    margin-top: 20px;;
-}
-
-.jumbotron .meta-info {
-    font-size: 20px;
-    margin-right: 15px
-}
-
-.jumbotron.meta-info, .jumbotron .meta-info .octicon {
-    font-size: 18px;
-}
-
-/** Footer **/
-.site-footer {
-    position: relative;
-    margin-top: 40px;
-    padding: 40px 0;
-    font-size: 12px;
-    line-height: 1.5;
-    color: #777;
-    border-top: 2px solid #eee
-}
-
-.site-footer .octicon-mark-github {
-    position: absolute;
-    left: 50%;
-    color: #ccc;
-}
-
-.site-footer .octicon-mark-github:hover {
-    color: #bbb;
-}
-
-/** Post List **/
-.post-list-item {
-    position: relative;
-    list-style: none;
-    border: 1px solid #eee;
-    margin-bottom: 15px !important;
-    line-height: 1.5;
-}
-
-.post-list-item .post-list-title {
-    text-decoration: none;
-    margin-top: 0 !important;
-}
-
-.post-list-item .post-list-description {
-    margin-bottom: 0;
-    font-size: 16px;
-    color: #666;
-}
-
-.post-list-item .post-body {
-    padding: 10px;
-}
-
-.post-list-item .post-footer {
-    margin-bottom: 0;
-    color: #888;
-    padding: 10px;
-    background-color: #f5f5f5;
-    border-top: 1px solid #e5e5e5;
-    font-size: 14px;
 }
 
 .geopattern {
-    background-size: contain; /* To fix strange behavior when zoom in/out */
+    background-size: contain;
 }
 
 .hvr-underline-from-center {
