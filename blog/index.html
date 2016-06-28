@@ -2,33 +2,32 @@
 layout: page
 title: All My Blogs
 subtitle: <span class="mega-octicon octicon-clippy"></span>&nbsp;&nbsp; Take notes about everything new
-menu: blog
+menu: Blog
 ---
 <!-- Post List -->
 <div class="col-md-8">
-    <ol class="post-list">
-        {% for post in paginator.posts %}
-        <li class="post-list-item">
-            <h2 class="post-list-title">
-                <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-            </h2>
+    {% for post in paginator.posts %}
+    <li class="post-list-item">
+        <div class="post-body">
+            <h3 class="post-list-title">
+                <a href="{{ post.url }}">{{ post.title }}</a>
+            </h3>
 
             <p class="post-list-description">
                 {{ post.excerpt | strip_html | strip }}
             </p>
-
-            <p class="post-list-meta">
-                Posted in <a href="/category/{{ post.category }}"> {{ post.category }}</a> &nbsp;&nbsp;
-                <span class="glyphicon glyphicon-time"></span> {{ post.date | date: "%Y/%m/%d" }}
-            </p>
-        </li>
-        {% endfor %}
-    </ol>
+        </div>
+        <p class="post-footer">
+            <span class="glyphicon glyphicon-time"></span> {{ post.date | date: "%Y-%m-%d" }}&nbsp;
+            Posted in <a href="/category/{{ post.category }}">{{ post.category }}</a>
+            <a class="pull-right" href="{{ post.url }}">Read More</a>
+        </p>
+    </li>
+    {% endfor %}
     <!-- Pagination -->
     {% include pagination.html %}
 </div>
 <div class="col-md-4">
-    {% include sidebar-post-search2.html %}
     {% include sidebar-post-category.html %}
     {% include sidebar-post-tag.html %}
 </div>

@@ -22,25 +22,25 @@ css: ['sidebar-popular-repo.css']
 <section class="content container">
     <!-- Post List -->
     <div class="col-md-8">
-        <ol class="post-list">
-            {% for post in site.posts | limit: 5 %}
-            <li class="post-list-item">
-                <h2 class="post-list-title">
+        {% for post in site.posts | limit: 5 %}
+        <li class="post-list-item">
+            <div class="post-body">
+                <h3 class="post-list-title">
                     <a href="{{ post.url }}">{{ post.title }}</a>
-                </h2>
+                </h3>
 
                 <p class="post-list-description">
                     {{ post.excerpt | strip_html | strip }}
                 </p>
-
-                <p class="post-list-meta">
-                    Posted in <a href="/category/{{ post.category }}"> {{ post.category }}</a> &nbsp;&nbsp;
-                    <span class="glyphicon glyphicon-time"></span> {{ post.date | date: "%Y/%m/%d" }}
-                </p>
-            </li>
-            {% endfor %}
-        </ol>
-        <a href="/blog" class="pull-right"><h3>Read More ...</h3></a>
+            </div>
+            <p class="post-footer">
+                <span class="glyphicon glyphicon-time"></span> {{ post.date | date: "%Y-%m-%d" }}&nbsp;
+                Posted in <a href="/category/{{ post.category }}">{{ post.category }}</a>
+                <a class="pull-right" href="{{ post.url }}">Read More</a>
+            </p>
+        </li>
+        {% endfor %}
+        <a href="/blog" class="col-xs-12"><h3 class="pull-right">Read More ...</h3></a>
     </div>
     <div class="col-md-4">
         {% include sidebar-popular-repo.html %}

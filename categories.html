@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Categories
-menu: categories
+menu: Categories
 ---
 
 <div class="tags-expo">
@@ -18,7 +18,9 @@ menu: categories
             {% for post in category[1] %}
             <a class="list-group-item" href="{{ site.baseurl }}{{ post.url }}">
                 {{ post.title }}
-                <small class="post-date">{{ post.date | date_to_string }}</small>
+                <small class="post-date">
+                    <span class="glyphicon glyphicon-time"></span> {{ post.date | date: "%Y-%m-%d" }}
+                </small>
             </a>
             {% endfor %}
         </ul>

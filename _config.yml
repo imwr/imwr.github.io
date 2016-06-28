@@ -21,7 +21,7 @@ gems:
   - jekyll-geo-pattern
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-github-metadata
+#  - jekyll-github-metadata
 
 # Where things are
 collections:
@@ -62,27 +62,27 @@ defaults:
 navs:
   -
     href: /
-    label: home
+    label: Home
 
   -
     href: /open-source
-    label: open-source
+    label: Open-Source
 
   -
     href: /blog
-    label: blog
+    label: Blog
 
   -
     href: /tags
-    label: tags
+    label: Tags
 
   -
     href: /categories
-    label: categories
+    label: Categories
 
   -
     href: /about
-    label: about
+    label: About
 
 
 # Pagination

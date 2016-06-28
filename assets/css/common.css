@@ -1,12 +1,7 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
 /** Header **/
 .site-header {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     width: 100%;
     position: fixed;
     margin: 40px 0 30px 0;
@@ -14,14 +9,9 @@
     left: 0 !important;
     right: 0;
     z-index: 103;
-
     color: #000;
     background: #fff;
-
     -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
 
@@ -38,14 +28,6 @@
     color: #4183c4;
 }
 
-#site-header-brand, #site-header-brand .octicon {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 38px;
-    font-weight: 400;
-    line-height: 38px;
-}
-
 .site-header-nav {
     float: right;
     margin-bottom: -20px;
@@ -55,7 +37,7 @@
     color: #000;
     display: inline-block;
     padding: 10px;
-    margin-left: 1.25rem;
+    margin-left: 10px;
     font-size: 20px;
 }
 
@@ -66,6 +48,68 @@
 .site-header-nav-item.selected:before {
     left: 0;
     right: 0;
+}
+
+.site-header-search {
+    float: right;
+    padding: 8px 14px 8px 56px;
+    position: relative;
+}
+
+.site-header-search .search-query {
+    width: 0;
+    opacity: 0;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.site-header-search .glyphicon-search {
+    position: absolute;
+    right: 24px;
+    top: 18px;
+}
+
+.site-header-search .search-results {
+    width: 0;
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+    right: 14px;
+    top: 38px;
+    line-height: 30px;
+    background: white;
+    border: 1px solid #ddd;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    max-height: 250px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    padding: 0 10px;
+}
+
+.site-header-search .search-query:focus {
+    width: 250px;
+    opacity: 1;
+}
+
+.site-header-search .search-query:focus ~ .search-results{
+    width: 250px;
+    opacity: 1;
+}
+
+.search-results a:first-child {
+    margin-top: 8px;
+}
+
+.search-results a {
+    display: block;
+    height: 32px;
+    line-height: 32px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 /******* Scroll Start *******/
@@ -85,7 +129,7 @@
 /** Jumbotron **/
 .jumbotron {
     padding-top: 200px;
-    padding-bottom: 100px;
+    padding-bottom: 80px;
     color: #fff;
 }
 
@@ -131,39 +175,38 @@
 /** Post List **/
 .post-list-item {
     position: relative;
-    padding-top: 30px;
-    padding-bottom: 30px;
     list-style: none;
-    border-bottom: 1px solid #eee;
+    border: 1px solid #eee;
+    margin-bottom: 15px !important;
+    line-height: 1.5;
 }
 
-.post-list-title a {
+.post-list-item .post-list-title {
     text-decoration: none;
+    margin-top: 0 !important;
 }
 
-.post-list-description {
-    margin-top: 8px;
+.post-list-item .post-list-description {
     margin-bottom: 0;
-    font-size: 18px;
+    font-size: 16px;
     color: #666;
 }
 
-.post-list-meta {
-    margin-top: 8px;
-    margin-bottom: 0;
-    color: #888;
+.post-list-item .post-body {
+    padding: 10px;
 }
 
-.post-list-meta, .post-list-meta.octicon {
-    font-size: 18px;
+.post-list-item .post-footer {
+    margin-bottom: 0;
+    color: #888;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #e5e5e5;
+    font-size: 14px;
 }
 
 .geopattern {
     background-size: contain; /* To fix strange behavior when zoom in/out */
-}
-
-.sidebar-title {
-    text-align: center;
 }
 
 .hvr-underline-from-center {

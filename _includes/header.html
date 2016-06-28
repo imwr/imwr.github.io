@@ -1,7 +1,13 @@
 <header class="site-header">
-    <div class="container">
-        <a id="site-header-brand" href="/" title="{{ site.name }}">
+    <div class="container" style="position: relative">
+        <a href="/" title="{{ site.name }}">
             <img src="/favicon.ico"> {{ site.name }}
+        </a>
+        <a class="site-header-search">
+            <label for="search-query" class="glyphicon glyphicon-search"></label>
+            <input type="text" id="search-query" class="form-control search-query" name="q" placeholder="Search"
+                   autocomplete="off"/>
+            <div class="search-results" id="search-results"></div>
         </a>
         <nav class="site-header-nav" role="navigation">
             {% for nav in site.navs %}
