@@ -7,11 +7,11 @@ A Simple, Bootstrap Based Jekyll Website.
 * Compatible with Jekyll 3.x and GitHub Pages
 * Based on Bootstrap
 * Use all jekyll/GitHub Pages official plugins
-* jekyll-paginate
-* jekyll-geo-pattern
-* jekyll-sitemap
-* jekyll-seo-tag
-* jekyll-github-metadata
+ * jekyll-paginate
+ * jekyll-geo-pattern
+ * jekyll-sitemap
+ * jekyll-seo-tag
+ * jekyll-github-metadata
 * [Tags](http://tt-cc.cn/tags) and [Categories](http://tt-cc.cn/categories) archive page
 * List posts by a specified tag and category
 * Simple search base on [Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)
