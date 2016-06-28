@@ -53,9 +53,9 @@ Write the Front Matter and content in the file.
 ```
 ---
 layout: post
-title: Post title
-category: Category
-tags: [tag1, tag2]
+title: your_post_title
+category: your_category
+tags: [your_tag1, your_tag2]
 ---
 ```
 
