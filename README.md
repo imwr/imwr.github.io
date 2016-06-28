@@ -59,9 +59,9 @@ tags: [tag1, tag2]
 ---
 ```
 
-Theme Base on [Yummy-Jekyll](https://github.com/DONGChuan/Yummy-Jekyll) and [Minddust](https://github.com/minddust/minddust.github.io)
-
 ## License
+
+Theme Base on [Yummy-Jekyll](https://github.com/DONGChuan/Yummy-Jekyll) and thank [Minddust](https://github.com/minddust/minddust.github.io)
 
 The Apache License 2.0
 
