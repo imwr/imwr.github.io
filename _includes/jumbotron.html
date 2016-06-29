@@ -11,7 +11,7 @@
                 {% if page.category %} |
                  Posted in <a href="/category/{{ page.category }}">{{ page.category }}</a>
                 {% endif %}
-                {% if page.tags %} |
+                {% if page.tags %} with
                  <span class="glyphicon glyphicon-tag small"></span>
                 {% for tag in page.tags %}
                   <a href="/tag/{{ tag | slugify }}" class="post-tag">

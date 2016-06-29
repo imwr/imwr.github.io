@@ -28,7 +28,7 @@ menu: Blog
         {% endunless %}
         <a href="{{ post.url }}" class="list-group-item">
             {{ post.title }}
-            <div class="pull-right">
+            <div class="pull-right hidden-xs">
                 <span class="glyphicon glyphicon-time "> </span>
                 {{ post.date | date: "%Y-%m-%d" }}
             </div>

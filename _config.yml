@@ -4,7 +4,7 @@ name: 汀汀涔涔
 email: ttccmvp@gmail.com
 location: Chengdu, Sichuang
 github_url: https://github.com/imwr
-description: This is personnel website of ttcc
+description: This is personal website of ttcc
 url: http://tt-cc.cn
 
 # About/contact
@@ -20,7 +20,7 @@ gems:
   - jekyll-geo-pattern
   - jekyll-sitemap
   - jekyll-seo-tag
-#  - jekyll-github-metadata
+  - jekyll-github-metadata
 
 # Where things are
 collections:
