@@ -20,7 +20,7 @@ gems:
   - jekyll-geo-pattern
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-github-metadata
+#  - jekyll-github-metadata
 
 # Where things are
 collections:

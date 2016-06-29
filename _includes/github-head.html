@@ -20,21 +20,15 @@
 
     <link type="text/css" rel="stylesheet" href="{{site.url}}/resources/syntax/shCoreDefault.css"/>
     <link rel="stylesheet" type="text/css" href="{{site.url}}/resources/css/github-example.css">
-
-    <!-- CSS set in page -->
-    {% for css in page.css %}
-    <link rel="stylesheet" href="{{site.url}}{{css}}">
-    {% endfor %}
-
-    <!-- CSS set in layout -->
-    {% for css in layout.css %}
-    <link rel="stylesheet" href="{{site.url}}{{css}}">
-    {% endfor %}
-
     <!-- My CSS -->
     <link rel="stylesheet" href="/assets/css/common.css">
 
-    {% for javascript in page.js %}
+    <!-- CSS set in page -->
+    {% for css in page.romotejs %}
+    <link rel="stylesheet" href="{{site.url}}{{css}}">
+    {% endfor %}
+
+    {% for javascript in page.romotejs %}
     <script src="{{site.url}}{{javascript}}"></script>
     {% endfor %}
 </head>

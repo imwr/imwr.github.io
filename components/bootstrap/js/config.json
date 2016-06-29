@@ -392,21 +392,19 @@
     "navbar.less",
     "breadcrumbs.less",
     "pagination.less",
+    "pager.less",
     "labels.less",
     "badges.less",
     "jumbotron.less",
     "list-group.less",
     "panels.less",
     "component-animations.less",
-    "dropdowns.less",
     "tooltip.less"
   ],
   "js": [
-    "dropdown.js",
     "tooltip.js",
-    "affix.js",
     "collapse.js",
     "transition.js"
   ],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=b06ff95e2c3cbe49dfbbf8202725a443"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=e15b541605c6a14cbc09fc35f79c9b1b"
 }
