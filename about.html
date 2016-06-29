@@ -1,20 +1,23 @@
 ---
 layout: page
-title: About Me
+title: About Me | 汀汀涔涔
 menu: About
-css: ['open-source.css']
 ---
 <div class="col-md-8">
-    <h2>About me</h2>
-
-    <p>{{ site.name }}</p>
-
     <h2>Contact</h2>
-    <ul>
-        <li>Email：<a href="mailto:{{ site.email }}" target="_top">{{ site.email }}</a></li>
-        <li>Github：<a href="{{ site.github_url }}">{{ site.github_url }}</a></li>
-        <li>Weibo：<a href="{{ site.weibo_url }}">{{ site.github_url }}</a></li>
-        <li>Website：<a href="{{ site.url }}">{{ site.url }}</a></li>
+    <ul class="list-inline">
+        <li>
+            <a href="mailto:{{ site.email }}" target="_top"><i class="fa fa-envelope"></i>&nbsp;Email
+            </a>
+        </li>
+        <li>
+            <a href="mailto:{{ site.email }}" target="_top"><i class="fa fa-github"></i>&nbsp;Github
+            </a>
+        </li>
+        <li>
+            <a href="mailto:{{ site.email }}" target="_top"><i class="fa fa-weibo"></i>&nbsp;Weibo
+            </a>
+        </li>
     </ul>
     <h2>Skill Keywords</h2>
     {% if site.skill_software_keywords %}
@@ -22,7 +25,7 @@ css: ['open-source.css']
         <div class="panel-heading">
             <h3 class="panel-title">Software Engineer Keywords</h3>
         </div>
-        <div class="panel-body">
+        <div class="panel-body btn-label">
             {% for keyword in site.skill_software_keywords %}
             <button class="btn btn-default" type="button">{{ keyword }}</button>
             {% endfor %}
@@ -34,7 +37,7 @@ css: ['open-source.css']
         <div class="panel-heading">
             <h3 class="panel-title">J2EE Developer Keywords</h3>
         </div>
-        <div class="panel-body">
+        <div class="panel-body btn-label">
             {% for keyword in site.skill_j2ee_keywords %}
             <button class="btn btn-default" type="button">{{ keyword }}</button>
             {% endfor %}
@@ -46,7 +49,7 @@ css: ['open-source.css']
         <div class="panel-heading">
             <h3 class="panel-title">Mobile Developer Keywords</h3>
         </div>
-        <div class="panel-body">
+        <div class="panel-body btn-label">
             {% for keyword in site.skill_mobile_app_keywords %}
             <button class="btn btn-default" type="button">{{ keyword }}</button>
             {% endfor %}

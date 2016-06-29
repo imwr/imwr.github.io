@@ -2,11 +2,23 @@
     <div class="row">
         <hr/>
         <ul class="nav nav-pills">
-            <li role="presentation"><a href="/">{{ site.name }}</a></li>
-            <li role="presentation"><a href="/about">About Me</a></li>
-            <li role="presentation"><a href="/sitemap.xml">Sitemap</a></li>
+            <li role="presentation">
+                <a href="/">
+                    <span class="fa fa-home"></span> {{ site.name }}
+                </a>
+            </li>
+            <li role="presentation">
+                <a href="/about">
+                    <span class="fa fa-user"></span> About Me
+                </a>
+            </li>
+            <li role="presentation"><a href="/sitemap.xml">
+                <span class="fa fa-sitemap"></span> Sitemap</a>
+            </li>
             <li role="presentation" class="pull-right">
-                <a href="javascript:$('body').animate({scrollTop: 0}, 200);">TOP</a>
+                <a href="javascript:$('body').animate({scrollTop: 0}, 200);">
+                    <span class="fa fa-arrow-up"></span>
+                </a>
             </li>
         </ul>
     </div>

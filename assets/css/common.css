@@ -114,14 +114,22 @@ header {
 .thumbnail-card {
     padding: 0;
 }
+
+.thumbnail-card .card-img {
+    padding: 15px 0 20px 0;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
 .thumbnail-card a {
     color: white;
 }
+
 /* modify bootstrap default style end*/
 
-.geopattern {
-    background-size: contain;
-}
+/*.geopattern {*/
+/*background-size: contain;*/
+/*}*/
 
 .hvr-underline-from-center {
     display: inline-block;

@@ -12,7 +12,7 @@ menu: Open-Source
         {% for repo in sorted_repos %}
         <div class="col-md-4 text-center">
             <div class="thumbnail thumbnail-card">
-                <div class="caption geopattern" data-pattern-id="{{ repo.name }}">
+                <div class="card-img geopattern" data-pattern-id="{{ repo.name }}">
                     <a href="{{ repo.html_url }}" target="_blank"><h3>{{ repo.name }}</h3></a>
                 </div>
                 <div class="caption">
@@ -20,13 +20,13 @@ menu: Open-Source
 
                     <p>
                             <span data-toggle="tooltip" title="{{ repo.stargazers_count }} stars">
-                                <span class="glyphicon glyphicon-star"></span> {{ repo.stargazers_count }}
+                                <span class="fa fa-star"></span> {{ repo.stargazers_count }}
                             </span>
                             <span data-toggle="tooltip" title="{{ repo.forks_count }} forks">
-                                <span class="glyphicon glyphicon-hand-right"></span> {{ repo.forks_count }}
+                                <span class="fa fa-code-fork"></span> {{ repo.forks_count }}
                             </span>
                             <span data-toggle="tooltip" title="Last updated：{{ repo.updated_at }}">
-                                <span class="glyphicon glyphicon-time"></span>
+                                <span class="fa fa-calendar"></span>
                                 <time datetime="{{ repo.updated_at }}" title="{{ repo.updated_at }}">{{ repo.updated_at
                                     | date: '%Y-%m-%d' }}
                                 </time>
