@@ -4,4 +4,5 @@
    gem "jekyll-sitemap"
    gem "jekyll-seo-tag"
    gem "jekyll-github-metadata"
+   gem 'jekyll-redirect-from'
  end

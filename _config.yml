@@ -20,6 +20,7 @@ gems:
   - jekyll-geo-pattern
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-redirect-from
   - jekyll-github-metadata
 
 # Where things are
