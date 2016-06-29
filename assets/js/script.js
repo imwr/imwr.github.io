@@ -6,7 +6,10 @@ $(window).scroll(function () {
         $('.site-header').removeClass('site-header-nav-scrolled');
     }
 });
-
 $(document).ready(function () {
-    $(window).scroll()
+    $(window).scroll();
+    $("body").tooltip({selector: '[data-toggle=tooltip]'});
+    $('.geopattern').each(function () {
+        $(this).geopattern($(this).data('pattern-id'));
+    });
 });

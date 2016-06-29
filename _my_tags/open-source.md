@@ -1,4 +1,4 @@
 ---
 slug: open-source
-name: Open Source
+name: OpenSource
 ---

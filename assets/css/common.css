@@ -107,6 +107,16 @@ header {
     color: wheat;
 }
 
+.btn-label .btn {
+    margin-bottom: 4px;
+}
+
+.thumbnail-card {
+    padding: 0;
+}
+.thumbnail-card a {
+    color: white;
+}
 /* modify bootstrap default style end*/
 
 .geopattern {

@@ -8,4 +8,10 @@
         <span class="badge pull-right">{{ tag[1].size }}</span>
     </a>
     {% endfor %}
+    {% for tag in site.tags %}
+    <a class="list-group-item" href="/tag/{{ tag | first }}">
+        {{ tag | first }}
+        <span class="badge pull-right">{{ tag[1].size }}</span>
+    </a>
+    {% endfor %}
 </ul>

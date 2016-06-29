@@ -61,8 +61,6 @@ tags: [your_tag1, your_tag2]
 
 ## License
 
-Theme Base on [Yummy-Jekyll](https://github.com/DONGChuan/Yummy-Jekyll) and thank [Minddust](https://github.com/minddust/minddust.github.io)
-
 The Apache License 2.0
 
 Copyright (c) 2016 DONG Chuan

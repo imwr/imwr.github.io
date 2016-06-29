@@ -1,4 +1,4 @@
 ---
-slug: python
-name: Python
+slug: password
+name: password
 ---

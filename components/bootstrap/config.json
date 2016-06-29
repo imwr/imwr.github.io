@@ -378,7 +378,6 @@
     "@blockquote-border-color": "@gray-lighter",
     "@page-header-border-color": "@gray-lighter",
     "@dl-horizontal-offset": "@component-offset-horizontal",
-    "@dl-horizontal-breakpoint": "@grid-float-breakpoint",
     "@hr-border": "@gray-lighter"
   },
   "css": [
@@ -396,8 +395,11 @@
     "labels.less",
     "badges.less",
     "jumbotron.less",
+    "thumbnails.less",
+    "media.less",
     "list-group.less",
     "panels.less",
+    "wells.less",
     "component-animations.less",
     "tooltip.less"
   ],
@@ -406,5 +408,5 @@
     "collapse.js",
     "transition.js"
   ],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=e15b541605c6a14cbc09fc35f79c9b1b"
+  "customizerUrl": "http://v3.bootcss.com/customize/?id=3c3fd78ceb2d6db6ecfa9518e3c65fae"
 }

@@ -5,4 +5,5 @@
    gem "jekyll-seo-tag"
    gem "jekyll-github-metadata"
    gem 'jekyll-redirect-from'
+   gem 'jekyll-feed'
  end

@@ -1,4 +1,4 @@
 ---
-slug: plugins
-name: plugins
+slug: simple-camera
+name: SimpleCamera
 ---

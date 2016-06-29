@@ -7,14 +7,18 @@ menu: search
     <li><a href="/">Home</a></li>
     <li class="active">{{ page.title }}</li>
 </ol>
-<form action="/search" method="get" class="input-group">
+<!--<form action="/search" method="get" class="input-group">-->
+    <!--<input type="text" id="search-query" class="form-control" placeholder="Search"-->
+           <!--autocomplete="off">-->
+        <!--<span class="input-group-btn">-->
+            <!--<button class="btn btn-default" type="button">-->
+                <!--<span class="glyphicon glyphicon-search"></span>-->
+            <!--</button>-->
+        <!--</span>-->
+<!--</form>-->
+<form action="/search" method="get">
     <input type="text" id="search-query" class="form-control" placeholder="Search"
            autocomplete="off">
-        <span class="input-group-btn">
-            <button class="btn btn-default" type="button">
-                <span class="glyphicon glyphicon-search"></span>
-            </button>
-        </span>
 </form>
 <br/>
 <ul class="list-group" id="search-results"></ul>

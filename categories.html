@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Categories
+title: All My Categories
 menu: Categories
 ---
 <div class="col-md-8">
@@ -26,8 +26,10 @@ menu: Categories
     {% endfor %}
 </div>
 <div class="col-md-4">
-    <h3> Categories Cloud</h3>
-    {% for category in site.categories %}
-    <a href="#{{ category[0] | slugify }}" class="post-tag">{{ category[0] }}</a>
-    {% endfor %}
+    <div class="btn-label">
+        <h3> Available Categories</h3>
+        {% for category in site.categories %}
+        <a href="#{{ category[0] | slugify }}" class="btn btn-default">{{ category[0] }}({{ category[1].size }})</a>
+        {% endfor %}
+    </div>
 </div>
