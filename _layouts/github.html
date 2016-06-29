@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+{% include github-head.html %}
+<body>
+{% include header.html %}
+{% include jumbotron.html %}
+<article class="container">
+    <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li><a href="/category/{{ page.category }}">{{ page.category }}</a></li>
+        <li class="active">{{ page.title }}</li>
+    </ol>
+
+    {{ content }}
+
+    {% if site.related_posts.size >= 1 %}
+    <hr/>
+    <div>
+        <h3>Related Posts</h3>
+        <ul>
+            {% for related_post in site.related_posts limit: 5 %}
+            <li><a href="{{ related_post.url }}">{{ related_post.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    {% if page.categories %}
+    {% assign category = page.categories[0] %}
+    {% assign posts = site.categories[category] %}
+    {% for post in posts %}
+    {% if post.url == page.url %}
+    {% assign post_index0 = forloop.index0 %}
+    {% assign post_index1 = forloop.index %}
+    {% endif %}
+    {% endfor %}
+    {% for post in posts %}
+    {% if post_index0 == forloop.index %}
+    {% assign next_post = post %}
+    {% endif %}
+    {% if post_index1 == forloop.index0 %}
+    {% assign prev_post = post %}
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+
+    <nav>
+        <ul class="pager">
+            {% if prev_post %}
+            <li class="previous">
+                <a href="{{ prev_post.url }}">
+                    <span aria-hidden="true">&larr;</span> Previous
+                </a>
+            </li>
+            {% else %}
+            <li class="previous disabled">
+                <a href="javascript:void(0)">
+                    <span aria-hidden="true">&larr;</span> Previous
+                </a>
+            </li>
+            {% endif %}
+            {% if next_post %}
+            <li class="next">
+                <a href="{{ next_post.url }}">Next
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+            </li>
+            {% else %}
+            <li class="next disabled">
+                <a href="javascript:void(0)">Next
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    <hr/>
+    <!-- Comments -->
+    {% include disqus-comments.html %}
+</article>
+{% include github-footer.html %}
+</body>
+</html>
+
+

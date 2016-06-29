@@ -1,0 +1,4 @@
+---
+slug: camera
+name: camera
+---

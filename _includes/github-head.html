@@ -18,18 +18,23 @@
     <!-- Third-Party CSS -->
     <link rel="stylesheet" href="/components/bootstrap/css/bootstrap.min.css">
 
-    <!-- My CSS -->
-    <link rel="stylesheet" href="/assets/css/common.css">
+    <link type="text/css" rel="stylesheet" href="{{site.url}}/resources/syntax/shCoreDefault.css"/>
+    <link rel="stylesheet" type="text/css" href="{{site.url}}/resources/css/github-example.css">
 
     <!-- CSS set in page -->
     {% for css in page.css %}
-    <link rel="stylesheet" href="/assets/css/{{css}}">
+    <link rel="stylesheet" href="{{site.url}}{{css}}">
     {% endfor %}
 
     <!-- CSS set in layout -->
     {% for css in layout.css %}
-    <link rel="stylesheet" href="/assets/css/{{css}}">
+    <link rel="stylesheet" href="{{site.url}}{{css}}">
     {% endfor %}
 
-    <script type="text/javascript" src="/components/bootstrap/js/bootstrap.min.js"></script>
+    <!-- My CSS -->
+    <link rel="stylesheet" href="/assets/css/common.css">
+
+    {% for javascript in page.js %}
+    <script src="{{site.url}}{{javascript}}"></script>
+    {% endfor %}
 </head>

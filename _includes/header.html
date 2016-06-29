@@ -8,8 +8,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="/" title="{{ site.name }}" class="navbar-brand" style="padding: 0">
-                    <img src="/favicon.ico">
+                <a href="/" title="{{ site.name }}" class="navbar-brand">
+                    <span><img src="/favicon.ico"></span>
+                    <h3 class="visible-md-inline visible-lg-inline">TT-CC</h3>
                 </a>
             </div>
             <div id="navbarCollapse" class="collapse navbar-collapse">
@@ -17,7 +18,8 @@
                 <form role="search" action="/search" class="navbar-form navbar-right">
                     <input type="text" id="search-input" placeholder="Search" name="query"
                            class="form-control search-query">
-                    <label for="search-input" class="glyphicon glyphicon-search search-query-icon" aria-hidden="true"
+                    <label for="search-input" class="glyphicon glyphicon-search search-query-icon hidden"
+                           aria-hidden="true"
                            href></label>
                 </form>
                 {% endif %}

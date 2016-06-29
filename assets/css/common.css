@@ -1,3 +1,8 @@
+body {
+    background: white;
+    overflow-x: hidden;
+}
+
 .site-header {
     padding-top: 10px;
     width: 100%;
@@ -10,6 +15,7 @@
     z-index: 10;
 }
 
+/* modify bootstrap default style start */
 .navbar-default {
     background: none;
     border: none;
@@ -27,28 +33,39 @@
     background: white;
 }
 
+.navbar-brand {
+    padding: 0;
+}
+
 .navbar-form {
-    padding: 0 0 0 20px;
-    min-width: 48px;
+    border: none;
 }
 
-.navbar-form .search-query {
-    width: 0;
-    opacity: 0;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-}
+@media screen and (min-width: 768px) {
+    .navbar-form {
+        padding: 0 0 0 20px;
+        min-width: 48px;
+    }
 
-.navbar-form .search-query:focus {
-    width: 196px;
-    opacity: 1;
-}
+    .navbar-form .search-query {
+        width: 0;
+        opacity: 0;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+    }
 
-.navbar-form .search-query-icon {
-    position: absolute;
-    right: 8px;
-    cursor: pointer;
-    top: 16px;
+    .navbar-form .search-query:focus {
+        width: 196px;
+        opacity: 1;
+    }
+
+    .navbar-form .search-query-icon {
+        position: absolute;
+        right: 8px;
+        cursor: pointer;
+        top: 16px;
+        display: block !important;
+    }
 }
 
 .site-header {
@@ -79,6 +96,8 @@
 .jumbotron a {
     color: #fff;
 }
+
+/* modify bootstrap default style end*/
 
 .geopattern {
     background-size: contain;
@@ -116,4 +135,10 @@
     transition-duration: .3s;
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
+}
+
+.main-inner {
+    width: 100%;
+    margin: 0;
+    border: none;
 }
