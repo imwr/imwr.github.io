@@ -1,0 +1,102 @@
+---
+layout: github-plugins
+menu: Blog
+title: MouseMe 鼠标事件合集
+category: jquery-plugin
+tags: [mouse-me,jquery-event]
+github: AutoAddto
+romotejs: ['/MouseMe/js/MouseMe.js']
+redirect_from:
+- /front-end/jquery-plugins/mouseme
+---
+<p>Mouse Me —— 鼠标事件合集，如可监控点击次数、长按时间、滑动方向事件等，扩展中。</p>
+<hr/>
+
+<div class="paper-title">Demo1:</div>
+<div class="paper-div">
+    <div id="demo1" onselectstart="return false;" style="-moz-user-select:none;">长按我1.5秒</div>
+</div>
+<div class="paper-sep"></div>
+
+<div class="paper-title">Demo2:</div>
+<div class="paper-div">
+    <div id="demo2" onselectstart="return false;" style="-moz-user-select:none;">长按我2秒</div>
+</div>
+<div class="paper-sep"></div>
+
+<div class="paper-title">Demo3:</div>
+<div class="paper-div">
+    <div id="demo3" onselectstart="return false;" style="-moz-user-select:none;">快速点击我4次</div>
+</div>
+<div class="paper-sep"></div>
+
+<div class="paper-title paper-specil" id="options">holdTime event options:</div>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th width="15%">参数名</th>
+        <th width="15%">类型</th>
+        <th width="20%">默认值</th>
+        <th width="50%">说明</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>time</td>
+        <td>number</td>
+        <td>2000(ms)</td>
+        <td>鼠标长按触发事件的时间</td>
+    </tr>
+    <tr>
+        <td>onBegin</td>
+        <td>function</td>
+        <td>null</td>
+        <td>鼠标刚按下时触发的事件，参数（自身dom节点）</td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="paper-title paper-specil">multiClick event options:</div>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th width="15%">参数名</th>
+        <th width="15%">类型</th>
+        <th width="20%">默认值</th>
+        <th width="50%">说明</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>times</td>
+        <td>number</td>
+        <td>3</td>
+        <td>监听鼠标多次点击的次数</td>
+    </tr>
+    <tr>
+        <td>interval</td>
+        <td>number</td>
+        <td>500(ms)</td>
+        <td>监听鼠标点击次数时间段</td>
+    </tr>
+    </tbody>
+</table>
+<script type="text/javascript" id="js1">
+    $("#demo1").on("holdTime", function () {
+        $(this).html("长按 1500ms ..." + new Date().getTime());
+    })
+</script>
+<script type="text/javascript" id="js2">
+    $("#demo2").on("holdTime", {times: 2000}, function () {
+        $(this).html("长按 2000ms ..." + new Date().getTime());
+    }).on("click", function () {
+        if (!this.holdTime) {
+            $(this).html("clicked me")
+        }
+    })
+</script>
+<script type="text/javascript" id="js3">
+    $("#demo3").on("multiClick", {times: 4}, function () {
+        $(this).html("多击 4次 ..." + new Date().getTime());
+    });
+</script>

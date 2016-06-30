@@ -1,7 +1,7 @@
 ---
-layout: github
+layout: github-plugins
 menu: Blog
-title: AutoAddto —— Input Assist 输入建议 中文拼音 异步请求数据
+title: AutoAddto 输入建议插件
 category: jquery-plugin
 tags: [autoaddto,auto-compelte,input-suggestion]
 github: AutoAddto
@@ -13,28 +13,28 @@ redirect_from:
 <p>AutoAddto —— Input suggestion，jQuery输入建议插件，支持中文拼音、异步请求数据。PC端同时可键盘操作。</p>
 <hr/>
 
-<h3>Demo1:</h3>
-<p>
+<div class="paper-title">Demo1:</div>
+<div class="paper-div">
     <input id="demo1" placeholder="keywords..."/>
-</p>
-<hr/>
+</div>
+<div class="paper-sep"></div>
 
-<h3>Demo2:</h3>
-<p>
+<div class="paper-title">Demo2:</div>
+<div class="paper-div">
     <input id="demo2" placeholder="keywords..."/>
-</p>
-<hr/>
+</div>
+<div class="paper-sep"></div>
 
-<h3>Demo3:</h3>
-<p>
+<div class="paper-title">Demo3:</div>
+<div class="paper-div">
     <input id="demo3" placeholder="keywords..."/>
-</p>
-<hr/>
+</div>
+<div class="paper-sep"></div>
 
-<h3>Demo4:</h3>
-<p>
+<div class="paper-title">Demo4:</div>
+<div class="paper-div">
     <input id="demo4" placeholder="keywords..."/>
-</p>
+</div>
 LOCAL SPRING SERVER：
 <pre type='syntaxhighlighter' class="brush: js;class-name: paper-code; toolbar: false">
         @RequestMapping(value = "/test")
@@ -46,9 +46,9 @@ LOCAL SPRING SERVER：
             return list;
         }
     </pre>
-<hr/>
+<div class="paper-sep"></div>
 
-<h3 id="options">options:</h3>
+<div class="paper-title paper-specil" id="options">options:</div>
 <table class="table table-bordered">
     <thead>
     <tr>
@@ -104,7 +104,7 @@ LOCAL SPRING SERVER：
     </tbody>
 </table>
 
-<h3>Method:</h3>
+<div class="paper-title paper-specil" id="method">Method:</div>
 <table class="table table-bordered">
     <thead>
     <tr>
@@ -144,6 +144,6 @@ LOCAL SPRING SERVER：
 <script type="text/javascript" id="js4">
     $("#demo4").autoAddto({
         type: "get",
-        sourceUrl: "test/data.json"
+        sourceUrl: "/assets/test/autoaddto-data.json"
     });
 </script>

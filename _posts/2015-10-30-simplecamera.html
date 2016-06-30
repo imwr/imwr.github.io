@@ -1,0 +1,44 @@
+---
+layout: github-plugins
+menu: Blog
+title: SimpleCamera 简易摄像机
+category: jquery-plugin
+tags: [simple-camera,camera]
+github: SimpleCamera
+romotejs: ['/SimpleCamera/js/SimpleCamera.js']
+redirect_from:
+- /front-end/jquery-plugins/mouseme
+---
+<p>Simple Camera —— 简易摄像机，支持保存图片到本地。</p>
+<hr/>
+
+<div class="paper-title">Demo1:</div>
+<div class="paper-div">
+    <div id="demo1"></div>
+</div>
+<div class="paper-sep"></div>
+
+<h4 id="options">Options:</h4>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th width="15%">参数名</th>
+        <th width="15%">类型</th>
+        <th width="20%">默认值</th>
+        <th width="50%">说明</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<script type="text/javascript" id="js1">
+    $("#demo1").simpleCamera({
+        width: 272,
+        height: 420,
+        photoW: 272,//摄像头宽
+        photoH: 378,//摄像头高
+        doImage: $("#phone1"),
+        onEnd: function (img) {
+        }
+    });
+</script>
