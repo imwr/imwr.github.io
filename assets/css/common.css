@@ -98,6 +98,15 @@ img {
     border-top-right-radius: 4px;
 }
 
+.thumbnail-card .caption {
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
 .thumbnail-card a {
     color: white;
 }
