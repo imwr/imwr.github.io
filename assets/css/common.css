@@ -99,7 +99,7 @@ img {
 }
 
 .thumbnail-card .caption {
-    height: 40px;
+    height: 88px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
