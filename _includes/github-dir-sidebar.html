@@ -4,26 +4,26 @@
     </a>
 </div>
 <section id="directory-module" class="directory-module hidden-xs">
-    <h3><i class="fa fa-bars fa-fw" aria-hidden="true"></i> Directory</h3>
+    <div class="paper-title">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i> Directory
+    </div>
     <dl>
     </dl>
 </section>
 <script type="text/javascript">
     $(document).ready(function () {
-        var directory = $("#directory-module"), dt = {};
-        $("[id^=demo]").each(function () {
-            var id = $(this).attr("id");
-            if (!dt[id]) {
-                dt[id] = true;
-                directory.find("dl").append('<dt href="#' + id + '">' + id + '</dt>');
-            }
+        var directory = $("#directory-module"), scrolltop = directory.offset().top;
+        var targets = $("#github-main").find(".paper-title");
+        targets.each(function (index) {
+            directory.find("dl").append('<dt data-loc="' + index +
+                    '">' + $(this).text().replace(/\:/, "") + '</dt>'
+            );
         });
-        directory.find("dl").append('<dt href="#options">options</dt>');
         $(window).scroll(function () {
             var currentScroll = $(window).scrollTop();
-            if (currentScroll >= 200) {
+            if (currentScroll >= scrolltop - 72 ) {
                 directory.css({
-                    top: 60,
+                    top: 72,
                     position: 'fixed'
                 });
             } else {
@@ -36,8 +36,9 @@
         directory.find("dt").on("click", function (e) {
             e.preventDefault();
             $("body").animate({
-                scrollTop: $($(this).attr('href')).offset().top - 115
+                scrollTop: targets.eq($(this).attr('data-loc')).offset().top - 72
             }, 500);
         });
-    });
+    })
+    ;
 </script>
