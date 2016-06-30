@@ -23,16 +23,17 @@ gems:
   - jekyll-seo-tag
   - jekyll-feed
   - jekyll-redirect-from
-  - jekyll-github-metadata
+  - kramdown
+#  - jekyll-github-metadata
 
 # Where things are
 collections:
   my_categories:
     output: true
-    permalink: /category/:name/
+    permalink: /categories/:name/
   my_tags:
     output: true
-    permalink: /tag/:name/
+    permalink: /tags/:name/
 
 defaults:
   -
@@ -94,6 +95,11 @@ category_page: categories
 # github metadata
 repository: imwr/imwr.github.com
 
+# kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: true
+
 # Sidebar to show popular repo
 side_bar_repo_limit: 5
 
@@ -102,18 +108,18 @@ disque: tt-cc.disqus.com
 # Google Analytics
 google_tracking_id : 'UA-79713062-1'
 
-
 # For about.html. Fell free to create your own!
-skill_software_keywords: [Java, MySQL, Oracle, SQLite, PL/SQL, Design Patterns]
-skill_j2ee_keywords: [Spring, Struct, Hibernet, MyBatis, JSP]
-skill_web_keywords: [HTML, CSS, JS, JQuery, Ajax, AngularJS, MongoDB, Redis,  Boostrap]
+skill_software_keywords: [Java, Objective C, MySQL, MongoDB, SSDB, Redis，Lua]
+skill_j2ee_keywords: [SpringMvc, Struct, MyBatis, Velocity]
+skill_web_keywords: [HTML, CSS, JS, JQuery, Ajax, AngularJS, Boostrap]
 
 # Exclude metadata and development time dependencies (like Grunt plugins)
 exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, node_modules]
 
 
 #test
-github-test:
+easydebug: true
+github:
   public_repositories:
     -
       name: fa2png.io - v21

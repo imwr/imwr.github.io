@@ -3,6 +3,10 @@ body {
     overflow-x: hidden;
 }
 
+img {
+    max-width: 100%;
+}
+
 /* modify bootstrap default style start */
 .navbar-default {
     font-size: 18px;

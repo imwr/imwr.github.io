@@ -1,6 +1,5 @@
 ---
 layout: default
-css: ['sidebar-post-nav.css']
 menu: Blog
 ---
 {% include jumbotron.html %}
@@ -77,12 +76,13 @@ menu: Blog
                 </ul>
             </nav>
             <hr/>
-            <!-- Comments -->
+            {% unless site.easydebug %}
             {% include disqus-comments.html %}
+            {% endunless %}
         </div>
 
         <div class="col-md-4">
-            {% include sidebar-post-nav.html %}
+            {% include post-sidebar.html %}
         </div>
     </div>
 </article>

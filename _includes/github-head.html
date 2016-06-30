@@ -13,16 +13,13 @@
 
     {% feed_meta %}
 
-    <!-- Third-Party CSS -->
     <link rel="stylesheet" href="/components/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/components/font-awesome/css/font-awesome.min.css">
 
     <link type="text/css" rel="stylesheet" href="{{site.url}}/resources/syntax/shCoreDefault.css"/>
-    <!-- My CSS -->
     <link rel="stylesheet" type="text/css" href="/assets/css/common.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/github.css">
 
-    <!-- CSS set in page -->
     {% for css in page.romotecss %}
     <link rel="stylesheet" href="{{site.url}}{{css}}">
     {% endfor %}

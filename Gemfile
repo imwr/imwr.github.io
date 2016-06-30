@@ -6,4 +6,5 @@
    gem "jekyll-github-metadata"
    gem 'jekyll-redirect-from'
    gem 'jekyll-feed'
+   gem 'kramdown'
  end

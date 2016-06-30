@@ -94,9 +94,9 @@
                 SyntaxHighlighter.config.strings.expandSource = "Click To Expand Html Source";
                 SyntaxHighlighter.all();
             </script>
-            {% if site.easydebug == "true" %}
+            {% unless site.easydebug %}
             {% include disqus-comments.html %}
-            {% endif %}
+            {% endunless %}
         </div>
         <div class="col-md-3">
             {% include github-dir-sidebar.html %}

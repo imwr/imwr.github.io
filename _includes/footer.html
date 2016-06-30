@@ -29,6 +29,6 @@
 {% for javascript in page.js %}
 <script src="/assets/js/{{javascript}}"></script>
 {% endfor %}
-{% if site.easydebug == "true" %}
+{% unless site.easydebug %}
 {% include google-analytic.html %}
-{% endif %}
+{% endunless %}
