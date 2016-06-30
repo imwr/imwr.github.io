@@ -73,6 +73,7 @@ body {
 .jumbotron a {
     color: white;
     text-decoration: underline;
+    margin-right: 4px;
 }
 
 .btn-label .btn {
