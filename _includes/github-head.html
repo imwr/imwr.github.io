@@ -18,16 +18,16 @@
     <link rel="stylesheet" href="/components/font-awesome/css/font-awesome.min.css">
 
     <link type="text/css" rel="stylesheet" href="{{site.url}}/resources/syntax/shCoreDefault.css"/>
-    <!--<link rel="stylesheet" type="text/css" href="{{site.url}}/resources/css/github-example.css">-->
     <!-- My CSS -->
-    <link rel="stylesheet" href="/assets/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/github.css">
 
     <!-- CSS set in page -->
     {% for css in page.romotecss %}
     <link rel="stylesheet" href="{{site.url}}{{css}}">
     {% endfor %}
 
-    <script type="text/javascript" src="/components/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/components/jquery/jquery-1.12.4.min.js"></script>
 
     {% for javascript in page.romotejs %}
     <script src="{{site.url}}{{javascript}}"></script>

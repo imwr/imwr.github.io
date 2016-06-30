@@ -1,0 +1,79 @@
+.paper-code {
+    border: 1px solid #ddd;
+    overflow: hidden;
+    padding: 10px 0;
+    border-radius: 4px;
+}
+
+.paper-tips {
+    padding: 4px 10px;
+    overflow-x: auto;
+    color: #5B8FEF;
+    line-height: 2;
+    border: 1px dashed #5B8FEF;
+    background-color: #F0F5FF;
+    border-radius: 4px;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.paper-sep {
+    border-bottom: 1px solid #eee;
+    margin: 20px 0 20px;
+}
+
+.paper-div {
+    width: 100%;
+    position: relative;
+    line-height: 24px;
+}
+
+.directory-module dt {
+    border-left: 4px solid #23527c;
+    padding-left: 8px;
+    margin-left: 25px;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.directory-module dt:hover {
+    background: #23527c;
+    color: white;
+}
+
+.table {
+    max-width: 100%;
+    background-color: transparent;
+    border-spacing: 0;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-collapse: separate;
+    border-left: 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.table th {
+    font-weight: bold;
+    background-color: #D5E7FB;
+}
+
+.table-bordered th, .table-bordered td {
+    border-left: 1px solid #ddd;
+}
+
+.table tr:nth-child(even) {
+    background: #F7F8F9;
+}
+
+.table th, .table td {
+    padding: 8px;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}

@@ -15,7 +15,7 @@ menu: Tags
         <ul class="list-group">
             {% for post in tag[1] %}
             <a class="list-group-item" href="{{ post.url }}">
-                {{ post.title }}
+                <i class="fa fa-arrow-right fa-fw" aria-hidden="true"></i>{{ post.title }}
                 <div class="pull-right hidden-xs">
                     <span class="fa fa-calendar"> </span>
                     {{ post.date | date: "%Y-%m-%d" }}
@@ -28,7 +28,7 @@ menu: Tags
 </div>
 <div class="col-md-4">
     <div class="btn-label">
-        <h3> Available Tags</h3>
+        <div class="paper-title"><i class="fa fa-tags fa-fw" aria-hidden="true"></i> Tags</div>
         {% for tag in site.tags %}
         <a href="#{{ tag[0] | slugify }}" class="btn btn-default">{{ tag[0] }}({{ tag[1].size }})</a>
         {% endfor %}

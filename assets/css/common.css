@@ -6,10 +6,15 @@ body {
 /* modify bootstrap default style start */
 .navbar-default {
     font-size: 18px;
-    padding: 8px 0 12px 0;
+    padding: 6px 0 12px 0;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     top: 20px;
+}
+
+.navbar-default .navbar-brand {
+    font-size: 24px;
+    line-height: 28px;
 }
 
 .navbar-nav > li.active .hvr-underline-from-center:before {
@@ -73,7 +78,6 @@ body {
 .jumbotron a {
     color: white;
     text-decoration: underline;
-    margin-right: 4px;
 }
 
 .btn-label .btn {
@@ -92,6 +96,16 @@ body {
 
 .thumbnail-card a {
     color: white;
+}
+
+.paper-title {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    font-size: 24px;
+    padding-bottom: 12px;
+    text-shadow: 1px 1px #efefef, 2px 1px #ddd;
+    font-weight: 500;
 }
 
 /* modify bootstrap default style end*/
@@ -132,54 +146,4 @@ body {
     transition-duration: .3s;
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
-}
-
-.directory-module dt {
-    border-left: 4px solid #23527c;
-    padding-left: 8px;
-    margin-left: 2px;
-    line-height: 24px;
-    cursor: pointer;
-}
-
-.directory-module dt:hover {
-    background: #23527c;
-    color: white;
-}
-
-.table {
-    max-width: 100%;
-    background-color: transparent;
-    border-spacing: 0;
-    border-bottom: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    border-collapse: separate;
-    border-left: 0;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    width: 100%;
-    font-size: 12px;
-    margin-bottom: 15px;
-}
-
-.table th {
-    font-weight: bold;
-    background-color: #D5E7FB;
-}
-
-.table-bordered th, .table-bordered td {
-    border-left: 1px solid #ddd;
-}
-
-.table tr:nth-child(even) {
-    background: #F7F8F9;
-}
-
-.table th, .table td {
-    padding: 8px;
-    line-height: 20px;
-    text-align: left;
-    vertical-align: top;
-    border-top: 1px solid #ddd;
 }

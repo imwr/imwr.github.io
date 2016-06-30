@@ -27,9 +27,9 @@ menu: Tags
         {% endif %}
         {% endunless %}
         <a href="{{ post.url }}" class="list-group-item">
-            {{ post.title }}
+            <i class="fa fa-arrow-right fa-fw" aria-hidden="true"></i> {{ post.title }}
             <div class="pull-right hidden-xs">
-                <span class="fa fa-calendar"> </span>
+                <span class="fa fa-calendar fa-fw"> </span>
                 {{ post.date | date: "%Y-%m-%d" }}
             </div>
         </a>
@@ -38,15 +38,14 @@ menu: Tags
     {% endif %}
     {% endfor %}
     {% else %}
-    <p>There are no posts in this tag.</p>
+    <p><i class="fa fa-meh-o fa-fw" aria-hidden="true"></i> There are no posts in this tag.</p>
     {% endif %}
 </div>
 <div class="col-md-4">
     <div class="btn-label">
-        <h3> Tag Cloud</h3>
+        <div class="paper-title"> Tag Cloud</div>
         {% for tag in site.my_tags %}
-        {% assign words = ['JavaScript', 'CSS', 'HTML'] %}
-        <a href="/tag/{{tag.slug}}" class="btn btn-default">{{ tag.slug }}</a>
+        <a href="/tags/{{tag.slug}}" class="btn btn-default">{{ tag.name }}({{site.tags[tag.slug].size|default:0}})</a>
         {% endfor %}
     </div>
 </div>

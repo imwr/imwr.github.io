@@ -1,9 +1,9 @@
 <ul class="list-group">
     <a href="#" class="list-group-item disabled">
-        Categories
+        <i class="fa fa-archive fa-fw" aria-hidden="true"></i> Categories
     </a>
     {% for category in site.categories %}
-    <a class="list-group-item" href="/category/{{ category[0] }}">
+    <a class="list-group-item" href="/categories/{{ category[0] }}">
         {{ category | first }}
         <span class="badge pull-right">{{ category[1].size }}</span>
     </a>

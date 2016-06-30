@@ -1,4 +1,6 @@
-<h3 class="sidebar-title">My Popular Repositories</h3>
+<div class="paper-title">
+    <i class="fa fa-github fa-fw" aria-hidden="true"></i> MyProjects
+</div>
 {% if site.github && site.github.public_repositories %}
 {% assign sorted_repos = (site.github.public_repositories | sort: 'stargazers_count') | reverse | where: "fork", "false" %}
 {% for repo in sorted_repos | limit: site.side_bar_repo_limit %}
@@ -11,13 +13,13 @@
             <p>{{ repo.description }}</p>
             <p>
                             <span data-toggle="tooltip" title="{{ repo.stargazers_count }} stars">
-                                <span class="fa fa-star"></span> {{ repo.stargazers_count }}
+                                <span class="fa fa-star fa-fw"></span> {{ repo.stargazers_count }}
                             </span>
                             <span data-toggle="tooltip" title="{{ repo.forks_count }} forks">
-                                <span class="fa fa-code-fork"></span> {{ repo.forks_count }}
+                                <span class="fa fa-code-fork fa-fw"></span> {{ repo.forks_count }}
                             </span>
                             <span data-toggle="tooltip" title="Last updated：{{ repo.updated_at }}">
-                                <span class="fa fa-calendar"></span>
+                                <span class="fa fa-calendar fa-fw"></span>
                                 <time datetime="{{ repo.updated_at }}" title="{{ repo.updated_at }}">{{ repo.updated_at
                                     | date: '%Y-%m-%d' }}
                                 </time>

@@ -1,15 +1,9 @@
 <ul class="list-group">
     <a href="#" class="list-group-item disabled">
-        Tags
+        <i class="fa fa-tags fa-fw" aria-hidden="true"></i> Tags
     </a>
     {% for tag in site.tags %}
-    <a class="list-group-item" href="/tag/{{ tag | first }}">
-        {{ tag | first }}
-        <span class="badge pull-right">{{ tag[1].size }}</span>
-    </a>
-    {% endfor %}
-    {% for tag in site.tags %}
-    <a class="list-group-item" href="/tag/{{ tag | first }}">
+    <a class="list-group-item" href="/tags/{{ tag | first }}">
         {{ tag | first }}
         <span class="badge pull-right">{{ tag[1].size }}</span>
     </a>

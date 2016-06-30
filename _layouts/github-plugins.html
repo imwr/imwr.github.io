@@ -6,7 +6,7 @@
 {% include jumbotron.html %}
 <article class="container">
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-9" id="github-main">
             <!--<ol class="breadcrumb">-->
             <!--<li><a href="/">Home</a></li>-->
             <!--<li><a href="/category/{{ page.category }}">{{ page.category }}</a></li>-->
@@ -94,7 +94,9 @@
                 SyntaxHighlighter.config.strings.expandSource = "Click To Expand Html Source";
                 SyntaxHighlighter.all();
             </script>
+            {% if site.easydebug == "true" %}
             {% include disqus-comments.html %}
+            {% endif %}
         </div>
         <div class="col-md-3">
             {% include github-dir-sidebar.html %}

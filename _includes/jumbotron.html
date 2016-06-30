@@ -6,14 +6,14 @@
             {{ page.subtitle }}
             {% endif %}
             {% if page.date %}
-            <span class="fa fa-calendar"></span>  {{ page.date | date: "%Y/%m/%d" }}
+            <span class="fa fa-calendar fa-fw"></span>  {{ page.date | date: "%Y/%m/%d" }}
             {% endif %}
             {% if page.category %}
-            <span class="fa fa-archive"></span>
+            <span class="fa fa-archive fa-fw"></span>
             <a href="/category/{{ page.category }}">  {{ page.category }}</a>
             {% endif %}
             {% if page.tags %}
-            <span class="fa fa-tags"></span>
+            <span class="fa fa-tags fa-fw"></span>
             {% for tag in page.tags %}
             <a href="/tag/{{ tag | slugify }}" class="post-tag">
                  {{ tag }}
