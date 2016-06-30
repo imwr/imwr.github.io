@@ -1,12 +1,9 @@
 // Window Scroll
+var navbarDefault = $('#navbar-default');
 $(window).scroll(function () {
-    if ($(window).scrollTop() > 70) {
-        $('.site-header').addClass('site-header-nav-scrolled');
-    } else {
-        $('.site-header').removeClass('site-header-nav-scrolled');
-    }
+    navbarDefault.css('top', $(window).scrollTop() > 60 ? 0 : 20);
 });
-$(document).ready(function () {
+$(function () {
     $(window).scroll();
     $("body").tooltip({selector: '[data-toggle=tooltip]'});
     $('.geopattern').each(function () {

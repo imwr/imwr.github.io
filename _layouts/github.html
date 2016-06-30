@@ -5,79 +5,103 @@
 {% include header.html %}
 {% include jumbotron.html %}
 <article class="container">
-    <!--<ol class="breadcrumb">-->
-        <!--<li><a href="/">Home</a></li>-->
-        <!--<li><a href="/category/{{ page.category }}">{{ page.category }}</a></li>-->
-        <!--<li class="active">{{ page.title }}</li>-->
-    <!--</ol>-->
+    <div class="row">
+        <div class="col-md-9">
+            <!--<ol class="breadcrumb">-->
+            <!--<li><a href="/">Home</a></li>-->
+            <!--<li><a href="/category/{{ page.category }}">{{ page.category }}</a></li>-->
+            <!--<li class="active">{{ page.title }}</li>-->
+            <!--</ol>-->
 
-    {{ content }}
+            {{ content }}
 
-    {% if site.related_posts.size >= 1 %}
-    <hr/>
-    <div>
-        <h3>Related Posts</h3>
-        <ul>
-            {% for related_post in site.related_posts limit: 5 %}
-            <li><a href="{{ related_post.url }}">{{ related_post.title }}</a></li>
+            {% if site.related_posts.size >= 1 %}
+            <hr/>
+            <div>
+                <h3>Related Posts</h3>
+                <ul>
+                    {% for related_post in site.related_posts limit: 5 %}
+                    <li><a href="{{ related_post.url }}">{{ related_post.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            {% if page.categories %}
+            {% assign category = page.categories[0] %}
+            {% assign posts = site.categories[category] %}
+            {% for post in posts %}
+            {% if post.url == page.url %}
+            {% assign post_index0 = forloop.index0 %}
+            {% assign post_index1 = forloop.index %}
+            {% endif %}
             {% endfor %}
-        </ul>
+            {% for post in posts %}
+            {% if post_index0 == forloop.index %}
+            {% assign next_post = post %}
+            {% endif %}
+            {% if post_index1 == forloop.index0 %}
+            {% assign prev_post = post %}
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+
+            <nav>
+                <ul class="pager">
+                    {% if prev_post %}
+                    <li class="previous">
+                        <a href="{{ prev_post.url }}">
+                            <span aria-hidden="true">&larr;</span> Previous
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="previous disabled">
+                        <a href="javascript:void(0)">
+                            <span aria-hidden="true">&larr;</span> Previous
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if next_post %}
+                    <li class="next">
+                        <a href="{{ next_post.url }}">Next
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="next disabled">
+                        <a href="javascript:void(0)">Next
+                            <span aria-hidden="true">&rarr;</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+            <hr/>
+            <script type="text/javascript" src="{{site.url}}/resources/syntax/shCore.js"></script>
+            <script type="text/javascript" src="{{site.url}}/resources/syntax/shBrushJScriptAndXml.js"></script>
+            <script type="text/javascript">
+                $("[id^=demo]").each(function () {
+                    var demo = $(this).parent();
+                    demo.append($("<pre type='syntaxhighlighter' class='brush: js;html-script: true;collapse: true;class-name: paper-code;'>"
+                            + demo.html() + "</pre>"));
+                });
+                $("[id^=js]").each(function (i) {
+                    var index = this.id.substring(2, this.id.length);
+                    $("#demo" + index).parent().append($("<div class='paper-div'>&nbsp;Javascript Source</div>"
+                            + "<pre type='syntaxhighlighter' class='brush: js;class-name: paper-code; toolbar: false'>"
+                            + $(this).text().replace(/</g, '&lt;') + "</pre>"));
+                });
+                SyntaxHighlighter.config.strings.expandSource = "Click To Expand Html Source";
+                SyntaxHighlighter.all();
+            </script>
+            {% include disqus-comments.html %}
+        </div>
+        <div class="col-md-3">
+            {% include github-dir-sidebar.html %}
+        </div>
     </div>
-    {% endif %}
-
-    {% if page.categories %}
-    {% assign category = page.categories[0] %}
-    {% assign posts = site.categories[category] %}
-    {% for post in posts %}
-    {% if post.url == page.url %}
-    {% assign post_index0 = forloop.index0 %}
-    {% assign post_index1 = forloop.index %}
-    {% endif %}
-    {% endfor %}
-    {% for post in posts %}
-    {% if post_index0 == forloop.index %}
-    {% assign next_post = post %}
-    {% endif %}
-    {% if post_index1 == forloop.index0 %}
-    {% assign prev_post = post %}
-    {% endif %}
-    {% endfor %}
-    {% endif %}
-
-    <nav>
-        <ul class="pager">
-            {% if prev_post %}
-            <li class="previous">
-                <a href="{{ prev_post.url }}">
-                    <span aria-hidden="true">&larr;</span> Previous
-                </a>
-            </li>
-            {% else %}
-            <li class="previous disabled">
-                <a href="javascript:void(0)">
-                    <span aria-hidden="true">&larr;</span> Previous
-                </a>
-            </li>
-            {% endif %}
-            {% if next_post %}
-            <li class="next">
-                <a href="{{ next_post.url }}">Next
-                    <span aria-hidden="true">&rarr;</span>
-                </a>
-            </li>
-            {% else %}
-            <li class="next disabled">
-                <a href="javascript:void(0)">Next
-                    <span aria-hidden="true">&rarr;</span>
-                </a>
-            </li>
-            {% endif %}
-        </ul>
-    </nav>
-    <hr/>
-    {% include disqus-comments.html %}
 </article>
-{% include github-footer.html %}
+{% include footer.html %}
 </body>
 </html>
 

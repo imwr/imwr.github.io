@@ -1,0 +1,38 @@
+<section id="directory-module" class="directory-module hidden-xs">
+    <h3>Directory</h3>
+    <dl>
+    </dl>
+</section>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var directory = $("#directory-module"), dt = {};
+        $("[id^=demo]").each(function () {
+            var id = $(this).attr("id");
+            if (!dt[id]) {
+                dt[id] = true;
+                directory.find("dl").append('<dt href="#' + id + '">' + id + '</dt>');
+            }
+        });
+        directory.find("dl").append('<dt href="#options">options</dt>');
+        $(window).scroll(function () {
+            var currentScroll = $(window).scrollTop();
+            if (currentScroll >= 200) {
+                directory.css({
+                    top: 60,
+                    position: 'fixed'
+                });
+            } else {
+                directory.css({
+                    top: 0,
+                    position: 'inherit'
+                });
+            }
+        });
+        directory.find("dt").on("click", function (e) {
+            e.preventDefault();
+            $("body").animate({
+                scrollTop: $($(this).attr('href')).offset().top - 115
+            }, 500);
+        });
+    });
+</script>

@@ -1,41 +1,38 @@
-<header class="site-header">
+<nav role="navigation" id="navbar-default" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-        <nav role="navigation" class="navbar navbar-default">
-            <div class="navbar-header">
-                <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="{{ site.url }}" title="{{ site.name }}" class="navbar-brand">
-                    <span class="visible-md-inline visible-lg-inline"><img alt="{{ site.name }}" src="/favicon.ico"></span>
-                    TT-CC
-                </a>
-            </div>
-            <div id="navbarCollapse" class="collapse navbar-collapse">
-                {% if page.menu != 'search' %}
-                <form role="search" action="/search" class="navbar-form navbar-right">
-                    <input type="text" id="search-input" placeholder="Search" name="query"
-                           class="form-control search-query">
-                    <label for="search-input" class="fa fa-search search-query-icon hidden"
-                           aria-hidden="true"
-                           href></label>
-                </form>
-                {% endif %}
-                <ul class="nav navbar-nav navbar-right">
-                    {% for nav in site.navs %}
-                    <li class="{% if page.menu == nav.label %} active {% endif %}">
-                        <a href="{{ nav.href }}"
-                           class="hvr-underline-from-center"
-                           target="{{ nav.target | default: _self }}"
-                           title="{{ nav.label }}">
-                            {{ nav.label }}
-                        </a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </nav>
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="{{ site.url }}" title="{{ site.name }}" class="navbar-brand">
+                TT-CC
+            </a>
+        </div>
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+            {% if page.menu != 'search' %}
+            <form role="search" action="/search" class="navbar-form navbar-right">
+                <input type="text" id="search-input" placeholder="Search" name="query"
+                       class="form-control search-query">
+                <label for="search-input" class="fa fa-search search-query-icon hidden"
+                       aria-hidden="true"
+                       href></label>
+            </form>
+            {% endif %}
+            <ul class="nav navbar-nav navbar-right">
+                {% for nav in site.navs %}
+                <li class="{% if page.menu == nav.label %} active {% endif %}">
+                    <a href="{{ nav.href }}"
+                       class="hvr-underline-from-center"
+                       target="{{ nav.target | default: _self }}"
+                       title="{{ nav.label }}">
+                        {{ nav.label }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
-</header>
+</nav>
