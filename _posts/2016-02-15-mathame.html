@@ -1,0 +1,47 @@
+---
+menu: Blog
+title: Math-Sports-Game 简单的粒子数学运动测试
+category: jquery-game
+tags: [math-sports,jquery-game]
+github: math-sports
+romotecss: ['/math-sports/css/mathame.css']
+romotejs: ['/math-sports/js/mathame.js']
+redirect_from:
+- /front-end/jquery-plugins/mathame
+---
+<p>mathame —— JS数学小游戏，通过各种数学表达式改变粒子的角度、半径等属性，从而呈现特殊运动轨迹。Just Test！</p>
+<hr/>
+
+<div class="paper-title paper-specil">options:</div>
+<div class="math-toolbar" id="options">
+    <input class="math-ops-input" oninput="this.value=this.value.replace(/\D/g,'');if(this.value>20)this.value=20"
+           placeholder="同心圆圈 5px..."/>
+    <input class="math-ops-input" oninput="this.value=this.value.replace(/\D/g,'')" placeholder="同心圆半径 12px..."/>
+    <input class="math-ops-input" oninput="this.value=this.value.replace(/\D/g,'')" placeholder="动画间隔 20ms..."/>
+    <input class="math-ops-input" oninput="this.value=this.value.replace(/\D/g,'')" placeholder="动画周期 30ms..."/>
+</div>
+<hr/>
+<div class="math-content">
+    <div class="math-toolbar text-center">
+        <button class="math-button left" id="start">开始 Start</button>
+        <button class="math-button right" id="stop">停止 Stop</button>
+    </div>
+    <canvas id="canvas" class="math-canvas" height="400"></canvas>
+</div>
+<script>
+    var mathame = $.mathame();
+    $("#start").click(function () {
+        var options = $("#options").find("input");
+        mathame.stop().start({
+            pointRadius: 6,//圆点半径
+            circleNum: options.eq(0).val() || 6,// 同心圆圈
+            radius: options.eq(1).val() || 15,// 同心圆基本半径
+            time: options.eq(2).val() || 20,// 动画间隔，毫秒
+            period: options.eq(3).val() || 30// 动画周期，乘以间隔为动画持续时间
+        });
+        $("#stop").attr("disabled", false);
+    });
+    $("#stop").click(function () {
+        mathame.stop();
+    });
+</script>
