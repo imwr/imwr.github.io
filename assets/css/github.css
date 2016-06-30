@@ -76,4 +76,5 @@
     text-align: left;
     vertical-align: top;
     border-top: 1px solid #ddd;
+    word-break: break-all;
 }
