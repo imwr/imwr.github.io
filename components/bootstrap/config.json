@@ -386,7 +386,6 @@
     "forms.less",
     "buttons.less",
     "responsive-utilities.less",
-    "glyphicons.less",
     "navs.less",
     "navbar.less",
     "breadcrumbs.less",
@@ -399,14 +398,15 @@
     "media.less",
     "list-group.less",
     "panels.less",
-    "wells.less",
     "component-animations.less",
+    "dropdowns.less",
     "tooltip.less"
   ],
   "js": [
+    "dropdown.js",
     "tooltip.js",
     "collapse.js",
     "transition.js"
   ],
-  "customizerUrl": "http://v3.bootcss.com/customize/?id=3c3fd78ceb2d6db6ecfa9518e3c65fae"
+  "customizerUrl": "http://v3.bootcss.com/customize/?id=3957986be5fd74a1501ade96043498fb"
 }
