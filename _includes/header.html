@@ -16,20 +16,32 @@
             <form role="search" action="/search" class="navbar-form navbar-right">
                 <input type="text" id="search-input" placeholder="Search" name="query"
                        class="form-control search-query">
-                <label for="search-input" class="fa fa-search search-query-icon hidden"
-                       aria-hidden="true"
-                       href></label>
+                <label for="search-input" class="fa fa-search search-query-icon hidden" aria-hidden="true"></label>
             </form>
             {% endif %}
             <ul class="nav navbar-nav navbar-right">
                 {% for nav in site.navs %}
-                <li class="{% if page.menu == nav.label %} active {% endif %}">
+                <li class="{% if page.menu == nav.label %} active {% endif %}{% if nav.sub %}dropdown open{% endif %}">
+                    {% if nav.sub %}
                     <a href="{{ nav.href }}"
-                       class="hvr-underline-from-center"
-                       target="{{ nav.target | default: _self }}"
-                       title="{{ nav.label }}">
+                       class="dropdown-toggle hvr-underline-from-center" role="button" aria-haspopup="false" aria-expanded="false"
+                       target="{{ nav.target | default: _self }}" title="{{ nav.label }}">
+                        {{ nav.label }} <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        {% for subnav in nav.sub %}
+                        <li><a href="{{ subnav.href }}">{{ subnav.label }}</a></li>
+                        {% unless forloop.last %}
+                        <li role="separator" class="divider"></li>
+                        {% endunless %}
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <a href="{{ nav.href }}" class="hvr-underline-from-center"
+                       target="{{ nav.target | default: _self }}" title="{{ nav.label }}">
                         {{ nav.label }}
                     </a>
+                    {% endif %}
                 </li>
                 {% endfor %}
             </ul>

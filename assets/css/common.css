@@ -27,7 +27,9 @@ img {
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus,
-.navbar-default .navbar-nav > .active > a:hover {
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
     background: none;
 }
 
@@ -37,6 +39,21 @@ img {
 }
 
 @media screen and (min-width: 768px) {
+    .navbar-nav .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        height: 128px;
+    }
+
+    .navbar-nav .dropdown .dropdown-menu {
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+        height: 0;
+        display: block;
+        background: white;
+        overflow: hidden;
+        opacity: 0;
+    }
+
     .navbar-form {
         padding: 0 0 0 20px;
         min-width: 48px;
@@ -96,7 +113,7 @@ img {
     padding: 15px 0 20px 0;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-	background: #337ab7;
+    background: #337ab7;
 }
 
 .thumbnail-card .caption {

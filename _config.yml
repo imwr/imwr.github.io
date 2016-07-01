@@ -66,19 +66,25 @@ navs:
   -
     href: /
     label: Home
-
   -
     href: /open-source
     label: Open-Source
-
   -
     href: /blog
     label: Blog
-
+    sub:
+      -
+        href: /category/jquery-plugin/
+        label: Jquery-plugin
+      -
+        href: /category/web-app/
+        label: Web-app
+      -
+        href: /category/jquery-game/
+        label: Jquery-game
   -
     href: /tag
     label: Tags
-
   -
     href: /category
     label: Categories
