@@ -1,17 +1,18 @@
 <nav role="navigation" id="navbar-default" class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+            <a href="{{ site.url }}" title="{{ site.name }}" class="navbar-brand">
+                TT-CC
+            </a>
+            <label for="navbar-collapse-btn" class="navbar-toggle">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-            </button>
-            <a href="{{ site.url }}" title="{{ site.name }}" class="navbar-brand">
-                TT-CC
-            </a>
+            </label>
         </div>
-        <div id="navbarCollapse" class="collapse navbar-collapse">
+        <input type="checkbox" id="navbar-collapse-btn" class="navbar-collapse-btn hidden"/>
+        <div id="navbarCollapse" class="navbar-collapse">
             {% if page.menu != 'search' %}
             <form role="search" action="/search" class="navbar-form navbar-right">
                 <input type="text" id="search-input" placeholder="Search" name="query"

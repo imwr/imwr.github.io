@@ -11,8 +11,6 @@ img {
 .navbar-default {
     font-size: 18px;
     padding: 6px 0 12px 0;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
     top: 20px;
 }
 
@@ -21,7 +19,7 @@ img {
     line-height: 28px;
 }
 
-.navbar-nav > li.active .hvr-underline-from-center:before {
+.navbar-default .navbar-nav > li.active .tc-underline-from-center:before {
     left: 0;
     right: 0;
 }
@@ -33,9 +31,24 @@ img {
     background: none;
 }
 
-.navbar-form {
+.navbar-default .navbar-form, .navbar-default .navbar-collapse {
     border: none;
     position: relative;
+}
+
+.navbar-default .navbar-collapse {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.navbar-default .navbar-collapse-btn:checked ~ .navbar-collapse {
+    display: block;
+    overflow-y: auto;
+    height: 340px;
+    pointer-events: inherit;
 }
 
 @media screen and (min-width: 768px) {
@@ -77,6 +90,12 @@ img {
         right: 16px;
         cursor: pointer;
         top: 8px;
+    }
+
+    .navbar-default .navbar-collapse {
+        height: 50px;
+        pointer-events: inherit;
+        overflow: inherit;
     }
 }
 
@@ -144,11 +163,9 @@ img {
 }
 
 /* modify bootstrap default style end*/
-
 /*.geopattern {*/
 /*background-size: contain;*/
 /*}*/
-
 /* bottom-border animate */
 .tc-underline-from-center {
     display: inline-block;
