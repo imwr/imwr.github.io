@@ -15,9 +15,7 @@
             {% if page.tags %}
             <span class="fa fa-tags fa-fw"></span>
             {% for tag in page.tags %}
-            <a href="/tags/{{ tag | slugify }}" class="post-tag">
-                 {{ tag }}
-            </a>
+            <a href="/tags/{{ tag | slugify }}">{{ tag }}</a>&nbsp;
             {% endfor %}
             {% endif %}
         </div>
