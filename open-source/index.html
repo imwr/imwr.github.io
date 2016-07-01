@@ -14,27 +14,27 @@ menu: Open-Source
         {% for repo in sorted_repos %}
         <div class="col-md-4 text-center">
             <div class="thumbnail thumbnail-card">
-                <div class="card-img geopattern" data-pattern-id="{{ repo.name }}">
+                <div class="card-img gradient-pattern{{forloop.index}}" data-pattern-id="{{ repo.name }}">
                     <a href="{{ repo.html_url }}" target="_blank"><h3>{{ repo.name }}</h3></a>
                 </div>
-                <div class="caption">
-                    <p>{{ repo.description }}</p>
-
-                    <p>
-                            <span data-toggle="tooltip" title="{{ repo.stargazers_count }} stars">
-                                <span class="fa fa-star fa-fw"></span> {{ repo.stargazers_count }}
-                            </span>
-                            <span data-toggle="tooltip" title="{{ repo.forks_count }} forks">
-                                <span class="fa fa-code-fork fa-fw"></span> {{ repo.forks_count }}
-                            </span>
-                            <span data-toggle="tooltip" title="Last updated：{{ repo.updated_at }}">
-                                <span class="fa fa-calendar fa-fw"></span>
-                                <time datetime="{{ repo.updated_at }}" title="{{ repo.updated_at }}">{{ repo.updated_at
+                <div class="card-body">{{ repo.description }}</div>
+                <p>
+                <span class="tc-toolltip" data-toggle="tooltip" title="{{ repo.stargazers_count }} stars">
+                    <i class="fa fa-star fa-fw"></i> {{ repo.stargazers_count }}
+                    <span class="tooltip-t">{{ repo.stargazers_count }} stars</span>
+                </span>
+                <span class="tc-toolltip" data-toggle="tooltip" title="{{ repo.forks_count }} forks">
+                    <span class="fa fa-code-fork fa-fw"></span> {{ repo.forks_count }}
+                    <span class="tooltip-t">{{ repo.forks_count }} forks</span>
+                </span>
+                <span class="tc-toolltip" data-toggle="tooltip" title="Last updated：{{ repo.updated_at }}">
+                    <span class="fa fa-calendar fa-fw"></span>
+                    <time datetime="{{ repo.updated_at }}" title="{{ repo.updated_at }}">{{ repo.updated_at
                                     | date: '%Y-%m-%d' }}
-                                </time>
-                            </span>
-                    </p>
-                </div>
+                    </time>
+                    <span class="tooltip-t">Last updated：{{ repo.updated_at }}</span>
+                </span>
+                </p>
             </div>
         </div>
         {% endfor %}

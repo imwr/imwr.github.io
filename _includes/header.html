@@ -24,7 +24,7 @@
                 <li class="{% if page.menu == nav.label %} active {% endif %}{% if nav.sub %}dropdown open{% endif %}">
                     {% if nav.sub %}
                     <a href="{{ nav.href }}"
-                       class="dropdown-toggle hvr-underline-from-center" role="button" aria-haspopup="false" aria-expanded="false"
+                       class="dropdown-toggle tc-underline-from-center" role="button" aria-haspopup="false" aria-expanded="false"
                        target="{{ nav.target | default: _self }}" title="{{ nav.label }}">
                         {{ nav.label }} <span class="caret"></span>
                     </a>
@@ -37,7 +37,7 @@
                         {% endfor %}
                     </ul>
                     {% else %}
-                    <a href="{{ nav.href }}" class="hvr-underline-from-center"
+                    <a href="{{ nav.href }}" class="tc-underline-from-center"
                        target="{{ nav.target | default: _self }}" title="{{ nav.label }}">
                         {{ nav.label }}
                     </a>

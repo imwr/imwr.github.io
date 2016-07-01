@@ -5,7 +5,7 @@ $(window).scroll(function () {
 });
 $(function () {
     $(window).scroll();
-    $("body").tooltip({selector: '[data-toggle=tooltip]'});
+    // $("body").tooltip({selector: '[data-toggle=tooltip]'});
     $('.geopattern').each(function () {
         $(this).geopattern($(this).data('pattern-id'));
     });
