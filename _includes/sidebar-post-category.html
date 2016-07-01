@@ -2,10 +2,16 @@
     <a href="#" class="list-group-item disabled">
         <i class="fa fa-archive fa-fw" aria-hidden="true"></i> Categories
     </a>
-    {% for category in site.categories %}
+    {% for category in site.categories | limit: 5 %}
     <a class="list-group-item" href="/category/{{ category[0] }}">
         {{ category | first }}
         <span class="badge pull-right">{{ category[1].size }}</span>
     </a>
     {% endfor %}
+    {% if site.categories.size > 5 %}
+    <a class="list-group-item" href="/category">
+        &nbsp;
+        <span class="pull-right">More...</span>
+    </a>
+    {% endif %}
 </ul>

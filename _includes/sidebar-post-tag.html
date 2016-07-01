@@ -2,10 +2,16 @@
     <a href="#" class="list-group-item disabled">
         <i class="fa fa-tags fa-fw" aria-hidden="true"></i> Tags
     </a>
-    {% for tag in site.tags %}
+    {% for tag in site.tags | limit: 10 %}
     <a class="list-group-item" href="/tag/{{ tag | first }}">
         {{ tag | first }}
         <span class="badge pull-right">{{ tag[1].size }}</span>
     </a>
     {% endfor %}
+    {% if site.tags.size > 10 %}
+    <a class="list-group-item" href="/tag">
+        &nbsp;
+        <span class="pull-right">More...</span>
+    </a>
+    {% endif %}
 </ul>
