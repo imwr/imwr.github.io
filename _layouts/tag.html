@@ -5,7 +5,7 @@ menu: Tags
 <div class="col-md-8">
     <ol class="breadcrumb">
         <li><a href="/">Home</a></li>
-        <li><a href="/tags">tags</a></li>
+        <li><a href="/tag">tags</a></li>
         <li class="active">{{ page.title }}</li>
     </ol>
     {% if site.tags[page.slug] %}
@@ -45,7 +45,7 @@ menu: Tags
     <div class="btn-label">
         <div class="paper-title"> Tag Cloud</div>
         {% for tag in site.my_tags %}
-        <a href="/tags/{{tag.slug}}" class="btn btn-default">{{ tag.name }}({{site.tags[tag.slug].size|default:0}})</a>
+        <a href="/tag/{{tag.slug}}" class="btn btn-default">{{ tag.name }}({{site.tags[tag.slug].size|default:0}})</a>
         {% endfor %}
     </div>
 </div>

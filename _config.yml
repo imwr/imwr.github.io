@@ -30,10 +30,10 @@ gems:
 collections:
   my_categories:
     output: true
-    permalink: /categories/:name/
+    permalink: /category/:name/
   my_tags:
     output: true
-    permalink: /tags/:name/
+    permalink: /tag/:name/
 
 defaults:
   -
@@ -76,11 +76,11 @@ navs:
     label: Blog
 
   -
-    href: /tags
+    href: /tag
     label: Tags
 
   -
-    href: /categories
+    href: /category
     label: Categories
 
 # Pagination
@@ -89,8 +89,8 @@ paginate: 5
 paginate_path: "/blog/page:num/"
 
 # Where are tags and categories displayed
-tag_page: tags
-category_page: categories
+tag_page: tag
+category_page: category
 
 # github metadata
 repository: imwr/imwr.github.com
@@ -135,7 +135,7 @@ github-test:
       forks_count: 22
       updated_at: 2015-12-12
       stargazers_count: 1
-      description: 这是是一个啦减肥啦手机发的啦快速减肥卢卡斯地方
+      description: 这是是一个啦减肥啦手机发的啦快速减肥卢卡斯地方这是是一个啦减肥啦手机发的啦快速减肥卢卡斯地方
       fork: false
     -
       name: fa2png.io - v23
