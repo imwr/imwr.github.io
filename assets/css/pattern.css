@@ -100,10 +100,10 @@
     -webkit-background-clip: border-box;
     background-clip: border-box;
     -webkit-background-size: 54px auto;
-    background-size: 54px auto;
+    background-size: 200px auto;
 }
 
-.gradient-pattern6 {
+.gradient-pattern0 {
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
