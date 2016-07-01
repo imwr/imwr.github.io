@@ -5,7 +5,7 @@ email: ttccmvp@gmail.com
 location: Chengdu, Sichuang
 github_url: https://github.com/imwr
 weibo_url: https://weibo.com/imwr
-description: Personal Website of TTCC
+description: 汀汀涔涔 Personal Website of TTCC
 url: http://tt-cc.cn
 
 # About/contact
@@ -118,7 +118,7 @@ exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, node_modules]
 
 
 #test
-easydebug: 
+easydebug:
 github-test:
   public_repositories:
     -
