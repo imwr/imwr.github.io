@@ -1,5 +1,5 @@
 <div class="paper-title">
-    <i class="fa fa-github fa-fw" aria-hidden="true"></i> MyProjects
+    <i class="fa fa-github fa-fw" aria-hidden="true"></i> My Projects
 </div>
 {% if site.github && site.github.public_repositories %}
 {% assign sorted_repos = (site.github.public_repositories | sort: 'stargazers_count') | reverse | where: "fork", "false" %}

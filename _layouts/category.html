@@ -14,28 +14,30 @@ menu: Blog
     {% if forloop.first %}
     <h3>{{ post_year }}</h3>
 
-    <div class="list-group">
-        {% endif %}
-        {% unless forloop.first %}
-        {% assign previous_index = forloop.index0 | minus: 1 %}
-        {% capture previous_post_year %}{{ site.categories[page.slug][previous_index].date | date: '%Y' }}{% endcapture
-        %}
-        {% if post_year != previous_post_year %}
-    </div>
+    {% endif %}
+    {% unless forloop.first %}
+    {% assign previous_index = forloop.index0 | minus: 1 %}
+    {% capture previous_post_year %}{{ site.categories[page.slug][previous_index].date | date: '%Y' }}{% endcapture
+    %}
+    {% if post_year != previous_post_year %}
     <h3>{{ post_year }}</h3>
 
-    <div class="list-group">
-        {% endif %}
-        {% endunless %}
-        <a href="{{ post.url }}" class="list-group-item">
-            <i class="fa fa-hand-o-right fa-fw" aria-hidden="true"></i> {{ post.title }}
-            <div class="pull-right hidden-xs">
-                <span class="fa fa-calendar fa-fw"> </span>
-                {{ post.date | date: "%Y-%m-%d" }}
-            </div>
-        </a>
-        {% if forloop.last %}
+    {% endif %}
+    {% endunless %}
+
+    <div class="panel panel-default">
+        <div class="panel-top">
+            <a href="{{ post.url }}">
+                <i class="fa fa-hand-o-right fa-fw" aria-hidden="true"></i> {{ post.title }}
+            </a>
+            <small> —— {{ post.date | date: "%m-%d" }}</small>
+        </div>
+
+        <div class="panel-body">
+            {{ post.excerpt | strip_html | strip }}
+        </div>
     </div>
+    {% if forloop.last %}
     {% endif %}
     {% endfor %}
     {% else %}
