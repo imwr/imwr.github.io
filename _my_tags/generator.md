@@ -1,0 +1,4 @@
+---
+slug: generator
+name: generator
+---
