@@ -3,7 +3,11 @@ layout: default
 ---
 {% include jumbotron.html %}
 <div class="container">
+    {% if page.row %}
     <div class="row">
         {{ content }}
     </div>
+    {% else %}
+    {{ content }}
+    {% endif %}
 </div>
