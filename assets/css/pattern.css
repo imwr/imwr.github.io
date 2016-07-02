@@ -1,10 +1,9 @@
 /* geo */
+.gradient-pattern {
+    background: #337ab7;
+}
+
 .gradient-pattern0 {
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    border: none;
-    font: normal 100%/normal Arial, Helvetica, sans-serif;
     color: rgba(255, 255, 255, 1);
     -o-text-overflow: clip;
     text-overflow: clip;
@@ -17,15 +16,10 @@
     -webkit-background-clip: border-box;
     background-clip: border-box;
     -webkit-background-size: 54px auto;
-    background-size: 200px auto;
+    background-size: 100px auto;
 }
 
 .gradient-pattern1 {
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    border: none;
-    font: normal 0.5px/normal Arial, Helvetica, sans-serif;
     color: rgba(255, 255, 255, 1);
     -o-text-overflow: clip;
     text-overflow: clip;
@@ -37,16 +31,11 @@
     background-origin: padding-box;
     -webkit-background-clip: border-box;
     background-clip: border-box;
-    -webkit-background-size: 200em 200em;
-    background-size: 10em 10em;
+    -webkit-background-size: 100px 100px;
+    background-size: 100px 100px;
 }
 
 .gradient-pattern2 {
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    border: none;
-    font: normal 1px/normal Arial, Helvetica, sans-serif;
     color: rgba(255, 255, 255, 1);
     -o-text-overflow: clip;
     text-overflow: clip;
@@ -63,11 +52,6 @@
 }
 
 .gradient-pattern3 {
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    border: none;
-    font: normal 100%/normal Arial, Helvetica, sans-serif;
     color: rgb(255, 255, 255);
     -o-text-overflow: clip;
     text-overflow: clip;
@@ -83,11 +67,6 @@
 }
 
 .gradient-pattern4 {
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    border: none;
-    font: normal 100%/normal Arial, Helvetica, sans-serif;
     color: rgb(255, 255, 255);
     -o-text-overflow: clip;
     text-overflow: clip;
@@ -101,4 +80,114 @@
     background-clip: border-box;
     -webkit-background-size: 100px 100px;
     background-size: 100px 100px;
+}
+
+.gradient-pattern5 {
+    color: rgba(255, 255, 255, 1);
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0) 0), rgb(170, 204, 0);
+    background: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0) 0), rgb(170, 204, 0);
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0) 0), rgb(170, 204, 0);
+    background-position: auto auto;
+    -webkit-background-origin: padding-box;
+    background-origin: padding-box;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-background-size: 50px 50px;
+    background-size: 50px 50px;
+}
+
+.gradient-pattern6 {
+    color: rgba(255, 255, 255, 1);
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background: -webkit-linear-gradient(135deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.0470588) 50%), -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.2) 50%), -webkit-linear-gradient(-225deg, #FF0000 0, #FF0000 25%, rgba(0, 0, 0, 0) 25%), -webkit-linear-gradient(-135deg, #FF0000 0, #FF0000 25%, rgba(0, 0, 0, 0) 25%), -webkit-linear-gradient(-45deg, #FF0000 0, #FF0000 25%, rgba(0, 0, 0, 0) 25%), -webkit-linear-gradient(45deg, #FF0000 0, #FF0000 25%, rgba(0, 0, 0, 0) 25%), #ff0000;
+    background: -moz-linear-gradient(-45deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.0470588) 50%), -moz-linear-gradient(45deg, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.2) 50%), -moz-linear-gradient(315deg, #FF0000 0, #FF0000 25%, rgba(0, 0, 0, 0) 25%), -moz-linear-gradient(225deg, #FF0000 0, #FF0000 25%, rgba(0, 0, 0, 0) 25%), -moz-linear-gradient(135deg, #FF0000 0, #FF0000 25%, rgba(0, 0, 0, 0) 25%), -moz-linear-gradient(45deg, #FF0000 0, #FF0000 25%, rgba(0, 0, 0, 0) 25%), #ff0000;
+    background: linear-gradient(-45deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.0470588) 50%), linear-gradient(45deg, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.2) 50%), linear-gradient(315deg, #FF0000 0, #FF0000 25%, rgba(0, 0, 0, 0) 25%), linear-gradient(225deg, #FF0000 0, #FF0000 25%, rgba(0, 0, 0, 0) 25%), linear-gradient(135deg, #FF0000 0, #FF0000 25%, rgba(0, 0, 0, 0) 25%), linear-gradient(45deg, #FF0000 0, #FF0000 25%, rgba(0, 0, 0, 0) 25%), #ff0000;
+    background-position: auto auto, auto auto, -50px 0, -50px 0, auto auto, auto auto;
+    -webkit-background-origin: padding-box;
+    background-origin: padding-box;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-background-size: 50em 50em, 50em 50em, 100em 100em, 100em 100em, 100em 100em, 100em 100em;
+    background-size: 40px 40px;
+}
+
+.gradient-pattern7 {
+    color: rgb(255, 255, 255);
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background: -webkit-linear-gradient(-45deg, rgb(158, 95, 26) 22px, rgb(217, 189, 116) 22px, rgb(217, 189, 116) 24px, rgba(0, 0, 0, 0) 24px, rgba(0, 0, 0, 0) 67px, rgb(217, 189, 116) 67px, rgb(217, 189, 116) 69px, rgba(0, 0, 0, 0) 69px), -webkit-linear-gradient(-135deg, rgb(158, 95, 26) 22px, rgb(217, 189, 116) 22px, rgb(217, 189, 116) 24px, rgba(0, 0, 0, 0) 24px, rgba(0, 0, 0, 0) 67px, rgb(217, 189, 116) 67px, rgb(217, 189, 116) 69px, rgba(0, 0, 0, 0) 69px), rgb(158, 95, 26);
+    background: -moz-linear-gradient(135deg, rgb(158, 95, 26) 22px, rgb(217, 189, 116) 22px, rgb(217, 189, 116) 24px, rgba(0, 0, 0, 0) 24px, rgba(0, 0, 0, 0) 67px, rgb(217, 189, 116) 67px, rgb(217, 189, 116) 69px, rgba(0, 0, 0, 0) 69px), -moz-linear-gradient(225deg, rgb(158, 95, 26) 22px, rgb(217, 189, 116) 22px, rgb(217, 189, 116) 24px, rgba(0, 0, 0, 0) 24px, rgba(0, 0, 0, 0) 67px, rgb(217, 189, 116) 67px, rgb(217, 189, 116) 69px, rgba(0, 0, 0, 0) 69px), rgb(158, 95, 26);
+    background: linear-gradient(135deg, rgb(158, 95, 26) 22px, rgb(217, 189, 116) 22px, rgb(217, 189, 116) 24px, rgba(0, 0, 0, 0) 24px, rgba(0, 0, 0, 0) 67px, rgb(217, 189, 116) 67px, rgb(217, 189, 116) 69px, rgba(0, 0, 0, 0) 69px), linear-gradient(225deg, rgb(158, 95, 26) 22px, rgb(217, 189, 116) 22px, rgb(217, 189, 116) 24px, rgba(0, 0, 0, 0) 24px, rgba(0, 0, 0, 0) 67px, rgb(217, 189, 116) 67px, rgb(217, 189, 116) 69px, rgba(0, 0, 0, 0) 69px), rgb(158, 95, 26);
+    background-position: 0 0, 0 64px;
+    -webkit-background-origin: padding-box;
+    background-origin: padding-box;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-background-size: 64px 128px;
+    background-size: 64px 128px;
+}
+
+.gradient-pattern8 {
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 0), rgb(255, 153, 0);
+    background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 0), rgb(255, 153, 0);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 0), rgb(255, 153, 0);
+    background-position: auto auto;
+    -webkit-background-origin: padding-box;
+    background-origin: padding-box;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-background-size: 50px auto;
+    background-size: 50px auto;
+}
+
+.gradient-pattern9 {
+    color: rgba(255, 255, 255, 1);
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background: -webkit-radial-gradient(circle, rgb(35, 29, 24) 25%, rgba(0, 0, 0, 0) 25%), -webkit-radial-gradient(circle, rgb(63, 57, 50) 25%, rgba(0, 0, 0, 0) 25%), -webkit-radial-gradient(circle, rgb(35, 29, 24) 25%, rgba(0, 0, 0, 0) 25%), -webkit-radial-gradient(circle, rgb(63, 57, 50) 25%, rgba(0, 0, 0, 0) 25%), rgba(0, 57, 84, 1);
+    background: -moz-radial-gradient(circle, rgb(35, 29, 24) 25%, rgba(0, 0, 0, 0) 25%), -moz-radial-gradient(circle, rgb(63, 57, 50) 25%, rgba(0, 0, 0, 0) 25%), -moz-radial-gradient(circle, rgb(35, 29, 24) 25%, rgba(0, 0, 0, 0) 25%), -moz-radial-gradient(circle, rgb(63, 57, 50) 25%, rgba(0, 0, 0, 0) 25%), rgba(0, 57, 84, 1);
+    background: radial-gradient(circle, rgb(35, 29, 24) 25%, rgba(0, 0, 0, 0) 25%), radial-gradient(circle, rgb(63, 57, 50) 25%, rgba(0, 0, 0, 0) 25%), radial-gradient(circle, rgb(35, 29, 24) 25%, rgba(0, 0, 0, 0) 25%), radial-gradient(circle, rgb(63, 57, 50) 25%, rgba(0, 0, 0, 0) 25%), rgba(0, 57, 84, 1);
+    background-position: 3em 3em, 3em 4em, auto auto, 0 1em;
+    -webkit-background-origin: padding-box;
+    background-origin: padding-box;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-background-size: 6em 6em;
+    background-size: 6em 6em;
+}
+
+.gradient-pattern10 {
+    color: #ad0808;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background: -webkit-radial-gradient(closest-side, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 75%, rgb(182, 204, 102) 76%, rgb(182, 204, 102) 85%, rgb(237, 255, 219) 86%, rgb(237, 255, 219) 94%, rgb(255, 255, 255) 95%, rgb(255, 255, 255) 103%, rgb(217, 230, 167) 104%, rgb(217, 230, 167) 112%, rgb(121, 139, 60) 113%, rgb(121, 139, 60) 121%, rgb(255, 255, 255) 122%, rgb(255, 255, 255) 130%, rgb(224, 234, 215) 131%, rgb(224, 234, 215) 140%), -webkit-radial-gradient(closest-side, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 75%, rgb(182, 204, 102) 76%, rgb(182, 204, 102) 85%, rgb(237, 255, 219) 86%, rgb(237, 255, 219) 94%, rgb(255, 255, 255) 95%, rgb(255, 255, 255) 103%, rgb(217, 230, 167) 104%, rgb(217, 230, 167) 112%, rgb(121, 139, 60) 113%, rgb(121, 139, 60) 121%, rgb(255, 255, 255) 122%, rgb(255, 255, 255) 130%, rgb(224, 234, 215) 131%, rgb(224, 234, 215) 140%), rgb(200, 211, 167);
+    background: -moz-radial-gradient(closest-side, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 75%, rgb(182, 204, 102) 76%, rgb(182, 204, 102) 85%, rgb(237, 255, 219) 86%, rgb(237, 255, 219) 94%, rgb(255, 255, 255) 95%, rgb(255, 255, 255) 103%, rgb(217, 230, 167) 104%, rgb(217, 230, 167) 112%, rgb(121, 139, 60) 113%, rgb(121, 139, 60) 121%, rgb(255, 255, 255) 122%, rgb(255, 255, 255) 130%, rgb(224, 234, 215) 131%, rgb(224, 234, 215) 140%), -moz-radial-gradient(closest-side, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 75%, rgb(182, 204, 102) 76%, rgb(182, 204, 102) 85%, rgb(237, 255, 219) 86%, rgb(237, 255, 219) 94%, rgb(255, 255, 255) 95%, rgb(255, 255, 255) 103%, rgb(217, 230, 167) 104%, rgb(217, 230, 167) 112%, rgb(121, 139, 60) 113%, rgb(121, 139, 60) 121%, rgb(255, 255, 255) 122%, rgb(255, 255, 255) 130%, rgb(224, 234, 215) 131%, rgb(224, 234, 215) 140%), rgb(200, 211, 167);
+    background: radial-gradient(closest-side, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 75%, rgb(182, 204, 102) 76%, rgb(182, 204, 102) 85%, rgb(237, 255, 219) 86%, rgb(237, 255, 219) 94%, rgb(255, 255, 255) 95%, rgb(255, 255, 255) 103%, rgb(217, 230, 167) 104%, rgb(217, 230, 167) 112%, rgb(121, 139, 60) 113%, rgb(121, 139, 60) 121%, rgb(255, 255, 255) 122%, rgb(255, 255, 255) 130%, rgb(224, 234, 215) 131%, rgb(224, 234, 215) 140%), radial-gradient(closest-side, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 75%, rgb(182, 204, 102) 76%, rgb(182, 204, 102) 85%, rgb(237, 255, 219) 86%, rgb(237, 255, 219) 94%, rgb(255, 255, 255) 95%, rgb(255, 255, 255) 103%, rgb(217, 230, 167) 104%, rgb(217, 230, 167) 112%, rgb(121, 139, 60) 113%, rgb(121, 139, 60) 121%, rgb(255, 255, 255) 122%, rgb(255, 255, 255) 130%, rgb(224, 234, 215) 131%, rgb(224, 234, 215) 140%), rgb(200, 211, 167);
+    background-position: 0 0, 55px 55px;
+    -webkit-background-origin: padding-box;
+    background-origin: padding-box;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-background-size: 110px 110px;
+    background-size: 110px 110px;
+}
+
+.gradient-pattern11 {
+    color: rgb(255, 255, 255);
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background: -webkit-repeating-linear-gradient(45deg, rgba(0, 0, 0, 0) 5px, rgba(10, 35, 45, 0.498039) 5px, rgba(10, 35, 45, 0.498039) 10px, rgba(211, 119, 111, 0) 10px, rgba(211, 119, 111, 0) 35px, rgba(211, 119, 111, 0.498039) 35px, rgba(211, 119, 111, 0.498039) 40px, rgba(10, 35, 45, 0.498039) 40px, rgba(10, 35, 45, 0.498039) 50px, rgba(10, 35, 45, 0) 50px, rgba(10, 35, 45, 0) 60px, rgba(211, 119, 111, 0.498039) 60px, rgba(211, 119, 111, 0.498039) 70px, rgba(247, 179, 84, 0.498039) 70px, rgba(247, 179, 84, 0.498039) 80px, rgba(247, 179, 84, 0) 80px, rgba(247, 179, 84, 0) 90px, rgba(211, 119, 111, 0.498039) 90px, rgba(211, 119, 111, 0.498039) 110px, rgba(211, 119, 111, 0) 110px, rgba(211, 119, 111, 0) 120px, rgba(10, 35, 45, 0.498039) 120px, rgba(10, 35, 45, 0.498039) 140px), -webkit-repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0) 5px, rgba(10, 35, 45, 0.498039) 5px, rgba(10, 35, 45, 0.498039) 10px, rgba(211, 119, 111, 0) 10px, rgba(211, 119, 111, 0) 35px, rgba(211, 119, 111, 0.498039) 35px, rgba(211, 119, 111, 0.498039) 40px, rgba(10, 35, 45, 0.498039) 40px, rgba(10, 35, 45, 0.498039) 50px, rgba(10, 35, 45, 0) 50px, rgba(10, 35, 45, 0) 60px, rgba(211, 119, 111, 0.498039) 60px, rgba(211, 119, 111, 0.498039) 70px, rgba(247, 179, 84, 0.498039) 70px, rgba(247, 179, 84, 0.498039) 80px, rgba(247, 179, 84, 0) 80px, rgba(247, 179, 84, 0) 90px, rgba(211, 119, 111, 0.498039) 90px, rgba(211, 119, 111, 0.498039) 110px, rgba(211, 119, 111, 0) 110px, rgba(211, 119, 111, 0) 140px, rgba(10, 35, 45, 0.498039) 140px, rgba(10, 35, 45, 0.498039) 160px), rgb(234, 213, 185);
+    background: -moz-repeating-linear-gradient(45deg, rgba(0, 0, 0, 0) 5px, rgba(10, 35, 45, 0.498039) 5px, rgba(10, 35, 45, 0.498039) 10px, rgba(211, 119, 111, 0) 10px, rgba(211, 119, 111, 0) 35px, rgba(211, 119, 111, 0.498039) 35px, rgba(211, 119, 111, 0.498039) 40px, rgba(10, 35, 45, 0.498039) 40px, rgba(10, 35, 45, 0.498039) 50px, rgba(10, 35, 45, 0) 50px, rgba(10, 35, 45, 0) 60px, rgba(211, 119, 111, 0.498039) 60px, rgba(211, 119, 111, 0.498039) 70px, rgba(247, 179, 84, 0.498039) 70px, rgba(247, 179, 84, 0.498039) 80px, rgba(247, 179, 84, 0) 80px, rgba(247, 179, 84, 0) 90px, rgba(211, 119, 111, 0.498039) 90px, rgba(211, 119, 111, 0.498039) 110px, rgba(211, 119, 111, 0) 110px, rgba(211, 119, 111, 0) 120px, rgba(10, 35, 45, 0.498039) 120px, rgba(10, 35, 45, 0.498039) 140px), -moz-repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 5px, rgba(10, 35, 45, 0.498039) 5px, rgba(10, 35, 45, 0.498039) 10px, rgba(211, 119, 111, 0) 10px, rgba(211, 119, 111, 0) 35px, rgba(211, 119, 111, 0.498039) 35px, rgba(211, 119, 111, 0.498039) 40px, rgba(10, 35, 45, 0.498039) 40px, rgba(10, 35, 45, 0.498039) 50px, rgba(10, 35, 45, 0) 50px, rgba(10, 35, 45, 0) 60px, rgba(211, 119, 111, 0.498039) 60px, rgba(211, 119, 111, 0.498039) 70px, rgba(247, 179, 84, 0.498039) 70px, rgba(247, 179, 84, 0.498039) 80px, rgba(247, 179, 84, 0) 80px, rgba(247, 179, 84, 0) 90px, rgba(211, 119, 111, 0.498039) 90px, rgba(211, 119, 111, 0.498039) 110px, rgba(211, 119, 111, 0) 110px, rgba(211, 119, 111, 0) 140px, rgba(10, 35, 45, 0.498039) 140px, rgba(10, 35, 45, 0.498039) 160px), rgb(234, 213, 185);
+    background: repeating-linear-gradient(45deg, rgba(0, 0, 0, 0) 5px, rgba(10, 35, 45, 0.498039) 5px, rgba(10, 35, 45, 0.498039) 10px, rgba(211, 119, 111, 0) 10px, rgba(211, 119, 111, 0) 35px, rgba(211, 119, 111, 0.498039) 35px, rgba(211, 119, 111, 0.498039) 40px, rgba(10, 35, 45, 0.498039) 40px, rgba(10, 35, 45, 0.498039) 50px, rgba(10, 35, 45, 0) 50px, rgba(10, 35, 45, 0) 60px, rgba(211, 119, 111, 0.498039) 60px, rgba(211, 119, 111, 0.498039) 70px, rgba(247, 179, 84, 0.498039) 70px, rgba(247, 179, 84, 0.498039) 80px, rgba(247, 179, 84, 0) 80px, rgba(247, 179, 84, 0) 90px, rgba(211, 119, 111, 0.498039) 90px, rgba(211, 119, 111, 0.498039) 110px, rgba(211, 119, 111, 0) 110px, rgba(211, 119, 111, 0) 120px, rgba(10, 35, 45, 0.498039) 120px, rgba(10, 35, 45, 0.498039) 140px), repeating-linear-gradient(135deg, rgba(0, 0, 0, 0) 5px, rgba(10, 35, 45, 0.498039) 5px, rgba(10, 35, 45, 0.498039) 10px, rgba(211, 119, 111, 0) 10px, rgba(211, 119, 111, 0) 35px, rgba(211, 119, 111, 0.498039) 35px, rgba(211, 119, 111, 0.498039) 40px, rgba(10, 35, 45, 0.498039) 40px, rgba(10, 35, 45, 0.498039) 50px, rgba(10, 35, 45, 0) 50px, rgba(10, 35, 45, 0) 60px, rgba(211, 119, 111, 0.498039) 60px, rgba(211, 119, 111, 0.498039) 70px, rgba(247, 179, 84, 0.498039) 70px, rgba(247, 179, 84, 0.498039) 80px, rgba(247, 179, 84, 0) 80px, rgba(247, 179, 84, 0) 90px, rgba(211, 119, 111, 0.498039) 90px, rgba(211, 119, 111, 0.498039) 110px, rgba(211, 119, 111, 0) 110px, rgba(211, 119, 111, 0) 140px, rgba(10, 35, 45, 0.498039) 140px, rgba(10, 35, 45, 0.498039) 160px), rgb(234, 213, 185);
+    -webkit-background-origin: padding-box;
+    background-origin: padding-box;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-background-size: auto auto;
+    background-size: auto auto;
 }

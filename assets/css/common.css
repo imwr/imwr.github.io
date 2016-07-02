@@ -9,9 +9,9 @@ img {
 
 /* modify bootstrap default style start */
 .navbar-default {
-    font-size: 18px;
-    padding: 6px 0 12px 0;
-    top: 20px;
+    font-size: 16px;
+    padding-bottom: 6px;
+    /*top: 20px;*/
 }
 
 .navbar-default .navbar-brand {
@@ -29,6 +29,7 @@ img {
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
     background: none;
+    color: #777;
 }
 
 .navbar-default .navbar-form, .navbar-default .navbar-collapse {
@@ -110,7 +111,7 @@ img {
 }
 
 .jumbotron {
-    padding-top: 120px;
+    padding-top: 80px;
     padding-bottom: 40px;
     color: #fff;
 }

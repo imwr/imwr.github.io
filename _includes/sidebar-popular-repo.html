@@ -6,7 +6,7 @@
 {% for repo in sorted_repos | limit: site.side_bar_repo_limit %}
 <div class="text-center">
     <div class="thumbnail thumbnail-card">
-        <div class="card-img gradient-pattern{{forloop.index}}" data-pattern-id="{{ repo.name }}">
+        <div class="card-img gradient-pattern{{forloop.index| minus:1}}" data-pattern-id="{{ repo.name }}">
             <a href="{{ repo.html_url }}" target="_blank"><h3>{{ repo.name }}</h3></a>
         </div>
         <div class="card-body">{{ repo.description }}</div>
