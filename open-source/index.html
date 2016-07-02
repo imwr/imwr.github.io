@@ -5,7 +5,6 @@ menu: Open-Source
 ---
 <section class="container">
     <div class="row">
-
         {% if site.github && site.github.public_repositories %}
         {% assign sorted_repos = (site.github.public_repositories | sort: 'stargazers_count') | reverse | where: "fork",
         "false" %}
@@ -15,7 +14,7 @@ menu: Open-Source
         {% for repo in sorted_repos %}
         <div class="col-md-4 text-center">
             <div class="thumbnail thumbnail-card">
-                {% assign pattern = (forloop.index | modulo:9 ) %}
+                {% assign pattern = (forloop.index | modulo:site.pattern_module ) %}
                 <div class="card-img gradient-pattern{{ pattern }}" data-pattern-id="{{ repo.name }}">
                     <a href="{{ repo.html_url }}" target="_blank"><h3>{{ repo.name }}</h3></a>
                 </div>

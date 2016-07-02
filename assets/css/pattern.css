@@ -131,21 +131,6 @@
 }
 
 .gradient-pattern8 {
-    -o-text-overflow: clip;
-    text-overflow: clip;
-    background: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 0), rgb(255, 153, 0);
-    background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 0), rgb(255, 153, 0);
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 0), rgb(255, 153, 0);
-    background-position: auto auto;
-    -webkit-background-origin: padding-box;
-    background-origin: padding-box;
-    -webkit-background-clip: border-box;
-    background-clip: border-box;
-    -webkit-background-size: 50px auto;
-    background-size: 50px auto;
-}
-
-.gradient-pattern9 {
     color: rgba(255, 255, 255, 1);
     -o-text-overflow: clip;
     text-overflow: clip;
@@ -159,6 +144,21 @@
     background-clip: border-box;
     -webkit-background-size: 6em 6em;
     background-size: 6em 6em;
+}
+
+.gradient-pattern9 {
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 0), rgb(255, 153, 0);
+    background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 0), rgb(255, 153, 0);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 0), rgb(255, 153, 0);
+    background-position: auto auto;
+    -webkit-background-origin: padding-box;
+    background-origin: padding-box;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    -webkit-background-size: 50px auto;
+    background-size: 50px auto;
 }
 
 .gradient-pattern10 {
