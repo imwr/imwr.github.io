@@ -1,19 +1,22 @@
 ---
+layout: default
 title: Css3 3d Shape Generator 演示
 row: false
 ---
-<iframe frameborder="0" onload="iFrameHeight(this)" scrolling="no" src="{{site.url}}/css3-3d-shape-generator"
-        style="min-width: 100%;width: 320px;"></iframe>
-<p><a href="{{site.url}}/css3-3d-shape-generator" target="_blank">Open This Page In New Tab</a></p>
+<div class="container">
+    <iframe frameborder="0" onload="iFrameHeight(this)" scrolling="no" src="{{site.url}}/css3-3d-shape-generator"
+            style="min-width: 100%;width: 320px;margin-top: 57px;"></iframe>
+    <p><a href="{{site.url}}/css3-3d-shape-generator" target="_blank">Open This Page In New Tab</a></p>
 
-<script type="text/javascript" language="javascript">
-    function iFrameHeight(ifm) {
-        var subWeb = document.frames ? ifm.document : ifm.contentDocument;
-        if (ifm != null && subWeb != null) {
-            ifm.height = subWeb.body.scrollHeight;
+    <script type="text/javascript" language="javascript">
+        function iFrameHeight(ifm) {
+            var subWeb = document.frames ? ifm.document : ifm.contentDocument;
+            if (ifm != null && subWeb != null) {
+                ifm.height = subWeb.body.scrollHeight;
+            }
         }
-    }
-</script>
-{% unless site.easydebug %}
-{% include disqus-comments.html %}
-{% endunless %}
+    </script>
+    {% unless site.easydebug %}
+    {% include disqus-comments.html %}
+    {% endunless %}
+</div>

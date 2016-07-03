@@ -15,29 +15,30 @@ redirect_from:
 <div class="paper-title">Demo1:</div>
 <div class="paper-div">
     <div id="demo1"></div>
+    <div id="phone1"></div>
 </div>
 <div class="paper-sep"></div>
 
-<h4 id="options">Options:</h4>
-<table class="table table-bordered">
-    <thead>
-    <tr>
-        <th width="15%">参数名</th>
-        <th width="15%">类型</th>
-        <th width="20%">默认值</th>
-        <th width="50%">说明</th>
-    </tr>
-    </thead>
-    <tbody>
-    </tbody>
-</table>
+<div class="paper-title">Demo2:</div>
+<div class="paper-div">
+    <div id="demo2"></div>
+    <div id="phone2"></div>
+</div>
+<div class="paper-sep"></div>
 <script type="text/javascript" id="js1">
     $("#demo1").simpleCamera({
-        width: 272,
+        width: 400,
         height: 420,
-        photoW: 272,//摄像头宽
-        photoH: 378,//摄像头高
+        photoW: 400,//摄像头宽
+        photoH: 420,//摄像头高
         doImage: $("#phone1"),
+        onEnd: function (img) {
+        }
+    });
+</script>
+<script type="text/javascript" id="js2">
+    $("#demo2").simpleCamera({
+        doImage: "open",
         onEnd: function (img) {
         }
     });
