@@ -13,7 +13,7 @@ redirect_from:
 
 <a href="{{site.github_url}}/{{page.github}}" title="">View On Github</a>
 
-## <a href="/demo/hiticon-css" target="_blank" title="Hiticon 打假图标游戏">Play Here On Mobile</a>
+## <a href="/demo/hiticon-css" title="Hiticon 打假图标游戏">Play Here On Mobile</a>
 
 ### options
 ```html

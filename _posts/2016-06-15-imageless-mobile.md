@@ -11,7 +11,7 @@ redirect_from:
 很久前业余写的 CSS-JS 模拟手机，主体样式按照当时用的 sony lt22i 手机外观编写，没有任何图片素材，整合了部分自己开发的 JQuery Plugin。
 <a href="{{site.github_url}}/mobile-simulator" title="">View On Github</a>
 
-## <a href="/demo/imageless-mobile" target="_blank" title="Mobile-Simulator 模拟手机">Play Here</a>
+## <a href="/demo/imageless-mobile" title="Mobile-Simulator 模拟手机">Play Here</a>
 
 ### 特性
 - 长按开关机、短按解锁屏（右侧顶部按钮）—— See [MouseMe]({{site.github_url}}/MouseMe)
