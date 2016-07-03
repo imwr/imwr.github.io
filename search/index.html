@@ -8,15 +8,6 @@ menu: search
         <li><a href="/">Home</a></li>
         <li class="active">{{ page.title }}</li>
     </ol>
-    <!--<form action="/search" method="get" class="input-group">-->
-    <!--<input type="text" id="search-query" class="form-control" placeholder="Search"-->
-    <!--autocomplete="off">-->
-    <!--<span class="input-group-btn">-->
-    <!--<button class="btn btn-default" type="button">-->
-    <!--<span class="glyphicon glyphicon-search"></span>-->
-    <!--</button>-->
-    <!--</span>-->
-    <!--</form>-->
     <form action="/search" method="get">
         <input type="text" id="search-query" class="form-control" placeholder="Search"
                autocomplete="off">
@@ -36,7 +27,7 @@ menu: search
     SimpleJekyllSearch({
         searchInput: search[0],
         resultsContainer: document.getElementById('search-results'),
-        searchResultTemplate: '<a href="{url}" class="list-group-item">{title}<span class="badge pull-right">{category}</span></a>',
+        searchResultTemplate: '<a href="{url}" class="list-group-item">{title} &nbsp;&nbsp;<span class="label label-default">{category}</span></a>',
         json: '/components/search-jekyll/index.json'
     });
 </script>

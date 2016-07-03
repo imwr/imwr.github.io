@@ -75,13 +75,13 @@ navs:
     sub:
       -
         href: /category/jquery-plugin/
-        label: Jquery-plugin
+        label: Jquery-Plugin
       -
         href: /category/web-app/
-        label: Web-app
+        label: Web-App
       -
-        href: /category/jquery-game/
-        label: Jquery-game
+        href: /category/web-game/
+        label: Web-Game
   -
     href: /tag
     label: Tags
@@ -108,7 +108,7 @@ kramdown:
 
 # Sidebar to show popular repo
 side_bar_repo_limit: 5
-pattern_module: 8
+pattern_module: 7
 
 # Disque
 disque: tt-cc.disqus.com
