@@ -1,0 +1,38 @@
+---
+title: Mobile-Simulator 演示
+---
+<div class="col-md-8">
+    <iframe frameborder="0" onload="iFrameHeight(this)" scrolling="no" src="http://tt-cc.cn/mobile-simulator/"
+            style="min-width: 100%;width: 320px;min-height: 614px"></iframe>
+    <p><a href="http://tt-cc.cn/mobile-simulator/" target="_blank">Open This Page In New Tab</a></p>
+
+    <script type="text/javascript" language="javascript">
+        function iFrameHeight(ifm) {
+            var subWeb = document.frames ? ifm.document : ifm.contentDocument;
+            if (ifm != null && subWeb != null) {
+                ifm.height = subWeb.body.scrollHeight;
+            }
+        }
+    </script>
+    {% unless site.easydebug %}
+    {% include disqus-comments.html %}
+    {% endunless %}
+</div>
+<div class="col-md-4">  
+    <div class="paper-title">
+        <i class="fa fa-info fa-fw" aria-hidden="true"></i> How to start
+    </div>
+    <ul class="ul-num">
+        <li>
+            长按右上角按钮 2s 开机/关机/点亮屏幕
+            <br/> Long press (2s) on the button at top right corner to power on/ power off/ light up the screen
+        </li>
+        <li>
+            输入 153 解锁九宫格（从左到右、从上到下,自一开始计数）
+            <br/> Enter 153 to unlock Ninebox (start with 1, from left to right and top to bottom)
+        </li>
+        <li>
+            试着到处点击 <br/> Try to click anywhere. Have fun!
+        </li>
+    </ul>
+</div>

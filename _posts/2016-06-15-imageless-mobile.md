@@ -11,16 +11,16 @@ redirect_from:
 很久前业余写的 CSS-JS 模拟手机，主体样式按照当时用的 sony lt22i 手机外观编写，没有任何图片素材，整合了部分自己开发的 JQuery Plugin。
 <a href="{{site.github_url}}/mobile-simulator" title="">View On Github</a>
 
-## <a href="{{site.url}}/mobile-simulator" target="_blank" title="Mobile-Simulator 模拟手机">Play Here</a>
+## <a href="/demo/imageless-mobile" target="_blank" title="Mobile-Simulator 模拟手机">Play Here</a>
 
 ### 特性
-- 长按开关机、短按解锁屏（右侧顶部按钮）—— See [MouseMe](https://github.com/imwr/MouseMe)
-- 开机粒子动画 —— See [SimpleParticle](https://github.com/imwr/SimpleParticle)
-- 开机文字 —— See [ColorChange](https://github.com/imwr/ColorChange)
-- 九宫格解锁（默认密码 1→5→3，从左到右从上到下从1开始计数） —— See [NineBox](https://github.com/imwr/NineBox)
-- 通话、联系人、信息 Tab —— See [MovableTab](https://github.com/imwr/MovableTab)
-- 信息搜索—— See [AutoAddto](https://github.com/imwr/AutoAddto)
-- 拍照保存图片功能 —— See [SimpleCamera](https://github.com/imwr/SimpleCamera)
+- 长按开关机、短按解锁屏（右侧顶部按钮）—— See [MouseMe]({{site.github_url}}/MouseMe)
+- 开机粒子动画 —— See [SimpleParticle]({{site.github_url}}/SimpleParticle)
+- 开机文字 —— See [ColorChange]({{site.github_url}}/ColorChange)
+- 九宫格解锁（默认密码 1→5→3，从左到右从上到下从1开始计数） —— See [NineBox]({{site.github_url}}/NineBox)
+- 通话、联系人、信息 Tab —— See [MovableTab]({{site.github_url}}/MovableTab)
+- 信息搜索—— See [AutoAddto]({{site.github_url}}/AutoAddto)
+- 拍照保存图片功能 —— See [SimpleCamera]({{site.github_url}}/SimpleCamera)
 - 相册图片Slider（完善中）
 - 相册图片工具（完善中）
 - 桌面图标拖拽（完善中）
