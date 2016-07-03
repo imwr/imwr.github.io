@@ -1,0 +1,18 @@
+---
+title: Mobile-Simulator 演示
+---
+<div class="col-md-8">
+    <iframe frameborder="0" onload="iFrameHeight(this)" scrolling="no" src="http://tt-cc.cn/mobile-simulator/"
+            style="min-width: 100%;width: 320px"></iframe>
+    <script type="text/javascript" language="javascript">
+        function iFrameHeight(ifm) {
+            var subWeb = document.frames ? ifm.document : ifm.contentDocument;
+            if (ifm != null && subWeb != null) {
+                ifm.height = subWeb.body.scrollHeight;
+            }
+        }
+    </script>
+</div>
+<div class="col-md-4">
+    test
+</div>
