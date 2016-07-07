@@ -1,0 +1,24 @@
+---
+layout: page
+title: ajax
+---
+ajax dirction
+<div id="ajax"></div>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        var dir = "/photos/test1/";
+        $.ajax({
+            url: dir,
+            success: function (data) {
+                $(data).find("a").attr("href", function (i, val) {
+                    if (val.match(/\.(jpe?g|png|gif)$/)) {
+                        $("#ajax").append("<img src='" + dir + val + "'>" + val);
+                    }
+                });
+            },
+            error: function (e) {
+                console.log(e)
+            }
+        });
+    });
+</script>

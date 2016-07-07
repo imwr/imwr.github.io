@@ -1,0 +1,17 @@
+---
+layout: page
+title: loop_directory
+---
+loop_directory<br/>
+{% directory path:photos filter:*.png sort:descending %}
+{% if file.ext != '' %}
+<img src="{{ file.url }}" alt="{{ file.name }}"
+     datetime="{{ file.date}}"/> {{ file.slug }}
+{% else %}
+{{ file.url }}
+{% directory path:{{ file.url }} filter:*.png sort:descending %}
+<img src="{{ file.url }}" alt="{{ file.name }}"
+     datetime="{{ file.date}}"/> {{ file.slug }}
+{% enddirectory %}
+{% endif %}
+{% enddirectory %}

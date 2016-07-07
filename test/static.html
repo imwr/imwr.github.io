@@ -1,0 +1,10 @@
+---
+layout: page
+title: static_files
+---
+static_files<br/>
+{% for file in site.static_files %}
+{% if file.extname == ".jpg" or file.extname == ".png" %}
+<img src="{{ file.path }}"/> {{file.path}}{{file.extname}}
+{% endif %}
+{% endfor %}
