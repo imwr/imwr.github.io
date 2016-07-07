@@ -18,7 +18,6 @@ author:
 # Plugins
 gems:
   - jekyll-paginate
-  - jekyll-geo-pattern
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-feed
