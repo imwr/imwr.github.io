@@ -13,9 +13,11 @@ A Simple, Bootstrap Based Jekyll Website.
 * Based on Bootstrap
 * Use all jekyll/GitHub Pages official plugins
  * jekyll-paginate
- * jekyll-geo-pattern
  * jekyll-sitemap
  * jekyll-seo-tag
+ * jekyll-feed
+ * jekyll-redirect-from
+ * kramdown
  * jekyll-github-metadata
 * [Tags](http://tt-cc.cn/tags) and [Categories](http://tt-cc.cn/categories) archive page
 * List posts by a specified tag and category
