@@ -12,13 +12,13 @@ A Simple, Bootstrap Based Jekyll Website.
 * Compatible with Jekyll 3.x and GitHub Pages
 * Based on Bootstrap
 * Use all jekyll/GitHub Pages official plugins
- * jekyll-paginate
- * jekyll-sitemap
- * jekyll-seo-tag
- * jekyll-feed
- * jekyll-redirect-from
- * kramdown
- * jekyll-github-metadata
+  * jekyll-paginate
+  * jekyll-sitemap
+  * jekyll-seo-tag
+  * jekyll-feed
+  * jekyll-redirect-from
+  * kramdown
+  * jekyll-github-metadata
 * [Tags](http://tt-cc.cn/tags) and [Categories](http://tt-cc.cn/categories) archive page
 * List posts by a specified tag and category
 * Simple search base on [Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)
@@ -32,8 +32,8 @@ A Simple, Bootstrap Based Jekyll Website.
 Before using it, you may need [Bower](http://bower.io/) and [Bundler](http://bundler.io/) on your local to install dependencies.
 
 1. Fork code and clone
-2. Run `bower install` to install all dependencies in [bower.json](https://github.com/DONGChuan/DONGChuan.github.io/blob/master/bower.json)
-3. Run `bundle install` to install all dependencies in [Gemfile](https://github.com/DONGChuan/DONGChuan.github.io/blob/master/Gemfile)
+2. Run `bower install` to install all dependencies in bower.json
+3. Run `bundle install` to install all dependencies in Gemfile
 4. Update `_config.yml` with your own settings.
 5. Add posts in `/_my_categories` `/_my_tags` `/_posts`
 6. Commit to your own Username.github.io repository.
@@ -70,6 +70,4 @@ tags: [your_tag1, your_tag2]
 
 The Apache License 2.0
 
-Copyright (c) 2016 DONG Chuan
-
-Check [LICENSE](https://github.com/DONGChuan/DONGChuan.github.io/blob/master/LICENSE) file and [official website](http://www.apache.org/licenses/LICENSE-2.0) for details
+Copyright (c) 2016 TT-CC
