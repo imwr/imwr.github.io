@@ -3,7 +3,7 @@ layout: page
 title: About This Site
 row: false
 ---
-# TT-CC.CN 汀汀涔涔
+# TT-CC 汀汀涔涔
 
 A Simple, Bootstrap Based Jekyll Website.
 
@@ -19,7 +19,7 @@ A Simple, Bootstrap Based Jekyll Website.
   * jekyll-redirect-from
   * kramdown
   * jekyll-github-metadata
-* [Tags](http://tt-cc.cn/tags) and [Categories](http://tt-cc.cn/categories) archive page
+* [Tags]({{site.url}}/tags) and [Categories]({{site.url}}/categories) archive page
 * List posts by a specified tag and category
 * Simple search base on [Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)
 * Show projects from your orgnization on github
