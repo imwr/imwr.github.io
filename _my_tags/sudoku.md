@@ -1,0 +1,4 @@
+---
+slug: sudoku
+name: sudoku
+---
