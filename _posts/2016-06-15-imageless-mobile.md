@@ -2,12 +2,12 @@
 menu: Blog
 title: Mobile-Simulator 模拟手机
 category: web-app
-tags: [mobile-simulator,imageless,模拟器]
+tags: [emulator,mobile-simulator,imageless,模拟器]
 github: mobile-simulator
 redirect_from:
 - /front-end/jquery-game/imageless-mobile
 ---
-## Mobile-Simulator —— Imageless Mobile Devices
+## Mobile-Simulator —— Imageless Mobile Emulator
 很久前业余写的 CSS-JS 模拟手机，主体样式按照当时用的 sony lt22i 手机外观编写，没有任何图片素材，整合了部分自己开发的 JQuery Plugin。
 <a href="{{site.github_url}}/mobile-simulator" title="">View On Github</a>
 
