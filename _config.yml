@@ -115,9 +115,9 @@ disque: tt-cc.disqus.com
 google_tracking_id : 'UA-79713062-1'
 
 # For about.html. Fell free to create your own!
-skill_software_keywords: [Java, Objective C, MySQL, MongoDB, SSDB, Redis, Lua]
+skill_software_keywords: [Java, Python3, Objective C, MySQL, MongoDB, SSDB, Redis, Lua]
 skill_j2ee_keywords: [SpringMvc, Struct, MyBatis, Velocity]
-skill_web_keywords: [HTML, CSS, JS, JQuery, AngularJS, Boostrap, Ajax]
+skill_web_keywords: [HTML, CSS, JS, JQuery, AngularJS, Nodejs, Boostrap, Ajax, Django]
 
 # Exclude metadata and development time dependencies (like Grunt plugins)
 exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, node_modules]
