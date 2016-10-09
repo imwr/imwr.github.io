@@ -1,0 +1,32 @@
+---
+layout: page
+title: All My Snippets
+menu: Snippets
+---
+<div class="col-md-8">
+    <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li class="active">{{ page.title }}</li>
+    </ol>
+    {% for post in site.my_snippet %}
+    <div class="panel panel-default">
+        <div class="panel-top">
+            <a href="{{ post.url }}">{{ post.title }}</a>
+        </div>
+
+        <div class="panel-body">
+            {{ post.excerpt | strip_html | strip }}
+        </div>
+        <div class="panel-footer">
+                    <span class="hidden-xs">
+                        <span class="fa fa-calendar fa-fw"></span> {{ post.date | date: "%Y-%m-%d" }}&nbsp;
+                    </span>
+            Posted in <a href="/category/{{ post.category }}">{{ post.category }}</a>
+            <a class="pull-right" href="{{ post.url }}">Read More</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="col-md-4">
+    {% include sidebar-popular-repo.html %}
+</div>
