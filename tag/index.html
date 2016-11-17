@@ -3,34 +3,39 @@ layout: page
 title: All My Tags
 menu: Tags
 ---
-<div class="col-md-8">
+<div class="col-md-12">
     <ol class="breadcrumb">
         <li><a href="/">Home</a></li>
         <li class="active">{{ page.title }}</li>
     </ol>
-    {% for tag in site.tags %}
-    <div class="panel panel-default">
-        <!-- Default panel contents -->
-        <div class="panel-heading" id="{{ tag[0] | slugify }}">{{ tag[0] }}</div>
-        <ul class="list-group">
-            {% for post in tag[1] %}
-            <a class="list-group-item" href="{{ post.url }}">
-                <i class="fa fa-hand-o-right fa-fw" aria-hidden="true"></i>{{ post.title }}
-                <div class="pull-right hidden-xs">
-                    <span class="fa fa-calendar"> </span>
-                    {{ post.date | date: "%Y-%m-%d" }}
-                </div>
-            </a>
-            {% endfor %}
-        </ul>
-    </div>
-    {% endfor %}
-</div>
-<div class="col-md-4">
-    <div class="btn-label">
+    <div class="btn-label" id="post-tags" style="display: none">
         <div class="paper-title"><i class="fa fa-tags fa-fw" aria-hidden="true"></i> Tags</div>
-        {% for tag in site.tags %}
-        <a href="#{{ tag[0] | slugify }}" class="btn btn-default">{{ tag[0] }}({{ tag[1].size }})</a>
+        {% for tag in site.tags | sort %}
+        <a href="/tag/{{ tag[0] | slugify }}" data-tag="{{ tag[0] | slugify }}" class="btn btn-default">
+            {{ tag[0] }}(<span>{{ tag[1].size }}</span>)
+        </a>
+        {% endfor %}
+    </div>
+    <div id="snippet-tags" class="">
+        {% for snippet in site.my_snippet | sort %}
+        {% for tag in snippet.tags %}
+        <span>{{ tag }}</span>
+        {% endfor %}
         {% endfor %}
     </div>
 </div>
+<script>
+    var postTags = $("#post-tags");
+    $("#snippet-tags").find("span").each(function () {
+        console.log(this.textContent)
+        var taga = postTags.find("a[data-tag=" + this.textContent + "]");
+        if (taga) {
+            var s = taga.find("span");
+            s.text(1 + Number(s.text() || 0))
+        } else {
+            postTags.append('<a href="/tag/' + this.textContent + '" data-tag="' + this.textContent
+                    + '" class="btn btn-default">' + this.textContent + '(<span>1</span>)</a>')
+        }
+    }).remove();
+    postTags.show();
+</script>

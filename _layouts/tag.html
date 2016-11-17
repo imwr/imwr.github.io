@@ -8,35 +8,30 @@ menu: Tags
         <li><a href="/tag">tags</a></li>
         <li class="active">{{ page.title }}</li>
     </ol>
-    {% if site.tags[page.slug] %}
-    {% for post in site.tags[page.slug] %}
-    {% capture post_year %}{{ post.date | date: '%Y' }}{% endcapture %}
-    {% if forloop.first %}
-    <h3>{{ post_year }}</h3>
-
+    {% assign alltags = site.tags[page.slug] %}
+    {% for snippet in site.my_snippet %}
+    {% for tag in snippet.tags %}
+    {% if tag == page.slug %}
+    {% assign alltags = alltags | push: snippet %}
     {% endif %}
-    {% unless forloop.first %}
-    {% assign previous_index = forloop.index0 | minus: 1 %}
-    {% capture previous_post_year %}{{ site.tags[page.slug][previous_index].date | date: '%Y' }}{% endcapture %}
-    {% if post_year != previous_post_year %}
-    <h3>{{ post_year }}</h3>
+    {% endfor %}
+    {% endfor %}
 
-    {% endif %}
-    {% endunless %}
+    {% if alltags %}
+    {% assign alltags = alltags | sort: 'date' | reverse %}
+    {% for post in alltags %}
     <div class="panel panel-default">
         <div class="panel-top">
             <a href="{{ post.url }}">
                 <i class="fa fa-hand-o-right fa-fw" aria-hidden="true"></i> {{ post.title }}
             </a>
-            <small> —— {{ post.date | date: "%m-%d" }}</small>
+            <small> —— {{ post.date | date: "%Y-%m-%d" }}</small>
         </div>
 
         <div class="panel-body">
             {{ post.excerpt | strip_html | strip }}
         </div>
     </div>
-    {% if forloop.last %}
-    {% endif %}
     {% endfor %}
     {% else %}
     <p><i class="fa fa-meh-o fa-fw" aria-hidden="true"></i> There are no posts in this tag.</p>
