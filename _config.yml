@@ -133,4 +133,4 @@ exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, node_modules]
 #test
 easydebug: false
 github:
-  public_repositories: []
+  public_repositories:
