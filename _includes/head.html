@@ -19,7 +19,7 @@
     {% endfor %}
 	<script type="text/javascript" src="/components/jquery/jquery-1.12.4.min.js"></script>
 	{% for javascript in page.js %}
-    <script src="/assets/js/{{javascript}}"></script>
+    <script src="{{javascript}}"></script>
     {% endfor %}
     {% for javascript in page.romotejs %}
     <script src="{{site.url}}{{javascript}}"></script>
