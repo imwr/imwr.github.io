@@ -14,7 +14,7 @@ menu: Categories
         <ul class="list-group">
             {% for post in category[1] %}
             <a class="list-group-item" href="{{ post.url }}">
-                <i class="fa fa-hand-o-right fa-fw" aria-hidden="true"></i>{{ post.title }}
+                <i class="fa fa-hand-o-right fa-fw" aria-hidden="true"></i> {{ post.title }}
                 <div class="pull-right hidden-xs">
                     <span class="fa fa-calendar"> </span>
                     {{ post.date | date: "%Y-%m-%d" }}

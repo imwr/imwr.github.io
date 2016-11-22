@@ -48,8 +48,9 @@ menu: Blog
     <div class="btn-label">
         <div class="paper-title">Categories Cloud</div>
         {% for category in site.my_categories %}
-        <a href="/category/{{category.slug}}" class="btn btn-default">{{ category.slug
-            }}({{site.categories[category.slug].size|default:0}})</a>
+        <a href="/category/{{category.slug}}" class="btn btn-default">
+            {{ category.slug}}({{site.categories[category.slug].size|default:0}})
+        </a>
         {% endfor %}
     </div>
 </div>

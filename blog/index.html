@@ -1,6 +1,6 @@
 ---
 layout: page
-title: All My Blogs
+title: All My Posts
 menu: Blog
 redirect_from:
 - /front-end
@@ -14,7 +14,10 @@ redirect_from:
     {% for post in paginator.posts %}
     <div class="panel panel-default">
         <div class="panel-top">
-            <a href="{{ post.url }}">{{ post.title }}</a>
+            <a href="{{ post.url }}">
+                <i class="fa fa-hand-o-right fa-fw" aria-hidden="true"></i>
+                {{ post.title }}
+            </a>
         </div>
         <div class="panel-body">
             {{ post.excerpt | strip_html | strip }}

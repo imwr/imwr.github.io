@@ -16,7 +16,7 @@ menu: Tags
         </a>
         {% endfor %}
     </div>
-    <div id="snippet-tags" class="">
+    <div id="snippet-tags" class="hide">
         {% for snippet in site.my_snippet | sort %}
         {% for tag in snippet.tags %}
         <span>{{ tag }}</span>
@@ -27,9 +27,8 @@ menu: Tags
 <script>
     var postTags = $("#post-tags");
     $("#snippet-tags").find("span").each(function () {
-        console.log(this.textContent)
         var taga = postTags.find("a[data-tag=" + this.textContent + "]");
-        if (taga) {
+        if (taga.length > 0) {
             var s = taga.find("span");
             s.text(1 + Number(s.text() || 0))
         } else {

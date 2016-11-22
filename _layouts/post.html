@@ -5,11 +5,6 @@ menu: Blog
 {% include jumbotron-post.html %}
 <article class="container">
     <div class="row">
-        <!--<ol class="breadcrumb">-->
-            <!--<li><a href="/">Home</a></li>-->
-            <!--<li><a href="/category/{{ page.category }}">{{ page.category }}</a></li>-->
-            <!--<li class="active">{{ page.title }}</li>-->
-        <!--</ol>-->
         <div class="col-md-8 markdown-body">
 
             {{ content }}
@@ -82,7 +77,14 @@ menu: Blog
         </div>
 
         <div class="col-md-4">
-            {% include post-sidebar.html %}
+            {% if page.github  %}
+            <div class="paper-title">
+                <a href="{{ site.github_url }}/{{ page.github }}">
+                    <i class="fa fa-code-fork fa-fw" aria-hidden="true"></i>Fork On Github
+                </a>
+            </div>
+            {% endif %}
+            {% include sidebar-post-tag.html %}
         </div>
     </div>
 </article>

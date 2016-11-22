@@ -9,6 +9,9 @@ menu: Tags
         <li class="active">{{ page.title }}</li>
     </ol>
     {% assign alltags = site.tags[page.slug] %}
+    {% unless alltags %}
+    {% assign alltags = ''| split:',' %}
+    {% endunless %}
     {% for snippet in site.my_snippet %}
     {% for tag in snippet.tags %}
     {% if tag == page.slug %}
@@ -41,7 +44,11 @@ menu: Tags
     <div class="btn-label">
         <div class="paper-title"> Tag Cloud</div>
         {% for tag in site.my_tags %}
-        <a href="/tag/{{tag.slug}}" class="btn btn-default">{{ tag.name }}({{site.tags[tag.slug].size|default:0}})</a>
+        {% if site.tags[tag.slug].size > 0 %}
+        <a href="/tag/{{tag.slug}}" class="btn btn-default">
+            {{ tag.name }}({{site.tags[tag.slug].size|default:0}})
+        </a>
+        {% endif %}
         {% endfor %}
     </div>
 </div>
